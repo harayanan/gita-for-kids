@@ -1,0 +1,68 @@
+chapter: 1
+verse: 4
+speaker: sanjaya
+
+sanskrit: "अत्र शूरा महेष्वासा भीमार्जुनसमा युधि। युयुधानो विराटश्च द्रुपदश्च महारथः॥"
+
+transliteration: "atra śūrā maheṣvāsā bhīmārjunasamā yudhi | yuyudhāno virāṭaśca drupadaśca mahārathaḥ ||"
+
+dhatu_breakdown:
+  - word: "अत्र"
+    parts: ["atra (here)"]
+    meaning: "here, in this army"
+  - word: "शूराः"
+    parts: ["śūr (to be brave)"]
+    meaning: "heroes, brave warriors"
+  - word: "महेष्वासाः"
+    parts: ["mahā (great)", "iṣu (arrow)", "āsa (bow)"]
+    meaning: "great archers"
+  - word: "भीमार्जुनसमाः"
+    parts: ["bhīma (Bhima)", "arjuna (Arjuna)", "sama (equal to)"]
+    meaning: "equal to Bhima and Arjuna in battle"
+  - word: "युधि"
+    parts: ["yudh (to fight)"]
+    meaning: "in battle"
+  - word: "युयुधानः"
+    parts: ["yuyudhāna (Satyaki)"]
+    meaning: "Satyaki, a warrior ally"
+  - word: "विराटः"
+    parts: ["virāṭa (King Virata)"]
+    meaning: "King Virata"
+  - word: "द्रुपदः"
+    parts: ["drupada (King Drupada)"]
+    meaning: "King Drupada"
+  - word: "महारथः"
+    parts: ["mahā (great)", "ratha (chariot)"]
+    meaning: "a great chariot warrior"
+
+meaning: >
+  Duryodhana continued: "In the Pandava army, there are mighty heroes and
+  great archers who are as skilled as Bhima and Arjuna in battle — warriors
+  like Satyaki, King Virata, and the great chariot-warrior King Drupada."
+
+story:
+  title: "The Boy Who Counted the Other Team"
+  source: "original"
+  body: |
+    Before a big cricket match, Ravi peeked through the fence to watch the
+    other team practice. His eyes grew wide. "That boy hits sixes every ball,"
+    he whispered. "And that bowler — he's as fast as lightning!"
+
+    His friend Meera rolled her eyes. "Why are you counting their strengths?
+    You haven't even warmed up yet."
+
+    "But look at them!" said Ravi.
+
+    "I am looking," said Meera. "And I'm also looking at you — the best
+    spinner in our district. Are you going to play the match, or are you
+    going to stand here and make the other team sound unbeatable?"
+
+    That's exactly what Duryodhana was doing. Instead of focusing on his own
+    army — which was actually bigger — he was nervously listing every
+    strong warrior on the other side. When we're afraid, we sometimes make
+    the thing we fear sound bigger than it really is.
+
+    Fear doesn't show us the world as it is. It shows us the world as we
+    worry it might be.
+
+reflection: "Before a big challenge, do you focus more on what the other side has — or on your own strengths?"

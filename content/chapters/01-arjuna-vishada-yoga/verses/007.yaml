@@ -1,0 +1,66 @@
+chapter: 1
+verse: 7
+speaker: sanjaya
+
+sanskrit: "अस्माकं तु विशिष्टा ये तान्निबोध द्विजोत्तम। नायका मम सैन्यस्य संज्ञार्थं तान्ब्रवीमि ते॥"
+
+transliteration: "asmākaṁ tu viśiṣṭā ye tānnibodha dvijottama | nāyakā mama sainyasya saṁjñārthaṁ tānbravīmi te ||"
+
+dhatu_breakdown:
+  - word: "अस्माकम्"
+    parts: ["asmad (us, our)"]
+    meaning: "on our side"
+  - word: "विशिष्टाः"
+    parts: ["vi (specially)", "śiṣ (to distinguish)"]
+    meaning: "the distinguished ones, the best"
+  - word: "निबोध"
+    parts: ["ni (down, into)", "budh (to know, awaken)"]
+    meaning: "know them, understand"
+  - word: "द्विजोत्तम"
+    parts: ["dvija (twice-born, brahmin)", "uttama (best)"]
+    meaning: "O best of the twice-born (addressing Drona)"
+  - word: "नायकाः"
+    parts: ["nī (to lead)", "aka (one who)"]
+    meaning: "the leaders, commanders"
+  - word: "सैन्यस्य"
+    parts: ["sainya (army)"]
+    meaning: "of the army"
+  - word: "संज्ञार्थम्"
+    parts: ["saṁjñā (recognition)", "artha (for the purpose of)"]
+    meaning: "for your information"
+  - word: "ब्रवीमि"
+    parts: ["brū (to speak)"]
+    meaning: "I will tell you"
+
+meaning: >
+  Duryodhana said: "But now, O best of Brahmins, let me also tell you about
+  the distinguished leaders on our side. I name them so you may know the
+  commanders of my army."
+
+story:
+  title: "The Captain's Pep Talk"
+  source: "original"
+  body: |
+    There's a moment in every team sport when the captain calls the team
+    into a huddle. Sometimes it's before the game starts. Sometimes it's
+    when things look tough.
+
+    The best captains don't just yell "Let's go!" They name people. "Priya,
+    you're our fastest runner — own that wing. Aditya, you've got the
+    strongest throw — nothing gets past you."
+
+    That's what Duryodhana is doing here. After spending five verses
+    nervously listing the Pandava army's strength, he catches himself.
+    He realizes he's been focusing on the wrong side. So he switches:
+    "Okay, enough about them. Let me tell you about us."
+
+    But notice something — he's talking to Drona, his teacher, and he calls
+    him "dvijottama" — the best of the twice-born. It's a respectful title.
+    But it also sounds like Duryodhana is reminding Drona: "You are one of
+    us. Remember that."
+
+    When we're nervous, we sometimes try to make sure the people around us
+    are still on our side. Duryodhana's respect here has a little bit of
+    fear mixed into it.
+
+reflection: "When you're part of a team, what makes you feel like everyone is really together — not just standing next to each other?"

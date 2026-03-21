@@ -1,0 +1,68 @@
+chapter: 1
+verse: 1
+speaker: dhritarashtra
+
+sanskrit: "धर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः। मामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय॥"
+
+transliteration: "dharmakṣetre kurukṣetre samavetā yuyutsavaḥ | māmakāḥ pāṇḍavāścaiva kimakurvata sañjaya ||"
+
+dhatu_breakdown:
+  - word: "धर्मक्षेत्रे"
+    parts: ["dharma (righteousness)", "kṣetra (field)"]
+    meaning: "in the field of dharma"
+  - word: "कुरुक्षेत्रे"
+    parts: ["kuru (of the Kurus)", "kṣetra (field)"]
+    meaning: "in the field of the Kurus"
+  - word: "समवेताः"
+    parts: ["sam (together)", "ava (down)", "ita (gone)"]
+    meaning: "assembled together"
+  - word: "युयुत्सवः"
+    parts: ["yudh (to fight)", "san (desiring)"]
+    meaning: "desiring to fight"
+  - word: "मामकाः"
+    parts: ["mama (my)", "ka (belonging to)"]
+    meaning: "my people"
+  - word: "पाण्डवाः"
+    parts: ["pāṇḍu (King Pandu)", "va (sons of)"]
+    meaning: "the sons of Pandu"
+  - word: "किम्"
+    parts: ["kim (what)"]
+    meaning: "what"
+  - word: "अकुर्वत"
+    parts: ["a (past tense)", "kṛ (to do)"]
+    meaning: "did they do"
+  - word: "सञ्जय"
+    parts: ["sam (well)", "jaya (victory)"]
+    meaning: "O Sanjaya"
+
+meaning: >
+  The blind king Dhritarashtra asks his advisor Sanjaya: "On the sacred field of
+  Kurukshetra, where my sons and the sons of Pandu have gathered to fight —
+  tell me, Sanjaya, what did they do?"
+
+story:
+  title: "The King Who Could Not See"
+  source: "original"
+  body: |
+    Imagine you are a king, but you cannot see. You live in a grand palace
+    with marble floors and golden pillars, but you have never seen any of it.
+    You know the world only through the voices of others.
+
+    That was Dhritarashtra's life. He was born blind, and because of that, his
+    younger brother Pandu became king instead. But Pandu died young, and
+    Dhritarashtra finally got the throne — not for himself, but to hold it
+    until the children were old enough.
+
+    He had a hundred sons. His brother had only five. And deep in his heart,
+    Dhritarashtra wanted the kingdom for his own boys, even though he knew
+    it rightfully belonged to the Pandavas.
+
+    Now those boys had grown into men. They stood on opposite sides of a
+    battlefield, ready to destroy each other. And all the blind king could
+    do was ask: "What happened? Tell me what they did."
+
+    Sometimes not being able to see the truth outside is a reflection of not
+    wanting to see the truth inside. Dhritarashtra knew his sons were wrong.
+    But he could not bring himself to say it.
+
+reflection: "Have you ever asked a question when you already knew the answer, but were afraid to admit it?"

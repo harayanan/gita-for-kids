@@ -1,0 +1,64 @@
+chapter: 1
+verse: 6
+speaker: sanjaya
+
+sanskrit: "युधामन्युश्च विक्रान्त उत्तमौजाश्च वीर्यवान्। सौभद्रो द्रौपदेयाश्च सर्व एव महारथाः॥"
+
+transliteration: "yudhāmanyuśca vikrānta uttamaujāśca vīryavān | saubhadro draupadeyāśca sarva eva mahārathāḥ ||"
+
+dhatu_breakdown:
+  - word: "युधामन्युः"
+    parts: ["yudha (battle)", "manyu (spirit, fury)"]
+    meaning: "Yudhamanyu — whose spirit blazes in battle"
+  - word: "विक्रान्तः"
+    parts: ["vi (specially)", "kram (to stride)"]
+    meaning: "the mighty, the courageous"
+  - word: "उत्तमौजाः"
+    parts: ["uttama (highest)", "ojas (energy, vitality)"]
+    meaning: "Uttamaujas — of supreme energy"
+  - word: "सौभद्रः"
+    parts: ["su (good)", "bhadra (auspicious)", "subhadrā's son"]
+    meaning: "Abhimanyu — son of Subhadra and Arjuna"
+  - word: "द्रौपदेयाः"
+    parts: ["draupadī (Draupadi)", "eya (sons of)"]
+    meaning: "the five sons of Draupadi"
+  - word: "सर्वे"
+    parts: ["sarva (all)"]
+    meaning: "all of them"
+  - word: "महारथाः"
+    parts: ["mahā (great)", "ratha (chariot)"]
+    meaning: "great chariot warriors"
+
+meaning: >
+  "And the courageous Yudhamanyu, the powerful Uttamaujas, Abhimanyu the son
+  of Subhadra, and all five sons of Draupadi — every one of them is a great
+  chariot warrior."
+
+story:
+  title: "The Young Lion"
+  source: "Mahabharata"
+  body: |
+    Among all the names Duryodhana listed, one stands out: Saubhadra —
+    Abhimanyu.
+
+    Abhimanyu was Arjuna's son, barely sixteen years old. He had learned
+    the art of war while still in his mother's womb — legend says he
+    listened as Arjuna described to Subhadra how to break into the deadly
+    Chakravyuha, a spinning maze-like battle formation. But Subhadra fell
+    asleep before Arjuna could explain how to get out.
+
+    So Abhimanyu knew how to enter the labyrinth, but not how to leave it.
+
+    Later in the war, that incomplete knowledge would cost him his life.
+    He broke into the Chakravyuha with breathtaking bravery, fighting alone
+    against the greatest warriors — but he couldn't find the way out.
+
+    Abhimanyu's story teaches us something important: courage without
+    complete knowledge is dangerous. Bravery is beautiful, but it needs
+    wisdom beside it. It's not enough to know how to charge forward —
+    you also need to know when to step back.
+
+    Duryodhana feared Abhimanyu because he saw in the boy the fire of
+    his father Arjuna. And he was right to be afraid.
+
+reflection: "Can you think of a time when you were brave but didn't have all the information? What happened?"

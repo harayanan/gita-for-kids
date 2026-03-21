@@ -1,0 +1,63 @@
+chapter: 1
+verse: 2
+speaker: sanjaya
+
+sanskrit: "दृष्ट्वा तु पाण्डवानीकं व्यूढं दुर्योधनस्तदा। आचार्यमुपसङ्गम्य राजा वचनमब्रवीत्॥"
+
+transliteration: "dṛṣṭvā tu pāṇḍavānīkaṁ vyūḍhaṁ duryodhanastadā | ācāryamupasaṅgamya rājā vacanamabravīt ||"
+
+dhatu_breakdown:
+  - word: "दृष्ट्वा"
+    parts: ["dṛś (to see)", "tvā (having)"]
+    meaning: "having seen"
+  - word: "पाण्डवानीकम्"
+    parts: ["pāṇḍava (sons of Pandu)", "anīka (army)"]
+    meaning: "the army of the Pandavas"
+  - word: "व्यूढम्"
+    parts: ["vi (specially)", "ūḍha (arranged)"]
+    meaning: "arranged in formation"
+  - word: "दुर्योधनः"
+    parts: ["dur (difficult)", "yodhana (to fight against)"]
+    meaning: "Duryodhana — one who is hard to fight"
+  - word: "आचार्यम्"
+    parts: ["ā (towards)", "car (to move, conduct)"]
+    meaning: "the teacher (Dronacharya)"
+  - word: "उपसङ्गम्य"
+    parts: ["upa (near)", "sam (together)", "gam (to go)"]
+    meaning: "having approached"
+  - word: "वचनम्"
+    parts: ["vac (to speak)"]
+    meaning: "words, speech"
+  - word: "अब्रवीत्"
+    parts: ["brū (to speak)", "a (past)"]
+    meaning: "spoke"
+
+meaning: >
+  Sanjaya tells the king: "When Prince Duryodhana saw the Pandava army standing
+  in perfect battle formation, he went straight to his teacher Dronacharya
+  and spoke these words."
+
+story:
+  title: "Running to Teacher"
+  source: "original"
+  body: |
+    Think about the last time you were nervous about something big — a test,
+    a performance, a competition. Who was the first person you wanted to talk to?
+
+    Duryodhana was the eldest of the hundred Kaurava brothers. He was proud,
+    strong, and used to getting his way. But when he saw the Pandava army
+    stretched across the field like an ocean, something shifted in his chest.
+
+    He didn't go to his father. He didn't go to his brothers. He went to
+    Dronacharya — his teacher. The one person who had taught him everything
+    he knew about fighting.
+
+    But here's the thing: Dronacharya had also taught the Pandavas. Arjuna,
+    in fact, was Drona's favorite student. So when Duryodhana ran to his
+    teacher, he was running to someone whose heart was divided.
+
+    We all have moments when we run to the people who taught us. It's natural.
+    But Duryodhana wasn't looking for wisdom — he was looking for reassurance.
+    And there's a big difference between the two.
+
+reflection: "When you're worried, do you look for someone who will tell you the truth — or someone who will tell you what you want to hear?"

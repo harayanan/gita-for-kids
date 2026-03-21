@@ -1,0 +1,68 @@
+chapter: 1
+verse: 3
+speaker: sanjaya
+
+sanskrit: "पश्यैतां पाण्डुपुत्राणामाचार्य महतीं चमूम्। व्यूढां द्रुपदपुत्रेण तव शिष्येण धीमता॥"
+
+transliteration: "paśyaitāṁ pāṇḍuputrāṇāmācārya mahatīṁ camūm | vyūḍhāṁ drupadaputreṇa tava śiṣyeṇa dhīmatā ||"
+
+dhatu_breakdown:
+  - word: "पश्य"
+    parts: ["paś (to see)"]
+    meaning: "look, behold"
+  - word: "एताम्"
+    parts: ["etad (this)"]
+    meaning: "this"
+  - word: "पाण्डुपुत्राणाम्"
+    parts: ["pāṇḍu (King Pandu)", "putra (son)"]
+    meaning: "of the sons of Pandu"
+  - word: "महतीम्"
+    parts: ["mahat (great)"]
+    meaning: "great, mighty"
+  - word: "चमूम्"
+    parts: ["camū (army)"]
+    meaning: "army"
+  - word: "व्यूढाम्"
+    parts: ["vi (specially)", "ūḍha (arranged)"]
+    meaning: "arranged in formation"
+  - word: "द्रुपदपुत्रेण"
+    parts: ["drupada (King Drupada)", "putra (son)"]
+    meaning: "by the son of Drupada (Dhrishtadyumna)"
+  - word: "शिष्येण"
+    parts: ["śiṣ (to teach)", "ya (one who learns)"]
+    meaning: "by your student"
+  - word: "धीमता"
+    parts: ["dhī (intelligence)", "mat (possessing)"]
+    meaning: "the intelligent one"
+
+meaning: >
+  Duryodhana said to Drona: "Teacher, look at this mighty army of the Pandavas,
+  arranged in battle formation by Dhrishtadyumna — the son of Drupada and your
+  own clever student."
+
+story:
+  title: "The Sting in the Compliment"
+  source: "original"
+  body: |
+    Have you ever said something nice to someone, but secretly meant it as
+    an insult?
+
+    That's exactly what Duryodhana did here. He called Dhrishtadyumna "your
+    student" — reminding Drona that the man leading the enemy army had learned
+    everything from Drona himself.
+
+    It was like saying: "Look, Teacher. The weapon that's about to be used
+    against us? You made it."
+
+    There's a story about a potter who made two identical pots. He sold one
+    to a merchant and gave the other to his neighbor. Years later, during a
+    flood, both pots were carried by the water and crashed into each other.
+    They both shattered. The potter wept — not because he lost the pots,
+    but because the things he created with the same hands had destroyed
+    each other.
+
+    Drona had trained warriors on both sides of this battlefield. Every arrow
+    that would fly that day — from either direction — carried his teaching
+    inside it. That was the tragedy Duryodhana was quietly pointing at.
+
+reflection: "Have you ever taught someone something, and then seen them use it in a way you didn't expect?"

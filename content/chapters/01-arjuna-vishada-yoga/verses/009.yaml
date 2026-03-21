@@ -1,0 +1,61 @@
+chapter: 1
+verse: 9
+speaker: sanjaya
+
+sanskrit: "अन्ये च बहवः शूरा मदर्थे त्यक्तजीविताः। नानाशस्त्रप्रहरणाः सर्वे युद्धविशारदाः॥"
+
+transliteration: "anye ca bahavaḥ śūrā madarthe tyaktajīvitāḥ | nānāśastrapraharaṇāḥ sarve yuddhaviśāradāḥ ||"
+
+dhatu_breakdown:
+  - word: "अन्ये"
+    parts: ["anya (other)"]
+    meaning: "and many others"
+  - word: "बहवः"
+    parts: ["bahu (many)"]
+    meaning: "numerous"
+  - word: "शूराः"
+    parts: ["śūra (brave)"]
+    meaning: "brave warriors"
+  - word: "मदर्थे"
+    parts: ["mad (my)", "artha (sake, purpose)"]
+    meaning: "for my sake"
+  - word: "त्यक्तजीविताः"
+    parts: ["tyaj (to abandon)", "jīvita (life)"]
+    meaning: "ready to give up their lives"
+  - word: "नानाशस्त्रप्रहरणाः"
+    parts: ["nānā (various)", "śastra (weapon)", "praharaṇa (wielding)"]
+    meaning: "armed with many kinds of weapons"
+  - word: "युद्धविशारदाः"
+    parts: ["yuddha (battle)", "viśārada (skilled, expert)"]
+    meaning: "experts in the art of war"
+
+meaning: >
+  "And there are many other heroes who are ready to lay down their lives for
+  my sake. They are armed with all kinds of weapons and are all highly
+  skilled in the art of warfare."
+
+story:
+  title: "For My Sake"
+  source: "Panchatantra (adapted)"
+  body: |
+    There's an old story from the Panchatantra about a king who loved to
+    hunt. One day, deep in the forest, his horse stumbled and the king
+    fell into a ravine. His servant, a quiet man who had served the king
+    for twenty years, climbed down the cliff face with bare hands and
+    carried the king on his back all the way home.
+
+    The next day, the king held a great feast in the servant's honor.
+    "This man risked his life for me!" he announced to the court.
+
+    The servant shook his head. "I didn't risk my life for you, Your Majesty.
+    I risked my life because that is who I am. Even if you were a stranger
+    in that ravine, I would have climbed down."
+
+    Duryodhana says these warriors are ready to die "for my sake" —
+    madarthe. He sees their loyalty as being about him. But true warriors
+    don't fight for one person — they fight for what they believe is right.
+
+    The difference matters. Loyalty to a person can be blind. Loyalty to
+    what is right has eyes wide open.
+
+reflection: "Is there a difference between doing something for someone and doing something because it's the right thing to do?"

@@ -1,0 +1,68 @@
+chapter: 1
+verse: 8
+speaker: sanjaya
+
+sanskrit: "भवान्भीष्मश्च कर्णश्च कृपश्च समितिञ्जयः। अश्वत्थामा विकर्णश्च सौमदत्तिस्तथैव च॥"
+
+transliteration: "bhavānbhīṣmaśca karṇaśca kṛpaśca samitiñjayaḥ | aśvatthāmā vikarṇaśca saumadattisttathaiva ca ||"
+
+dhatu_breakdown:
+  - word: "भवान्"
+    parts: ["bhavat (your honor)"]
+    meaning: "yourself (Drona)"
+  - word: "भीष्मः"
+    parts: ["bhī (to fear)", "ṣma (intensifier)"]
+    meaning: "Bhishma — the one of terrible vows"
+  - word: "कर्णः"
+    parts: ["karṇa (ear)"]
+    meaning: "Karna — named for the golden earrings he was born with"
+  - word: "कृपः"
+    parts: ["kṛp (to be gracious)"]
+    meaning: "Kripa — the compassionate teacher"
+  - word: "समितिञ्जयः"
+    parts: ["samiti (assembly, battle)", "jaya (victory)"]
+    meaning: "always victorious in battle"
+  - word: "अश्वत्थामा"
+    parts: ["aśva (horse)", "sthāman (strength, neighing)"]
+    meaning: "Ashwatthama — he who has the strength of a horse"
+  - word: "विकर्णः"
+    parts: ["vi (different, large)", "karṇa (ear)"]
+    meaning: "Vikarna — one of the hundred Kaurava brothers"
+  - word: "सौमदत्तिः"
+    parts: ["somadatta (King Somadatta)", "i (son of)"]
+    meaning: "Bhurishravas, son of Somadatta"
+
+meaning: >
+  "On our side there is yourself, Drona, and the mighty Bhishma, Karna,
+  Kripa who always wins in battle, Ashwatthama, Vikarna, and Bhurishravas
+  the son of Somadatta."
+
+story:
+  title: "The Grandfather's Promise"
+  source: "Mahabharata"
+  body: |
+    Of all the names in this verse, one towers above the rest: Bhishma.
+
+    Bhishma was Duryodhana's great-grandfather, and he was the oldest and
+    most powerful warrior on the entire battlefield. His real name was
+    Devavrata, but he earned the name "Bhishma" — which means "terrible"
+    or "awe-inspiring" — because of a vow he took when he was young.
+
+    His father, King Shantanu, fell in love with a fisherwoman named
+    Satyavati. But her father said: "I will only let my daughter marry
+    the king if her sons inherit the throne — not yours."
+
+    Devavrata loved his father so much that he made two unbreakable promises:
+    he would give up his right to the throne, and he would never marry, so
+    he could never have children who might challenge Satyavati's sons.
+
+    The gods themselves trembled at this sacrifice. They gave him the name
+    Bhishma and blessed him with the power to choose the moment of his
+    own death.
+
+    Bhishma had spent his whole life sacrificing for this family. And now,
+    at the end, he stood on the wrong side — fighting against the very
+    people he knew were right — because his vow bound him to the throne,
+    no matter who sat on it.
+
+reflection: "Is it always right to keep a promise, even when the situation has completely changed?"

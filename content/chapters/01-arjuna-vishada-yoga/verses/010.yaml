@@ -1,0 +1,68 @@
+chapter: 1
+verse: 10
+speaker: sanjaya
+
+sanskrit: "अपर्याप्तं तदस्माकं बलं भीष्माभिरक्षितम्। पर्याप्तं त्विदमेतेषां बलं भीमाभिरक्षितम्॥"
+
+transliteration: "aparyāptaṁ tadasmākaṁ balaṁ bhīṣmābhirakṣitam | paryāptaṁ tvidameteṣāṁ balaṁ bhīmābhirakṣitam ||"
+
+dhatu_breakdown:
+  - word: "अपर्याप्तम्"
+    parts: ["a (not)", "pari (around)", "āp (to reach, measure)"]
+    meaning: "unlimited, immeasurable (or: insufficient — the word is deliberately ambiguous)"
+  - word: "अस्माकम्"
+    parts: ["asmad (our)"]
+    meaning: "our"
+  - word: "बलम्"
+    parts: ["bala (strength, army)"]
+    meaning: "army, strength"
+  - word: "भीष्माभिरक्षितम्"
+    parts: ["bhīṣma (Bhishma)", "abhi (towards)", "rakṣ (to protect)"]
+    meaning: "protected by Bhishma"
+  - word: "पर्याप्तम्"
+    parts: ["pari (fully)", "āp (to reach, measure)"]
+    meaning: "limited, measurable (or: sufficient)"
+  - word: "एतेषाम्"
+    parts: ["etad (their)"]
+    meaning: "of theirs (the Pandavas)"
+  - word: "भीमाभिरक्षितम्"
+    parts: ["bhīma (Bhima)", "abhi (towards)", "rakṣ (to protect)"]
+    meaning: "protected by Bhima"
+
+meaning: >
+  "Our army, protected by Bhishma, is unlimited in strength. But their army,
+  protected by Bhima, is limited." — Or does Duryodhana actually mean the
+  opposite? This famous verse has a double meaning that scholars have debated
+  for centuries.
+
+story:
+  title: "The Verse with Two Faces"
+  source: "Sanskrit literary tradition"
+  body: |
+    This is one of the most fascinating verses in the entire Gita, because
+    the Sanskrit word "aparyaptam" has two opposite meanings.
+
+    Reading 1: "Our army is unlimited. Theirs is limited." This is
+    Duryodhana boasting — puffing up his chest and telling his teacher
+    not to worry.
+
+    Reading 2: "Our army is insufficient, even though Bhishma protects it.
+    Their army is sufficient, even though only Bhima protects it." This
+    is Duryodhana accidentally revealing his real fear.
+
+    Sanskrit poets loved this kind of wordplay. They called it "shleshā" —
+    a literary pun where one word carries two meanings at once. Like
+    holding two truths in one hand.
+
+    Think about it: when someone boasts very loudly, what are they usually
+    feeling underneath? Often, it's doubt. The louder the boast, the deeper
+    the worry.
+
+    The genius of Vyasa, who wrote the Mahabharata, is that he lets
+    Duryodhana's words carry both readings at once. On the surface,
+    confidence. Underneath, terror. Both are true at the same time.
+
+    Language can do that — say two things at once. And sometimes the
+    meaning we don't intend to show is the most honest one.
+
+reflection: "Have you ever said something confident when you actually felt nervous inside? Why do you think people do that?"
