@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cream text-gray-900 font-body;
+  }
+
+  /* Sanskrit text styling */
+  .sanskrit {
+    @apply font-devanagari text-2xl leading-relaxed text-center;
+  }
+
+  .transliteration {
+    @apply font-ui text-lg italic text-center text-gray-600;
+  }
+
+  /* Print styles */
+  @media print {
+    body {
+      @apply bg-cream;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+}
