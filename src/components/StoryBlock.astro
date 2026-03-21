@@ -21,7 +21,7 @@ const sourceLabel = source === 'original' ? 'An original story' : `From the ${so
   <div class="font-body text-base leading-relaxed text-gray-800 space-y-4">
     {body.split('\n\n').map((paragraph) => (
       <p>
-        <Tooltip client:load glossary={glossary}>{paragraph}</Tooltip>
+        <Tooltip client:load glossary={glossary} text={paragraph} />
       </p>
     ))}
   </div>

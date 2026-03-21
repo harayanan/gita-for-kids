@@ -7,7 +7,7 @@ interface GlossaryEntry {
 
 interface TooltipProps {
   glossary: GlossaryEntry[];
-  children: string;
+  text: string;
 }
 
 function TooltipWord({ term, definition }: { term: string; definition: string }) {
@@ -58,8 +58,8 @@ function TooltipWord({ term, definition }: { term: string; definition: string })
  * Tooltip component that scans text for glossary terms and wraps them
  * in interactive tooltip spans. Used as a React island in Astro.
  */
-export default function Tooltip({ glossary, children }: TooltipProps) {
-  if (!glossary || glossary.length === 0) return <>{children}</>;
+export default function Tooltip({ glossary, text }: TooltipProps) {
+  if (!glossary || glossary.length === 0 || !text) return <>{text}</>;
 
   // Sort terms by length (longest first) to match longer terms before substrings
   const sorted = [...glossary].sort((a, b) => b.term.length - a.term.length);
@@ -72,7 +72,6 @@ export default function Tooltip({ glossary, children }: TooltipProps) {
 
   const parts: ReactNode[] = [];
   let lastIndex = 0;
-  const text = children;
 
   // Track which terms we've already tooltipped to avoid duplicates in same block
   const seen = new Set<string>();

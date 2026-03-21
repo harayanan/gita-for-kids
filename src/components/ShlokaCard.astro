@@ -95,7 +95,7 @@ const {
   <div class="py-4">
     <h3 class="font-ui text-xs font-semibold uppercase tracking-widest text-gold mb-3">What it means</h3>
     <p class="font-body text-lg leading-relaxed text-gray-800">
-      <Tooltip client:load glossary={glossary}>{meaning}</Tooltip>
+      <Tooltip client:load glossary={glossary} text={meaning} />
     </p>
   </div>
 
