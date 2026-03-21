@@ -3,6 +3,8 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import ShlokaCard from '../../../components/ShlokaCard.astro';
 import VerseNav from '../../../components/VerseNav.astro';
 import { getAllChapters, getChapter, getChapterVerses, getVerse, getGlossary } from '../../../lib/content';
+import fs from 'node:fs';
+import path from 'node:path';
 
 export function getStaticPaths() {
   const chapters = getAllChapters().filter((c) => c.status === 'active');
@@ -30,8 +32,9 @@ if (!chapter || !verse) return Astro.redirect('/');
 
 const glossary = getGlossary();
 
-// Check if illustration exists
-const illustrationPath = `/illustrations/${slug}/${verseNum}.png`;
+// Check if illustration exists in public/
+const illustrationFile = path.resolve(`public/illustrations/${slug}/${verseNum}.png`);
+const illustrationPath = fs.existsSync(illustrationFile) ? `/illustrations/${slug}/${verseNum}.png` : undefined;
 ---
 
 <BaseLayout title={`${chapter.name} ${chapter.number}.${verse.verse} — Gita for Kids`}>
@@ -47,6 +50,7 @@ const illustrationPath = `/illustrations/${slug}/${verseNum}.png`;
     reflection={verse.reflection}
     glossary={glossary}
     folkArtStyle={chapter.folk_art_style}
+    illustration={illustrationPath}
   />
 
   <VerseNav
