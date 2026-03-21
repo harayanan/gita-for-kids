@@ -1,0 +1,31 @@
+---
+interface DhatuEntry {
+  word: string;
+  parts: string[];
+  meaning: string;
+}
+
+interface Props {
+  breakdown: DhatuEntry[];
+}
+
+const { breakdown } = Astro.props;
+---
+
+<div class="py-6">
+  <h3 class="font-ui text-xs font-semibold uppercase tracking-widest text-gold mb-4">Word by Word</h3>
+  <div class="space-y-3">
+    {breakdown.map((entry) => (
+      <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 py-2 border-b border-gold/10 last:border-0">
+        <span class="font-devanagari text-lg text-gray-900 sm:w-48 shrink-0">{entry.word}</span>
+        <div class="flex-1">
+          <span class="font-ui text-sm text-gray-500">
+            {entry.parts.join(' + ')}
+          </span>
+          <span class="font-ui text-sm text-gray-400 mx-2">&rarr;</span>
+          <span class="font-body text-sm text-gray-700">{entry.meaning}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>

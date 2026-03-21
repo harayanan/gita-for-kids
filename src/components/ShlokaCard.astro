@@ -1,0 +1,115 @@
+---
+import FolkArtBorder from './FolkArtBorder.astro';
+import SanskritText from './SanskritText.astro';
+import DhatuBreakdown from './DhatuBreakdown.astro';
+import StoryBlock from './StoryBlock.astro';
+import SpeakerTag from './SpeakerTag.astro';
+import Tooltip from './Tooltip.tsx';
+
+interface DhatuEntry {
+  word: string;
+  parts: string[];
+  meaning: string;
+}
+
+interface Story {
+  title: string;
+  source: string;
+  body: string;
+}
+
+interface Props {
+  chapter: number;
+  verse: number;
+  speaker: string;
+  sanskrit: string;
+  transliteration: string;
+  dhatu_breakdown: DhatuEntry[];
+  meaning: string;
+  story: Story;
+  reflection: string;
+  illustration?: string;
+  glossary: { term: string; definition: string }[];
+  folkArtStyle?: 'madhubani' | 'pichwai' | 'pattachitra' | 'warli' | 'kalamkari';
+}
+
+const {
+  chapter,
+  verse,
+  speaker,
+  sanskrit,
+  transliteration,
+  dhatu_breakdown,
+  meaning,
+  story,
+  reflection,
+  illustration,
+  glossary,
+  folkArtStyle = 'madhubani',
+} = Astro.props;
+---
+
+<article class="max-w-reading mx-auto px-4 py-12">
+  <!-- 1. Chapter & Verse Number -->
+  <div class="text-center mb-8">
+    <span class="font-ui text-xs font-semibold uppercase tracking-widest text-gold">
+      Chapter {chapter} &middot; Verse {verse}
+    </span>
+  </div>
+
+  <!-- Speaker -->
+  <div class="flex justify-center mb-6">
+    <SpeakerTag speaker={speaker} />
+  </div>
+
+  <!-- 2. Illustration -->
+  {illustration && (
+    <div class="mb-8">
+      <FolkArtBorder style={folkArtStyle}>
+        <img
+          src={illustration}
+          alt={`Illustration for Chapter ${chapter}, Verse ${verse}`}
+          class="w-full rounded-sm"
+          loading="lazy"
+        />
+      </FolkArtBorder>
+    </div>
+  )}
+
+  <!-- 3 & 4. Sanskrit + Transliteration -->
+  <FolkArtBorder style={folkArtStyle} class="mb-8">
+    <SanskritText sanskrit={sanskrit} transliteration={transliteration} />
+  </FolkArtBorder>
+
+  <!-- 5. Dhatu Breakdown -->
+  <DhatuBreakdown breakdown={dhatu_breakdown} />
+
+  <!-- Divider -->
+  <div class="flex items-center gap-4 my-8">
+    <div class="flex-1 h-px bg-gold/20"></div>
+    <span class="font-devanagari text-gold/40 text-lg">॥</span>
+    <div class="flex-1 h-px bg-gold/20"></div>
+  </div>
+
+  <!-- 6. Simple Meaning -->
+  <div class="py-4">
+    <h3 class="font-ui text-xs font-semibold uppercase tracking-widest text-gold mb-3">What it means</h3>
+    <p class="font-body text-lg leading-relaxed text-gray-800">
+      <Tooltip client:load glossary={glossary}>{meaning}</Tooltip>
+    </p>
+  </div>
+
+  <!-- 7. The Story -->
+  <StoryBlock
+    title={story.title}
+    source={story.source}
+    body={story.body}
+    glossary={glossary}
+  />
+
+  <!-- 8. Reflection -->
+  <div class="bg-forest/8 rounded-xl px-6 py-6 my-6 border border-forest/15">
+    <h3 class="font-ui text-xs font-semibold uppercase tracking-widest text-forest mb-3">Think about it</h3>
+    <p class="font-body text-base italic text-gray-700 leading-relaxed">{reflection}</p>
+  </div>
+</article>

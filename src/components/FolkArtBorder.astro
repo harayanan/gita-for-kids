@@ -1,0 +1,61 @@
+---
+interface Props {
+  style?: 'madhubani' | 'pichwai' | 'pattachitra' | 'warli' | 'kalamkari';
+  class?: string;
+}
+
+const { style = 'madhubani', class: className = '' } = Astro.props;
+
+// Each folk art style maps to a distinct border pattern using CSS
+const borderStyles: Record<string, { pattern: string; color: string; accent: string }> = {
+  madhubani: {
+    pattern: 'repeating-linear-gradient(90deg, transparent, transparent 8px, currentColor 8px, currentColor 10px)',
+    color: '#C75B12',
+    accent: '#C4A24E',
+  },
+  pichwai: {
+    pattern: 'radial-gradient(circle 4px, currentColor 100%, transparent 100%)',
+    color: '#2D3A87',
+    accent: '#1A6847',
+  },
+  pattachitra: {
+    pattern: 'repeating-linear-gradient(45deg, transparent, transparent 6px, currentColor 6px, currentColor 8px)',
+    color: '#B85C3A',
+    accent: '#C4A24E',
+  },
+  warli: {
+    pattern: 'repeating-linear-gradient(0deg, transparent, transparent 12px, currentColor 12px, currentColor 14px)',
+    color: '#B85C3A',
+    accent: '#C75B12',
+  },
+  kalamkari: {
+    pattern: 'repeating-conic-gradient(currentColor 0% 25%, transparent 0% 50%)',
+    color: '#1A6847',
+    accent: '#C4A24E',
+  },
+};
+
+const s = borderStyles[style];
+---
+
+<div
+  class:list={['relative', className]}
+  style={`--border-color: ${s.color}; --accent-color: ${s.accent};`}
+>
+  <!-- Top border -->
+  <div class="h-2 w-full rounded-t-sm" style={`background: linear-gradient(90deg, var(--border-color), var(--accent-color), var(--border-color));`}></div>
+
+  <!-- Side borders + content -->
+  <div class="border-x-2 px-6 py-8" style={`border-color: var(--border-color);`}>
+    <!-- Corner ornaments -->
+    <div class="absolute top-2 left-2 w-4 h-4 border-l-2 border-t-2 rounded-tl-sm" style={`border-color: var(--accent-color);`}></div>
+    <div class="absolute top-2 right-2 w-4 h-4 border-r-2 border-t-2 rounded-tr-sm" style={`border-color: var(--accent-color);`}></div>
+    <div class="absolute bottom-2 left-2 w-4 h-4 border-l-2 border-b-2 rounded-bl-sm" style={`border-color: var(--accent-color);`}></div>
+    <div class="absolute bottom-2 right-2 w-4 h-4 border-r-2 border-b-2 rounded-br-sm" style={`border-color: var(--accent-color);`}></div>
+
+    <slot />
+  </div>
+
+  <!-- Bottom border -->
+  <div class="h-2 w-full rounded-b-sm" style={`background: linear-gradient(90deg, var(--border-color), var(--accent-color), var(--border-color));`}></div>
+</div>

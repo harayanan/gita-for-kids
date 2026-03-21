@@ -1,0 +1,46 @@
+---
+interface ChapterMeta {
+  slug: string;
+  name: string;
+  sanskrit_name: string;
+  number: number;
+}
+
+interface Props {
+  chapters: ChapterMeta[];
+  currentChapter: number;
+}
+
+const { chapters, currentChapter } = Astro.props;
+
+const prev = chapters.find((c) => c.number === currentChapter - 1);
+const next = chapters.find((c) => c.number === currentChapter + 1);
+---
+
+<nav class="max-w-reading mx-auto px-4 py-8 flex items-center justify-between font-ui text-sm border-t border-gold/20 mt-12">
+  {prev ? (
+    <a
+      href={`/chapters/${prev.slug}`}
+      class="flex flex-col items-start text-saffron hover:text-saffron/80 transition-colors"
+    >
+      <span class="text-xs text-gray-400">&larr; Previous</span>
+      <span class="font-medium">Ch {prev.number}: {prev.name}</span>
+    </a>
+  ) : (
+    <span></span>
+  )}
+
+  <a href="/" class="text-gray-500 hover:text-saffron transition-colors">Home</a>
+
+  {next ? (
+    <a
+      href={`/chapters/${next.slug}`}
+      class="flex flex-col items-end text-saffron hover:text-saffron/80 transition-colors"
+    >
+      <span class="text-xs text-gray-400">Next &rarr;</span>
+      <span class="font-medium">Ch {next.number}: {next.name}</span>
+    </a>
+  ) : (
+    <span></span>
+  )}
+</nav>

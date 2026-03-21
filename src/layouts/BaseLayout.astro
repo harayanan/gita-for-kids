@@ -1,0 +1,65 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Gita for Kids — Learn the Bhagavad Gita',
+  description = 'An illustrated, interactive journey through the Bhagavad Gita for children aged 8-12. Beautiful folk art, word-by-word Sanskrit, and stories that bring ancient wisdom to life.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+  </head>
+  <body class="min-h-screen flex flex-col bg-cream">
+    <!-- Navigation -->
+    <nav class="border-b border-gold/30 bg-cream/95 backdrop-blur-sm sticky top-0 z-50">
+      <div class="max-w-reading mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3 group">
+          <span class="font-devanagari text-2xl text-saffron group-hover:text-saffron/80 transition-colors">गीता</span>
+          <span class="font-ui text-sm font-semibold text-gray-600 tracking-wide uppercase">for Kids</span>
+        </a>
+        <div class="flex items-center gap-6 font-ui text-sm">
+          <a href="/chapters/01-arjuna-vishada-yoga" class="text-gray-600 hover:text-saffron transition-colors">Chapters</a>
+          <a href="/glossary" class="text-gray-600 hover:text-saffron transition-colors">Glossary</a>
+          <a href="/about" class="text-gray-600 hover:text-saffron transition-colors">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gold/20 py-8 mt-16">
+      <div class="max-w-reading mx-auto px-6 text-center font-ui text-sm text-gray-500">
+        <p class="font-devanagari text-lg text-saffron/60 mb-2">श्रीमद्भगवद्गीता</p>
+        <p>Gita for Kids &mdash; Ancient wisdom, young hearts</p>
+      </div>
+    </footer>
+  </body>
+</html>

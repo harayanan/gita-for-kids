@@ -1,0 +1,49 @@
+---
+interface Props {
+  chapterSlug: string;
+  currentVerse: number;
+  totalVerses: number;
+}
+
+const { chapterSlug, currentVerse, totalVerses } = Astro.props;
+
+const prevVerse = currentVerse > 1 ? currentVerse - 1 : null;
+const nextVerse = currentVerse < totalVerses ? currentVerse + 1 : null;
+
+function padVerse(n: number): string {
+  return String(n).padStart(3, '0');
+}
+---
+
+<nav class="max-w-reading mx-auto px-4 py-8 flex items-center justify-between font-ui text-sm">
+  {prevVerse ? (
+    <a
+      href={`/chapters/${chapterSlug}/${padVerse(prevVerse)}`}
+      class="flex items-center gap-2 text-saffron hover:text-saffron/80 transition-colors"
+    >
+      <span>&larr;</span>
+      <span>Verse {prevVerse}</span>
+    </a>
+  ) : (
+    <span class="text-gray-300">&larr; Start</span>
+  )}
+
+  <a
+    href={`/chapters/${chapterSlug}`}
+    class="text-gray-500 hover:text-saffron transition-colors"
+  >
+    All Verses
+  </a>
+
+  {nextVerse ? (
+    <a
+      href={`/chapters/${chapterSlug}/${padVerse(nextVerse)}`}
+      class="flex items-center gap-2 text-saffron hover:text-saffron/80 transition-colors"
+    >
+      <span>Verse {nextVerse}</span>
+      <span>&rarr;</span>
+    </a>
+  ) : (
+    <span class="text-gray-300">End &rarr;</span>
+  )}
+</nav>
