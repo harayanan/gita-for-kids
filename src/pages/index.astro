@@ -1,14 +1,105 @@
 ---
-import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FolkArtBorder from '../components/FolkArtBorder.astro';
+import { getAllChapters } from '../lib/content';
+
+const chapters = getAllChapters();
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gita for Kids</title>
-  </head>
-  <body class="bg-cream min-h-screen flex items-center justify-center">
-    <h1 class="font-devanagari text-4xl text-saffron">गीता for Kids</h1>
-  </body>
-</html>
+<BaseLayout>
+  <!-- Hero Section -->
+  <section class="py-20 px-4">
+    <div class="max-w-reading mx-auto text-center">
+      <p class="font-devanagari text-4xl md:text-5xl text-saffron mb-4">
+        श्रीमद्भगवद्गीता
+      </p>
+      <h1 class="font-body text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        The Bhagavad Gita
+      </h1>
+      <p class="font-body text-xl text-gray-600 mb-2">
+        For Young Explorers
+      </p>
+      <p class="font-body text-base text-gray-500 max-w-md mx-auto mt-6 leading-relaxed">
+        An illustrated journey through ancient India's most beloved scripture.
+        Word by word, story by story — for curious minds aged 8 to 12.
+      </p>
+
+      <!-- Decorative divider -->
+      <div class="flex items-center justify-center gap-4 mt-10">
+        <div class="w-16 h-px bg-gold/40"></div>
+        <span class="font-devanagari text-gold/60 text-2xl">ॐ</span>
+        <div class="w-16 h-px bg-gold/40"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapter Grid -->
+  <section class="py-12 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-ui text-xs font-semibold uppercase tracking-widest text-gold text-center mb-10">
+        18 Chapters
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {chapters.map((chapter) => {
+          const isActive = chapter.status === 'active';
+          return (
+            <a
+              href={isActive ? `/chapters/${chapter.slug}` : undefined}
+              class:list={[
+                'block rounded-xl border p-6 transition-all',
+                isActive
+                  ? 'border-gold/30 hover:border-saffron hover:shadow-lg cursor-pointer bg-white/50'
+                  : 'border-gray-200 opacity-50 cursor-default bg-gray-50/50',
+              ]}
+            >
+              <div class="flex items-start justify-between mb-3">
+                <span class="font-ui text-xs font-bold text-gold">
+                  {String(chapter.number).padStart(2, '0')}
+                </span>
+                {!isActive && (
+                  <span class="font-ui text-[10px] uppercase tracking-widest text-gray-400">
+                    Coming soon
+                  </span>
+                )}
+              </div>
+              <h3 class="font-body text-lg font-semibold text-gray-900 mb-1">
+                {chapter.name}
+              </h3>
+              <p class="font-devanagari text-sm text-saffron/60 mb-3">
+                {chapter.sanskrit_name}
+              </p>
+              <p class="font-body text-sm text-gray-500 leading-relaxed line-clamp-3">
+                {chapter.summary}
+              </p>
+              <div class="mt-4 font-ui text-xs text-gray-400">
+                {chapter.verse_count} verses
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-16 px-4">
+    <div class="max-w-reading mx-auto">
+      <FolkArtBorder style="madhubani" class="text-center">
+        <h2 class="font-body text-2xl font-bold text-gray-900 mb-4">What is the Gita?</h2>
+        <p class="font-body text-base text-gray-600 leading-relaxed mb-4">
+          Over 5,000 years ago, on a battlefield called Kurukshetra, a warrior named
+          Arjuna faced the hardest moment of his life. His charioteer, Krishna — who
+          was actually God in human form — spoke 700 verses of wisdom that changed
+          everything.
+        </p>
+        <p class="font-body text-base text-gray-600 leading-relaxed">
+          Those verses became the Bhagavad Gita — "The Song of God." It teaches us
+          about courage, duty, love, and finding out who we really are. This site
+          brings those teachings to life, one verse at a time, with stories you'll
+          remember and words you'll understand.
+        </p>
+      </FolkArtBorder>
+    </div>
+  </section>
+</BaseLayout>

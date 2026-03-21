@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ShlokaCard from '../../../components/ShlokaCard.astro';
+import VerseNav from '../../../components/VerseNav.astro';
+import { getAllChapters, getChapter, getChapterVerses, getVerse, getGlossary } from '../../../lib/content';
+
+export function getStaticPaths() {
+  const chapters = getAllChapters().filter((c) => c.status === 'active');
+  const paths: { params: { chapter: string; verse: string } }[] = [];
+
+  for (const ch of chapters) {
+    const verses = getChapterVerses(ch.slug);
+    for (const v of verses) {
+      paths.push({
+        params: {
+          chapter: ch.slug,
+          verse: String(v.verse).padStart(3, '0'),
+        },
+      });
+    }
+  }
+
+  return paths;
+}
+
+const { chapter: slug, verse: verseNum } = Astro.params;
+const chapter = getChapter(slug!);
+const verse = getVerse(slug!, verseNum!);
+if (!chapter || !verse) return Astro.redirect('/');
+
+const glossary = getGlossary();
+
+// Check if illustration exists
+const illustrationPath = `/illustrations/${slug}/${verseNum}.png`;
+---
+
+<BaseLayout title={`${chapter.name} ${chapter.number}.${verse.verse} — Gita for Kids`}>
+  <ShlokaCard
+    chapter={verse.chapter}
+    verse={verse.verse}
+    speaker={verse.speaker}
+    sanskrit={verse.sanskrit}
+    transliteration={verse.transliteration}
+    dhatu_breakdown={verse.dhatu_breakdown}
+    meaning={verse.meaning}
+    story={verse.story}
+    reflection={verse.reflection}
+    glossary={glossary}
+    folkArtStyle={chapter.folk_art_style}
+  />
+
+  <VerseNav
+    chapterSlug={slug!}
+    currentVerse={verse.verse}
+    totalVerses={chapter.verse_count}
+  />
+</BaseLayout>

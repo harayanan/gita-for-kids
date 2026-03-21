@@ -1,0 +1,58 @@
+---
+import ChapterLayout from '../../../layouts/ChapterLayout.astro';
+import ChapterNav from '../../../components/ChapterNav.astro';
+import { getAllChapters, getChapter, getChapterVerses } from '../../../lib/content';
+
+export function getStaticPaths() {
+  const chapters = getAllChapters();
+  return chapters
+    .filter((c) => c.status === 'active')
+    .map((c) => ({
+      params: { chapter: c.slug },
+    }));
+}
+
+const { chapter: slug } = Astro.params;
+const chapter = getChapter(slug!);
+if (!chapter) return Astro.redirect('/');
+
+const verses = getChapterVerses(slug!);
+const allChapters = getAllChapters();
+---
+
+<ChapterLayout
+  chapterNumber={chapter.number}
+  chapterName={chapter.name}
+  sanskritName={chapter.sanskrit_name}
+  summary={chapter.summary}
+>
+  <!-- Verse list -->
+  {verses.length > 0 ? (
+    <div class="space-y-3">
+      {verses.map((v) => (
+        <a
+          href={`/chapters/${slug}/${String(v.verse).padStart(3, '0')}`}
+          class="block rounded-lg border border-gold/15 hover:border-saffron/40 p-5 transition-all hover:shadow-sm bg-white/40"
+        >
+          <div class="flex items-start gap-4">
+            <span class="font-ui text-xs font-bold text-gold shrink-0 mt-1">
+              {chapter.number}.{v.verse}
+            </span>
+            <div class="flex-1 min-w-0">
+              <p class="font-devanagari text-base text-gray-800 truncate">{v.sanskrit}</p>
+              <p class="font-body text-sm text-gray-500 mt-1 truncate">{v.meaning}</p>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  ) : (
+    <div class="text-center py-16">
+      <p class="font-devanagari text-2xl text-saffron/40 mb-4">॥</p>
+      <p class="font-body text-gray-500">Content for this chapter is being written.</p>
+      <p class="font-ui text-sm text-gray-400 mt-2">Check back soon!</p>
+    </div>
+  )}
+
+  <ChapterNav chapters={allChapters} currentChapter={chapter.number} />
+</ChapterLayout>

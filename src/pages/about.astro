@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FolkArtBorder from '../components/FolkArtBorder.astro';
+---
+
+<BaseLayout title="About — Gita for Kids">
+  <div class="max-w-reading mx-auto px-4 py-12">
+    <header class="text-center mb-12">
+      <span class="font-ui text-xs font-semibold uppercase tracking-widest text-gold">About</span>
+      <h1 class="font-body text-3xl font-bold text-gray-900 mt-3">About This Project</h1>
+    </header>
+
+    <div class="prose font-body text-gray-700 leading-relaxed space-y-6">
+      <p>
+        The Bhagavad Gita is one of the most important books ever written. For thousands
+        of years, it has guided people through difficult decisions, taught them about
+        courage, and helped them understand the meaning of life.
+      </p>
+
+      <p>
+        But most translations are written for adults. The Sanskrit is beautiful
+        but mysterious. The philosophy is deep but dense. We wanted to change that.
+      </p>
+
+      <FolkArtBorder style="pichwai" class="my-8">
+        <h2 class="font-body text-xl font-bold text-gray-900 mb-3">What makes this different</h2>
+        <ul class="space-y-3 text-base">
+          <li><strong class="text-saffron">Every single verse</strong> — not a summary, but the complete Gita, chapter by chapter.</li>
+          <li><strong class="text-saffron">Word by word</strong> — each Sanskrit word is broken down to its root (dhatu), so you learn the language as you read.</li>
+          <li><strong class="text-saffron">A story for every verse</strong> — parables from Indian tradition and original stories that make the teaching come alive.</li>
+          <li><strong class="text-saffron">Beautiful illustrations</strong> — Indian folk art fusion inspired by Madhubani, Pichwai, Pattachitra, Warli, and Kalamkari traditions.</li>
+          <li><strong class="text-saffron">Built for curious minds</strong> — written for children aged 8 to 12, but honestly, it's for anyone encountering the Gita for the first time.</li>
+        </ul>
+      </FolkArtBorder>
+
+      <h2 class="font-body text-xl font-bold text-gray-900">How to use this site</h2>
+      <p>
+        Start with Chapter 1 and read one verse at a time. Don't rush — each verse
+        has a story and a question to think about. Hover over highlighted words to
+        see their meanings, or visit the <a href="/glossary" class="text-saffron hover:underline">Glossary</a>
+        for the full list.
+      </p>
+      <p>
+        You can also print the entire book using your browser's print function on the
+        print page — it's formatted as a beautiful, illustrated book.
+      </p>
+
+      <h2 class="font-body text-xl font-bold text-gray-900">The illustrations</h2>
+      <p>
+        Each chapter features a different style of Indian folk art. Chapter 1 uses
+        Madhubani (from Bihar), Chapter 2 uses Pichwai (from Rajasthan), and so on.
+        The illustrations capture the emotional heart of each verse — not just what
+        happens, but what it feels like.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
