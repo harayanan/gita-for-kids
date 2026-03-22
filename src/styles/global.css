@@ -25,3 +25,61 @@
     }
   }
 }
+
+@layer base {
+  /* Paper texture — subtle noise overlay (z-index 1 to stay below nav/tooltips) */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+
+  /* Page vignette — book-like light fall */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.04);
+  }
+}
+
+/* Drop cap for story opening */
+.drop-cap::first-letter {
+  float: left;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 3.5em;
+  line-height: 0.8;
+  padding-right: 0.08em;
+  padding-top: 0.05em;
+  color: #C75B12;
+  font-weight: 700;
+}
+
+/* Scroll reveal animations */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Speaker-based page theming */
+article[data-speaker="dhritarashtra"] { --speaker-accent: #6B7280; --speaker-bg: rgba(107, 114, 128, 0.04); }
+article[data-speaker="sanjaya"] { --speaker-accent: #2D3A87; --speaker-bg: rgba(45, 58, 135, 0.04); }
+article[data-speaker="duryodhana"] { --speaker-accent: #92400E; --speaker-bg: rgba(146, 64, 14, 0.04); }
+article[data-speaker="arjuna"] { --speaker-accent: #B85C3A; --speaker-bg: rgba(184, 92, 58, 0.04); }
+article[data-speaker="krishna"] { --speaker-accent: #1A6847; --speaker-bg: rgba(26, 104, 71, 0.04); }
+
+article[data-speaker] {
+  background-color: var(--speaker-bg);
+}
