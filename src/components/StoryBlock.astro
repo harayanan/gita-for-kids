@@ -11,18 +11,36 @@ interface Props {
 const { title, source, body, glossary } = Astro.props;
 
 const sourceLabel = source === 'original' ? 'An original story' : `From the ${source}`;
+const paragraphs = body.split('\n\n').filter(p => p.trim());
 ---
 
-<div class="bg-terracotta/8 rounded-xl px-6 py-8 my-6 border border-terracotta/15">
-  <div class="flex items-baseline justify-between mb-4">
-    <h3 class="font-body text-xl font-semibold text-terracotta">{title}</h3>
-    <span class="font-ui text-xs text-terracotta/60 italic">{sourceLabel}</span>
+<div class="my-10 relative">
+  <!-- Decorative top border -->
+  <div class="flex items-center gap-3 mb-6">
+    <div class="flex-1 h-px bg-gradient-to-r from-transparent via-terracotta/30 to-transparent"></div>
+    <span class="font-devanagari text-terracotta/40 text-sm">कथा</span>
+    <div class="flex-1 h-px bg-gradient-to-r from-transparent via-terracotta/30 to-transparent"></div>
   </div>
-  <div class="font-body text-base leading-relaxed text-gray-800 space-y-4">
-    {body.split('\n\n').map((paragraph) => (
-      <p>
+
+  <!-- Story header -->
+  <div class="mb-5">
+    <h3 class="font-body text-2xl font-bold text-terracotta">{title}</h3>
+    <span class="font-ui text-xs text-terracotta/50 italic">{sourceLabel}</span>
+  </div>
+
+  <!-- Story body with drop cap on first paragraph -->
+  <div class="font-body text-lg leading-[1.9] text-gray-800 space-y-5">
+    {paragraphs.map((paragraph, i) => (
+      <p class={i === 0 ? 'drop-cap' : ''}>
         <Tooltip client:load glossary={glossary} text={paragraph} />
       </p>
     ))}
+  </div>
+
+  <!-- Decorative bottom border -->
+  <div class="flex items-center gap-3 mt-8">
+    <div class="flex-1 h-px bg-gradient-to-r from-transparent via-terracotta/30 to-transparent"></div>
+    <span class="font-devanagari text-terracotta/40 text-sm">॥</span>
+    <div class="flex-1 h-px bg-gradient-to-r from-transparent via-terracotta/30 to-transparent"></div>
   </div>
 </div>
