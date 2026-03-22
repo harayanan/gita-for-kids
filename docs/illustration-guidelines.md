@@ -64,10 +64,12 @@ The modern analogies (cricket, sports, school) exist only in the narrative text.
 
 ## 5. Images Requiring Regeneration (Priority Order)
 
+**Completed:** `004.png` and `007.png` were regenerated on 2026-03-22 (modern scenes → mythological Madhubani).
+
+Remaining (optional quality polish for verses 1-10):
+
 | Priority | Image | Current Issue | Replacement Scene |
 |----------|-------|---------------|-------------------|
-| HIGH | `004.png` | Modern cricket scene breaks series | Duryodhana observing Pandava army formations from his chariot, warriors with bows on both sides |
-| HIGH | `007.png` | Modern sports huddle breaks series | Duryodhana standing center, addressing his commanders (Drona, Bhishma, Karna) arranged around him |
 | MEDIUM | `001.png` | Rajput miniature style, lacks Madhubani | Dhritarashtra on throne, Sanjaya kneeling, battlefield visible through arch — in flat Madhubani style |
 | MEDIUM | `002.png` | Naturalistic tree/landscape | Duryodhana approaching Drona under Madhubani Tree of Life with patterned leaves |
 | MEDIUM | `008.png` | Naturalistic sunset | Bhishma towering figure with bow, Madhubani patterned background, smaller Devavrata vow scene inset |
