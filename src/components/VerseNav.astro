@@ -15,7 +15,8 @@ function padVerse(n: number): string {
 }
 ---
 
-<nav class="max-w-reading mx-auto px-4 py-8 flex items-center justify-between font-ui text-sm">
+<!-- Desktop inline nav (hidden on mobile) -->
+<nav class="hidden md:flex max-w-reading mx-auto px-4 py-8 items-center justify-between font-ui text-sm">
   {prevVerse ? (
     <a
       href={`/chapters/${chapterSlug}/${padVerse(prevVerse)}`}
@@ -46,4 +47,54 @@ function padVerse(n: number): string {
   ) : (
     <span class="text-gray-300">End &rarr;</span>
   )}
+</nav>
+
+<!-- Mobile fixed bottom nav (hidden on desktop) -->
+<div class="h-16 md:hidden" aria-hidden="true"></div>
+<nav class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-cream border-t-2 border-gold/30 font-ui text-sm">
+  <div class="flex items-stretch h-14">
+    <!-- Prev -->
+    {prevVerse ? (
+      <a
+        href={`/chapters/${chapterSlug}/${padVerse(prevVerse)}`}
+        class="flex-1 flex items-center justify-center gap-1.5 text-saffron active:bg-saffron/10 transition-colors min-h-[44px]"
+      >
+        <span>&larr;</span>
+        <span>Prev</span>
+      </a>
+    ) : (
+      <span class="flex-1 flex items-center justify-center text-gray-300 min-h-[44px]">
+        <span>&larr;</span>
+      </span>
+    )}
+
+    <!-- Divider -->
+    <div class="w-px bg-gold/20 my-2"></div>
+
+    <!-- All Verses -->
+    <a
+      href={`/chapters/${chapterSlug}`}
+      class="flex-1 flex items-center justify-center text-gray-600 active:bg-saffron/10 transition-colors min-h-[44px] font-medium"
+    >
+      All Verses
+    </a>
+
+    <!-- Divider -->
+    <div class="w-px bg-gold/20 my-2"></div>
+
+    <!-- Next -->
+    {nextVerse ? (
+      <a
+        href={`/chapters/${chapterSlug}/${padVerse(nextVerse)}`}
+        class="flex-1 flex items-center justify-center gap-1.5 text-saffron active:bg-saffron/10 transition-colors min-h-[44px]"
+      >
+        <span>Next</span>
+        <span>&rarr;</span>
+      </a>
+    ) : (
+      <span class="flex-1 flex items-center justify-center text-gray-300 min-h-[44px]">
+        <span>&rarr;</span>
+      </span>
+    )}
+  </div>
 </nav>
