@@ -6,56 +6,219 @@ interface Props {
 
 const { style = 'madhubani', class: className = '' } = Astro.props;
 
-// Each folk art style maps to a distinct border pattern using CSS
-const borderStyles: Record<string, { pattern: string; color: string; accent: string }> = {
-  madhubani: {
-    pattern: 'repeating-linear-gradient(90deg, transparent, transparent 8px, currentColor 8px, currentColor 10px)',
-    color: '#C75B12',
-    accent: '#C4A24E',
-  },
-  pichwai: {
-    pattern: 'radial-gradient(circle 4px, currentColor 100%, transparent 100%)',
-    color: '#2D3A87',
-    accent: '#1A6847',
-  },
-  pattachitra: {
-    pattern: 'repeating-linear-gradient(45deg, transparent, transparent 6px, currentColor 6px, currentColor 8px)',
-    color: '#B85C3A',
-    accent: '#C4A24E',
-  },
-  warli: {
-    pattern: 'repeating-linear-gradient(0deg, transparent, transparent 12px, currentColor 12px, currentColor 14px)',
-    color: '#B85C3A',
-    accent: '#C75B12',
-  },
-  kalamkari: {
-    pattern: 'repeating-conic-gradient(currentColor 0% 25%, transparent 0% 50%)',
-    color: '#1A6847',
-    accent: '#C4A24E',
-  },
+const colors: Record<string, { primary: string; secondary: string }> = {
+  madhubani:   { primary: '#C75B12', secondary: '#C4A24E' },
+  pichwai:     { primary: '#2D3A87', secondary: '#1A6847' },
+  pattachitra: { primary: '#B85C3A', secondary: '#C4A24E' },
+  warli:       { primary: '#B85C3A', secondary: '#C75B12' },
+  kalamkari:   { primary: '#1A6847', secondary: '#C4A24E' },
 };
 
-const s = borderStyles[style];
+const c = colors[style];
+const uid = `fab-${Math.random().toString(36).slice(2, 8)}`;
 ---
 
-<div
-  class:list={['relative', className]}
-  style={`--border-color: ${s.color}; --accent-color: ${s.accent};`}
->
-  <!-- Top border -->
-  <div class="h-2 w-full rounded-t-sm" style={`background: linear-gradient(90deg, var(--border-color), var(--accent-color), var(--border-color));`}></div>
+<div class:list={['folk-art-border relative', className]}
+  style={`border-left: 2px solid ${c.primary}20; border-right: 2px solid ${c.primary}20;`}>
 
-  <!-- Side borders + content -->
-  <div class="border-x-2 px-6 py-8" style={`border-color: var(--border-color);`}>
-    <!-- Corner ornaments -->
-    <div class="absolute top-2 left-2 w-4 h-4 border-l-2 border-t-2 rounded-tl-sm" style={`border-color: var(--accent-color);`}></div>
-    <div class="absolute top-2 right-2 w-4 h-4 border-r-2 border-t-2 rounded-tr-sm" style={`border-color: var(--accent-color);`}></div>
-    <div class="absolute bottom-2 left-2 w-4 h-4 border-l-2 border-b-2 rounded-bl-sm" style={`border-color: var(--accent-color);`}></div>
-    <div class="absolute bottom-2 right-2 w-4 h-4 border-r-2 border-b-2 rounded-br-sm" style={`border-color: var(--accent-color);`}></div>
+  {/* ===== MADHUBANI TOP ===== */}
+  {style === 'madhubani' && (
+    <svg class="folk-art-top w-full block" height="28" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id={`${uid}-lotus`} patternUnits="userSpaceOnUse" width="40" height="16">
+          <path d="M10,14 Q14,2 20,8 Q26,2 30,14" fill="none" stroke={c.primary} stroke-width="1.5" />
+          <line x1="0" y1="14" x2="10" y2="14" stroke={c.secondary} stroke-width="1" />
+          <line x1="30" y1="14" x2="40" y2="14" stroke={c.secondary} stroke-width="1" />
+          <circle cx="20" cy="9" r="1.2" fill={c.secondary} />
+        </pattern>
+      </defs>
+      <line x1="0" y1="2" x2="100%" y2="2" stroke={c.primary} stroke-width="1.5" />
+      <line x1="0" y1="6" x2="100%" y2="6" stroke={c.secondary} stroke-width="0.75" />
+      <rect x="24" y="8" width="100%" height="16" fill={`url(#${uid}-lotus)`} />
+      <g transform="translate(10, 16)">
+        <ellipse cx="0" cy="-4" rx="2.5" ry="4" fill="none" stroke={c.secondary} stroke-width="0.8" />
+        <ellipse cx="0" cy="4" rx="2.5" ry="4" fill="none" stroke={c.secondary} stroke-width="0.8" />
+        <ellipse cx="-4" cy="0" rx="4" ry="2.5" fill="none" stroke={c.secondary} stroke-width="0.8" />
+        <ellipse cx="4" cy="0" rx="4" ry="2.5" fill="none" stroke={c.secondary} stroke-width="0.8" />
+        <circle cx="0" cy="0" r="1.5" fill={c.primary} />
+      </g>
+    </svg>
+  )}
 
+  {/* ===== PICHWAI TOP ===== */}
+  {style === 'pichwai' && (
+    <svg class="folk-art-top w-full block" height="26" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id={`${uid}-scallop`} patternUnits="userSpaceOnUse" width="24" height="14">
+          <path d="M0,14 Q6,2 12,14 Q18,2 24,14" fill="none" stroke={c.primary} stroke-width="1.2" />
+          <circle cx="12" cy="9" r="2.2" fill="none" stroke={c.secondary} stroke-width="0.8" />
+          <circle cx="12" cy="9" r="0.8" fill={c.secondary} />
+        </pattern>
+      </defs>
+      <rect x="0" y="0" width="100%" height="14" fill={`url(#${uid}-scallop)`} />
+      <line x1="0" y1="16" x2="100%" y2="16" stroke={c.primary} stroke-width="0.5" opacity="0.3" />
+      <g transform="translate(14, 20)">
+        <ellipse cx="0" cy="0" rx="6" ry="4" fill="none" stroke={c.primary} stroke-width="1" />
+        <ellipse cx="0" cy="0" rx="3" ry="2" fill="none" stroke={c.secondary} stroke-width="0.8" />
+        <circle cx="0" cy="0" r="1.2" fill={c.primary} />
+      </g>
+    </svg>
+  )}
+
+  {/* ===== PATTACHITRA TOP ===== */}
+  {style === 'pattachitra' && (
+    <svg class="folk-art-top w-full block" height="24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id={`${uid}-hatch`} patternUnits="userSpaceOnUse" width="20" height="20">
+          <line x1="0" y1="0" x2="20" y2="20" stroke={c.primary} stroke-width="0.6" opacity="0.5" />
+          <line x1="20" y1="0" x2="0" y2="20" stroke={c.primary} stroke-width="0.6" opacity="0.5" />
+          <circle cx="10" cy="10" r="2" fill="none" stroke={c.secondary} stroke-width="0.7" />
+          <circle cx="10" cy="10" r="0.7" fill={c.secondary} />
+        </pattern>
+      </defs>
+      <path d="M0,6 Q4,0 8,6 Q12,0 16,6 Q20,0 24,6 Q28,0 32,6 Q36,0 40,6 Q44,0 48,6 Q52,0 56,6 Q60,0 64,6 Q68,0 72,6 Q76,0 80,6 Q84,0 88,6 Q92,0 96,6 Q100,0 104,6 Q108,0 112,6 Q116,0 120,6 Q124,0 128,6 Q132,0 136,6 Q140,0 144,6 Q148,0 152,6 Q156,0 160,6 Q164,0 168,6 Q172,0 176,6 Q180,0 184,6 Q188,0 192,6 Q196,0 200,6" fill="none" stroke={c.primary} stroke-width="1" />
+      <rect x="0" y="6" width="100%" height="18" fill={`url(#${uid}-hatch)`} />
+    </svg>
+  )}
+
+  {/* ===== WARLI TOP ===== */}
+  {style === 'warli' && (
+    <svg class="folk-art-top w-full block" height="28" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id={`${uid}-warli`} patternUnits="userSpaceOnUse" width="32" height="26">
+          <circle cx="16" cy="5" r="3" fill="none" stroke={c.primary} stroke-width="1" />
+          <path d="M16,8 L10,22 L22,22 Z" fill="none" stroke={c.primary} stroke-width="1" />
+          <line x1="12" y1="13" x2="6" y2="9" stroke={c.primary} stroke-width="0.8" />
+          <line x1="20" y1="13" x2="26" y2="9" stroke={c.primary} stroke-width="0.8" />
+          <line x1="13" y1="22" x2="10" y2="25" stroke={c.primary} stroke-width="0.8" />
+          <line x1="19" y1="22" x2="22" y2="25" stroke={c.primary} stroke-width="0.8" />
+        </pattern>
+      </defs>
+      <line x1="0" y1="1" x2="100%" y2="1" stroke={c.primary} stroke-width="0.5" opacity="0.4" />
+      <rect x="0" y="2" width="100%" height="26" fill={`url(#${uid}-warli)`} />
+    </svg>
+  )}
+
+  {/* ===== KALAMKARI TOP ===== */}
+  {style === 'kalamkari' && (
+    <svg class="folk-art-top w-full block" height="22" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id={`${uid}-vine`} patternUnits="userSpaceOnUse" width="60" height="20">
+          <path d="M0,10 Q10,2 20,10 Q30,18 40,10 Q50,2 60,10" fill="none" stroke={c.primary} stroke-width="1" />
+          <circle cx="20" cy="6" r="2" fill="none" stroke={c.secondary} stroke-width="0.6" />
+          <circle cx="22.4" cy="7.8" r="2" fill="none" stroke={c.secondary} stroke-width="0.6" />
+          <circle cx="21.5" cy="10.6" r="2" fill="none" stroke={c.secondary} stroke-width="0.6" />
+          <circle cx="18.5" cy="10.6" r="2" fill="none" stroke={c.secondary} stroke-width="0.6" />
+          <circle cx="17.6" cy="7.8" r="2" fill="none" stroke={c.secondary} stroke-width="0.6" />
+          <circle cx="20" cy="8.8" r="1" fill={c.secondary} />
+          <path d="M44,8 Q47,4 50,8" fill="none" stroke={c.primary} stroke-width="0.7" />
+          <line x1="47" y1="5.5" x2="47" y2="8.5" stroke={c.primary} stroke-width="0.4" />
+        </pattern>
+      </defs>
+      <rect x="0" y="1" width="100%" height="20" fill={`url(#${uid}-vine)`} />
+    </svg>
+  )}
+
+  {/* === Content Slot === */}
+  <div class="px-6 py-6">
     <slot />
   </div>
 
-  <!-- Bottom border -->
-  <div class="h-2 w-full rounded-b-sm" style={`background: linear-gradient(90deg, var(--border-color), var(--accent-color), var(--border-color));`}></div>
+  {/* ===== MADHUBANI BOTTOM ===== */}
+  {style === 'madhubani' && (
+    <svg class="folk-art-bottom w-full block" height="28" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="transform: scaleY(-1);">
+      <defs>
+        <pattern id={`${uid}-lotus-b`} patternUnits="userSpaceOnUse" width="40" height="16">
+          <path d="M10,14 Q14,2 20,8 Q26,2 30,14" fill="none" stroke={c.primary} stroke-width="1.5" />
+          <line x1="0" y1="14" x2="10" y2="14" stroke={c.secondary} stroke-width="1" />
+          <line x1="30" y1="14" x2="40" y2="14" stroke={c.secondary} stroke-width="1" />
+          <circle cx="20" cy="9" r="1.2" fill={c.secondary} />
+        </pattern>
+      </defs>
+      <line x1="0" y1="2" x2="100%" y2="2" stroke={c.primary} stroke-width="1.5" />
+      <line x1="0" y1="6" x2="100%" y2="6" stroke={c.secondary} stroke-width="0.75" />
+      <rect x="24" y="8" width="100%" height="16" fill={`url(#${uid}-lotus-b)`} />
+      <g transform="translate(10, 16)">
+        <ellipse cx="0" cy="-4" rx="2.5" ry="4" fill="none" stroke={c.secondary} stroke-width="0.8" />
+        <ellipse cx="0" cy="4" rx="2.5" ry="4" fill="none" stroke={c.secondary} stroke-width="0.8" />
+        <ellipse cx="-4" cy="0" rx="4" ry="2.5" fill="none" stroke={c.secondary} stroke-width="0.8" />
+        <ellipse cx="4" cy="0" rx="4" ry="2.5" fill="none" stroke={c.secondary} stroke-width="0.8" />
+        <circle cx="0" cy="0" r="1.5" fill={c.primary} />
+      </g>
+    </svg>
+  )}
+
+  {/* ===== PICHWAI BOTTOM ===== */}
+  {style === 'pichwai' && (
+    <svg class="folk-art-bottom w-full block" height="26" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="transform: scaleY(-1);">
+      <defs>
+        <pattern id={`${uid}-scallop-b`} patternUnits="userSpaceOnUse" width="24" height="14">
+          <path d="M0,14 Q6,2 12,14 Q18,2 24,14" fill="none" stroke={c.primary} stroke-width="1.2" />
+          <circle cx="12" cy="9" r="2.2" fill="none" stroke={c.secondary} stroke-width="0.8" />
+          <circle cx="12" cy="9" r="0.8" fill={c.secondary} />
+        </pattern>
+      </defs>
+      <rect x="0" y="0" width="100%" height="14" fill={`url(#${uid}-scallop-b)`} />
+      <line x1="0" y1="16" x2="100%" y2="16" stroke={c.primary} stroke-width="0.5" opacity="0.3" />
+      <g transform="translate(14, 20)">
+        <ellipse cx="0" cy="0" rx="6" ry="4" fill="none" stroke={c.primary} stroke-width="1" />
+        <ellipse cx="0" cy="0" rx="3" ry="2" fill="none" stroke={c.secondary} stroke-width="0.8" />
+        <circle cx="0" cy="0" r="1.2" fill={c.primary} />
+      </g>
+    </svg>
+  )}
+
+  {/* ===== PATTACHITRA BOTTOM ===== */}
+  {style === 'pattachitra' && (
+    <svg class="folk-art-bottom w-full block" height="24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="transform: scaleY(-1);">
+      <defs>
+        <pattern id={`${uid}-hatch-b`} patternUnits="userSpaceOnUse" width="20" height="20">
+          <line x1="0" y1="0" x2="20" y2="20" stroke={c.primary} stroke-width="0.6" opacity="0.5" />
+          <line x1="20" y1="0" x2="0" y2="20" stroke={c.primary} stroke-width="0.6" opacity="0.5" />
+          <circle cx="10" cy="10" r="2" fill="none" stroke={c.secondary} stroke-width="0.7" />
+          <circle cx="10" cy="10" r="0.7" fill={c.secondary} />
+        </pattern>
+      </defs>
+      <path d="M0,6 Q4,0 8,6 Q12,0 16,6 Q20,0 24,6 Q28,0 32,6 Q36,0 40,6 Q44,0 48,6 Q52,0 56,6 Q60,0 64,6 Q68,0 72,6 Q76,0 80,6 Q84,0 88,6 Q92,0 96,6 Q100,0 104,6 Q108,0 112,6 Q116,0 120,6 Q124,0 128,6 Q132,0 136,6 Q140,0 144,6 Q148,0 152,6 Q156,0 160,6 Q164,0 168,6 Q172,0 176,6 Q180,0 184,6 Q188,0 192,6 Q196,0 200,6" fill="none" stroke={c.primary} stroke-width="1" />
+      <rect x="0" y="6" width="100%" height="18" fill={`url(#${uid}-hatch-b)`} />
+    </svg>
+  )}
+
+  {/* ===== WARLI BOTTOM ===== */}
+  {style === 'warli' && (
+    <svg class="folk-art-bottom w-full block" height="28" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="transform: scaleY(-1);">
+      <defs>
+        <pattern id={`${uid}-warli-b`} patternUnits="userSpaceOnUse" width="32" height="26">
+          <circle cx="16" cy="5" r="3" fill="none" stroke={c.primary} stroke-width="1" />
+          <path d="M16,8 L10,22 L22,22 Z" fill="none" stroke={c.primary} stroke-width="1" />
+          <line x1="12" y1="13" x2="6" y2="9" stroke={c.primary} stroke-width="0.8" />
+          <line x1="20" y1="13" x2="26" y2="9" stroke={c.primary} stroke-width="0.8" />
+          <line x1="13" y1="22" x2="10" y2="25" stroke={c.primary} stroke-width="0.8" />
+          <line x1="19" y1="22" x2="22" y2="25" stroke={c.primary} stroke-width="0.8" />
+        </pattern>
+      </defs>
+      <line x1="0" y1="1" x2="100%" y2="1" stroke={c.primary} stroke-width="0.5" opacity="0.4" />
+      <rect x="0" y="2" width="100%" height="26" fill={`url(#${uid}-warli-b)`} />
+    </svg>
+  )}
+
+  {/* ===== KALAMKARI BOTTOM ===== */}
+  {style === 'kalamkari' && (
+    <svg class="folk-art-bottom w-full block" height="22" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="transform: scaleY(-1);">
+      <defs>
+        <pattern id={`${uid}-vine-b`} patternUnits="userSpaceOnUse" width="60" height="20">
+          <path d="M0,10 Q10,2 20,10 Q30,18 40,10 Q50,2 60,10" fill="none" stroke={c.primary} stroke-width="1" />
+          <circle cx="20" cy="6" r="2" fill="none" stroke={c.secondary} stroke-width="0.6" />
+          <circle cx="22.4" cy="7.8" r="2" fill="none" stroke={c.secondary} stroke-width="0.6" />
+          <circle cx="21.5" cy="10.6" r="2" fill="none" stroke={c.secondary} stroke-width="0.6" />
+          <circle cx="18.5" cy="10.6" r="2" fill="none" stroke={c.secondary} stroke-width="0.6" />
+          <circle cx="17.6" cy="7.8" r="2" fill="none" stroke={c.secondary} stroke-width="0.6" />
+          <circle cx="20" cy="8.8" r="1" fill={c.secondary} />
+          <path d="M44,8 Q47,4 50,8" fill="none" stroke={c.primary} stroke-width="0.7" />
+          <line x1="47" y1="5.5" x2="47" y2="8.5" stroke={c.primary} stroke-width="0.4" />
+        </pattern>
+      </defs>
+      <rect x="0" y="1" width="100%" height="20" fill={`url(#${uid}-vine-b)`} />
+    </svg>
+  )}
 </div>
