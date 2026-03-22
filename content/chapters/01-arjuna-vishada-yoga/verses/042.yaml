@@ -1,0 +1,102 @@
+chapter: 1
+verse: 42
+speaker: arjuna
+
+sanskrit: "दोषैरेतैः कुलघ्नानां वर्णसङ्करकारकैः। उत्साद्यन्ते जातिधर्माः कुलधर्माश्च शाश्वताः॥"
+
+transliteration: "doṣairetaiḥ kulaghnānāṁ varṇasaṅkarakārakaiḥ | utsādyante jātidharmāḥ kuladharmāśca śāśvatāḥ ||"
+
+dhatu_breakdown:
+  - word: "दोषैः"
+    parts: ["doṣa (fault, sin)"]
+    meaning: "by these faults, by these sins"
+  - word: "एतैः"
+    parts: ["etad (these)"]
+    meaning: "by these"
+  - word: "कुलघ्नानाम्"
+    parts: ["kula (family)", "ghna (destroyer, from han — to kill)"]
+    meaning: "of the destroyers of the family"
+  - word: "वर्णसङ्करकारकैः"
+    parts: ["varṇa (social order)", "saṅkara (mixing, confusion)", "kāraka (causing, from kṛ — to do)"]
+    meaning: "which cause the intermingling of social orders"
+  - word: "उत्साद्यन्ते"
+    parts: ["ut (up, out)", "sad (to sit, to perish)"]
+    meaning: "are destroyed, are uprooted"
+  - word: "जातिधर्माः"
+    parts: ["jāti (community, group)", "dharma (duty, sacred law)"]
+    meaning: "the duties of the community"
+  - word: "कुलधर्माः"
+    parts: ["kula (family)", "dharma (duty, sacred law)"]
+    meaning: "the duties of the family"
+  - word: "शाश्वताः"
+    parts: ["śāśvata (eternal, from śaśvat — ever, always)"]
+    meaning: "eternal, timeless"
+
+meaning: >
+  "By these sins of the family destroyers, which cause the breakdown of social
+  order, the eternal duties of the community and the family are destroyed."
+
+story:
+  title: "The Language Nobody Speaks"
+  source: "original"
+  body: |
+    In the mountains of Arunachal Pradesh, in a village reachable only by
+    a footpath that wound through rhododendron forests and across three
+    rope bridges, there lived a woman named Khumri Idu. She was eighty-one
+    years old, and she was the last person on earth who could speak the
+    Koro language fluently.
+
+    Koro was not a written language. It had no alphabet, no dictionary,
+    no grammar book sitting on a library shelf. It lived only in the
+    mouths of the people who spoke it — in their songs, their stories,
+    their words for the particular shade of green that the rice paddies
+    turned in late monsoon, or the name for the feeling you get when you
+    return home after a long journey and the house smells exactly the
+    way you remembered.
+
+    Khumri's children understood Koro but answered in Hindi. Her
+    grandchildren understood a few words — the names for food, the
+    counting song she sang while braiding their hair. Her great-
+    grandchildren understood nothing at all. They spoke Hindi at school,
+    watched cartoons in English, and when Khumri talked to them in Koro,
+    they smiled politely and waited for her to switch.
+
+    A team of linguists from Delhi came to the village one winter. They
+    recorded Khumri for nine days, writing down every word she could
+    remember. She sat on a wooden stool outside her house, a thick
+    woolen shawl around her shoulders, and spoke into their microphone
+    for hours. She named every plant she could see from her doorstep.
+    She described how to build a fish trap, how to call a hawk down
+    from the sky, how to apologize to a river before crossing it.
+
+    On the eighth day, she tried to explain a word that meant something
+    like "the sorrow of watching your own knowledge become useless." It
+    was a single word, four syllables, and there was no translation for
+    it in any other language. The linguists wrote it down phonetically,
+    but Khumri shook her head. "You have the sound," she said. "You
+    do not have the feeling."
+
+    When Khumri dies — and she is eighty-one, so the day is not far —
+    the word will die with her. Not just that word. Hundreds of words.
+    A whole way of seeing the world, encoded in a language that took
+    thousands of years to grow and only two generations to forget.
+
+    Nobody destroyed Koro with violence. No army came and burned the
+    books — there were no books. It died the way most languages die:
+    slowly, quietly, one skipped generation at a time. The parents
+    spoke it but did not insist their children learn. The children
+    understood but did not teach their own.
+
+    Arjuna is describing exactly this kind of destruction. When the
+    family structure breaks, he says, the eternal dharma — the duties,
+    the traditions, the knowledge passed from one generation to the
+    next — is uprooted. Not by an enemy. By neglect. By the simple,
+    devastating act of not passing on what you received.
+
+    The saddest part is that the loss is invisible at first. Nobody
+    notices a language dying. Nobody notices a tradition fading. It
+    happens the way a river dries — one summer at a time, until one
+    day you walk to the bank and there is only cracked mud where water
+    used to be.
+
+reflection: "Is there a language, custom, or tradition in your family that is slowly being forgotten? What would happen if nobody made an effort to keep it alive?"
