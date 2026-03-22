@@ -25,6 +25,15 @@ dhatu_breakdown:
   - word: "एतेषाम्"
     parts: ["etad (their)"]
     meaning: "of theirs (the Pandavas)"
+  - word: "तद्"
+    parts: ["tad (that)"]
+    meaning: "that"
+  - word: "तु"
+    parts: ["tu (but, however)"]
+    meaning: "but"
+  - word: "इदम्"
+    parts: ["idam (this)"]
+    meaning: "this"
   - word: "भीमाभिरक्षितम्"
     parts: ["bhīma (Bhima)", "abhi (towards)", "rakṣ (to protect)"]
     meaning: "protected by Bhima"
@@ -50,7 +59,7 @@ story:
     Their army is sufficient, even though only Bhima protects it." This
     is Duryodhana accidentally revealing his real fear.
 
-    Sanskrit poets loved this kind of wordplay. They called it "shleshā" —
+    Sanskrit poets loved this kind of wordplay. They called it "shlesha" —
     a literary pun where one word carries two meanings at once. Like
     holding two truths in one hand.
 
