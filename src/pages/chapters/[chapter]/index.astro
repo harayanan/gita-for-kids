@@ -2,6 +2,8 @@
 import ChapterLayout from '../../../layouts/ChapterLayout.astro';
 import ChapterNav from '../../../components/ChapterNav.astro';
 import { getAllChapters, getChapter, getChapterVerses } from '../../../lib/content';
+import fs from 'node:fs';
+import path from 'node:path';
 
 export function getStaticPaths() {
   const chapters = getAllChapters();
@@ -18,6 +20,26 @@ if (!chapter) return Astro.redirect('/');
 
 const verses = getChapterVerses(slug!);
 const allChapters = getAllChapters();
+
+// Find the first verse illustration for the hero
+const firstIllustration = fs.existsSync(path.resolve(`public/illustrations/${slug}/001.png`))
+  ? `/illustrations/${slug}/001.png` : undefined;
+
+// Color accents based on folk_art_style
+const styleColors: Record<string, string> = {
+  madhubani:   '#C75B12',
+  pichwai:     '#2D3A87',
+  pattachitra: '#B85C3A',
+  warli:       '#B85C3A',
+  kalamkari:   '#1A6847',
+};
+
+const accentColor = styleColors[chapter.folk_art_style] || '#C4A24E';
+
+// Speaker label formatting
+function formatSpeaker(speaker: string): string {
+  return speaker.charAt(0).toUpperCase() + speaker.slice(1);
+}
 ---
 
 <ChapterLayout
@@ -25,21 +47,28 @@ const allChapters = getAllChapters();
   chapterName={chapter.name}
   sanskritName={chapter.sanskrit_name}
   summary={chapter.summary}
+  illustration={firstIllustration}
 >
   <!-- Verse list -->
   {verses.length > 0 ? (
     <div class="space-y-3">
-      {verses.map((v) => (
+      {verses.map((v, index) => (
         <a
           href={`/chapters/${slug}/${String(v.verse).padStart(3, '0')}`}
-          class="block rounded-lg border border-gold/15 hover:border-saffron/40 p-5 transition-all hover:shadow-sm bg-white/40"
+          class="block rounded-lg border border-gold/15 hover:border-saffron/40 p-5 transition-all hover:shadow-sm bg-white/40 scroll-reveal"
+          style={`border-left: 3px solid ${accentColor}; transition-delay: ${index * 0.05}s`}
         >
           <div class="flex items-start gap-4">
             <span class="font-ui text-xs font-bold text-gold shrink-0 mt-1">
               {chapter.number}.{v.verse}
             </span>
             <div class="flex-1 min-w-0">
-              <p class="font-devanagari text-base text-gray-800 truncate">{v.sanskrit}</p>
+              <div class="flex items-center gap-2 mb-1">
+                <p class="font-devanagari text-base text-gray-800 truncate">{v.sanskrit}</p>
+                <span class="font-ui text-[10px] uppercase tracking-wider text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded shrink-0">
+                  {formatSpeaker(v.speaker)}
+                </span>
+              </div>
               <p class="font-body text-sm text-gray-500 mt-1 truncate">{v.meaning}</p>
             </div>
           </div>

@@ -6,12 +6,25 @@ interface Props {
   chapterName: string;
   sanskritName: string;
   summary: string;
+  illustration?: string;
 }
 
-const { chapterNumber, chapterName, sanskritName, summary } = Astro.props;
+const { chapterNumber, chapterName, sanskritName, summary, illustration } = Astro.props;
 ---
 
 <BaseLayout title={`Chapter ${chapterNumber}: ${chapterName} — Gita for Kids`}>
+  <!-- Optional hero illustration -->
+  {illustration && (
+    <div class="max-w-4xl mx-auto -mt-2">
+      <img
+        src={illustration}
+        alt={`Illustration for Chapter ${chapterNumber}`}
+        class="w-full"
+        loading="eager"
+      />
+    </div>
+  )}
+
   <div class="max-w-reading mx-auto px-4 py-12">
     <!-- Chapter Header -->
     <header class="text-center mb-12">
