@@ -16,9 +16,10 @@ npm run preview   # Preview built site locally
 
 Illustration generation (requires GEMINI_API_KEY in `/root/claudecode/mutual-fund-dost/.env.local`):
 ```bash
-node scripts/generate-illustration.mjs --verse 11
-node scripts/generate-illustration.mjs --verse 4 --regenerate
-node scripts/generate-illustration.mjs --batch 11-20
+node scripts/generate-illustration.mjs --chapter 12 --verse 1
+node scripts/generate-illustration.mjs --chapter 12 --batch 1-20
+node scripts/generate-illustration.mjs --chapter 12 --verse 4 --regenerate
+node scripts/generate-illustration.mjs --verse 11                  # defaults to chapter 1
 node scripts/generate-illustration.mjs --batch 11-20 --dry-run
 ```
 

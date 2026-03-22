@@ -2,18 +2,22 @@
 /**
  * generate-illustration.mjs
  *
- * Generates Madhubani-style illustrations for the Gita for Kids project
- * using the Gemini image generation API.
+ * Generates folk art illustrations for the Gita for Kids project
+ * using the Gemini image generation API. Supports multiple art styles
+ * (Madhubani, Pichwai, Pattachitra, Warli, Kalamkari) based on the
+ * chapter's meta.yaml `folk_art_style` field.
  *
  * Usage:
- *   node scripts/generate-illustration.mjs --verse 11
+ *   node scripts/generate-illustration.mjs --chapter 12 --verse 1
+ *   node scripts/generate-illustration.mjs --chapter 12 --batch 1-20
+ *   node scripts/generate-illustration.mjs --verse 11                  (defaults to chapter 1)
  *   node scripts/generate-illustration.mjs --verse 4 --regenerate
- *   node scripts/generate-illustration.mjs --batch 11-20
+ *   node scripts/generate-illustration.mjs --batch 11-20 --dry-run
  *
  * API key is read from /root/claudecode/mutual-fund-dost/.env.local
  */
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -25,9 +29,7 @@ const PROJECT_ROOT = join(__dirname, '..');
 // ---------------------------------------------------------------------------
 
 const API_KEY_FILE = '/root/claudecode/mutual-fund-dost/.env.local';
-const CHAPTER_SLUG = '01-arjuna-vishada-yoga';
-const VERSES_DIR = join(PROJECT_ROOT, 'content', 'chapters', CHAPTER_SLUG, 'verses');
-const OUTPUT_DIR = join(PROJECT_ROOT, 'public', 'illustrations', CHAPTER_SLUG);
+const CHAPTERS_DIR = join(PROJECT_ROOT, 'content', 'chapters');
 const GUIDELINES_FILE = join(PROJECT_ROOT, 'docs', 'illustration-guidelines.md');
 
 // Gemini image generation models (tried in order)
@@ -54,6 +56,117 @@ function readApiKey() {
   }
   return match[1].trim();
 }
+
+/**
+ * Resolve a chapter identifier (number or slug) to { slug, versesDir, outputDir, meta }.
+ */
+function resolveChapterSync(chapterArg) {
+  const entries = readdirSync(CHAPTERS_DIR, { withFileTypes: true })
+    .filter(d => d.isDirectory())
+    .map(d => d.name);
+
+  let slug;
+  if (/^\d+$/.test(chapterArg)) {
+    // Numeric: find directory starting with zero-padded number
+    const padded = String(chapterArg).padStart(2, '0');
+    slug = entries.find(e => e.startsWith(padded + '-'));
+    if (!slug) throw new Error(`No chapter directory found for number ${chapterArg}`);
+  } else {
+    slug = entries.find(e => e === chapterArg);
+    if (!slug) throw new Error(`Chapter directory not found: ${chapterArg}`);
+  }
+
+  const metaPath = join(CHAPTERS_DIR, slug, 'meta.yaml');
+  if (!existsSync(metaPath)) {
+    throw new Error(`meta.yaml not found: ${metaPath}`);
+  }
+  const metaRaw = readFileSync(metaPath, 'utf-8');
+  const meta = {};
+  for (const field of ['number', 'slug', 'name', 'folk_art_style', 'verse_count']) {
+    const m = metaRaw.match(new RegExp(`^${field}:\\s*(.+)$`, 'm'));
+    if (m) meta[field] = m[1].trim();
+  }
+
+  return {
+    slug,
+    versesDir: join(CHAPTERS_DIR, slug, 'verses'),
+    outputDir: join(PROJECT_ROOT, 'public', 'illustrations', slug),
+    meta,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Folk art style prompt blocks
+// ---------------------------------------------------------------------------
+
+const STYLE_PROMPTS = {
+  madhubani: {
+    name: 'Madhubani (Mithila)',
+    prompt: `STYLE REQUIREMENTS (CRITICAL — follow every rule exactly):
+- Madhubani (Mithila) folk art style
+- Flat perspective — NO shading, NO atmospheric depth, NO 3D rendering, NO gradients
+- Double-line outlines on all figures and objects
+- Horror vacui — fill ALL blank spaces with traditional patterns: crosshatching, concentric circles, dots, fish motifs, lotus motifs, geometric fills
+- Figures in strict profile OR frontal view, NEVER three-quarter view
+- Dense floral and geometric border on all four sides
+- No naturalistic sky, ground, or landscape — use patterned flat color fields
+- Bharni (filled) style of Madhubani painting
+- Always illustrate the verse/mythological scene, NOT any modern story analogy`,
+  },
+  pichwai: {
+    name: 'Pichwai (Nathdwara)',
+    prompt: `STYLE REQUIREMENTS (CRITICAL — follow every rule exactly):
+- Pichwai painting style from Nathdwara, Rajasthan
+- Rich, detailed, devotional composition centered on Krishna
+- Flat perspective — NO shading, NO atmospheric depth, NO 3D rendering
+- Intricate lotus pond motifs, cows, peacocks, flowering trees where relevant
+- Dense floral patterns filling all empty spaces (horror vacui)
+- Figures in strict profile OR frontal view, NEVER three-quarter view
+- Ornamental border with lotus, paisley, or floral chain on all four sides
+- Rich jewel-tone palette with gold accents
+- Devotional, sacred atmosphere — temple painting aesthetic
+- Always illustrate the verse/mythological scene, NOT any modern story analogy`,
+  },
+  pattachitra: {
+    name: 'Pattachitra (Odisha)',
+    prompt: `STYLE REQUIREMENTS (CRITICAL — follow every rule exactly):
+- Pattachitra folk art style from Odisha
+- Flat perspective — NO shading, NO atmospheric depth, NO 3D rendering
+- Bold black outlines on all figures with intricate internal detailing
+- Horror vacui — fill ALL spaces with fine cross-hatching, floral scrolls, geometric patterns
+- Figures in strict profile OR frontal view, NEVER three-quarter view
+- Multi-layered ornamental border (typically 3-4 nested frames)
+- No naturalistic sky or landscape — use patterned flat color fields
+- Narrative panel composition showing a single key scene
+- Always illustrate the verse/mythological scene, NOT any modern story analogy`,
+  },
+  warli: {
+    name: 'Warli (Maharashtra)',
+    prompt: `STYLE REQUIREMENTS (CRITICAL — follow every rule exactly):
+- Warli tribal folk art style from Maharashtra
+- Simple white stick figures and geometric shapes on a terracotta/earth-tone background
+- Flat perspective — NO shading, NO atmospheric depth, NO 3D rendering
+- Figures made from basic geometric shapes (triangles for bodies, circles for heads)
+- Scenes composed in circular or processional arrangements
+- Decorative border of simple geometric chain patterns
+- Minimalist aesthetic — the beauty is in simplicity and rhythm
+- Fill spaces with small dots, spirals, and simple plant motifs
+- Always illustrate the verse/mythological scene, NOT any modern story analogy`,
+  },
+  kalamkari: {
+    name: 'Kalamkari (Andhra Pradesh)',
+    prompt: `STYLE REQUIREMENTS (CRITICAL — follow every rule exactly):
+- Kalamkari painting style from Andhra Pradesh (Srikalahasti or Machilipatnam school)
+- Flat perspective — NO shading, NO atmospheric depth, NO 3D rendering
+- Fine pen-drawn outlines with natural dye color fills
+- Elaborate scrolling vine and floral borders on all four sides
+- Figures in strict profile OR frontal view, NEVER three-quarter view
+- Dense botanical patterns (flowers, leaves, vines) filling all empty spaces
+- Tree of Life motif where compositionally appropriate
+- Narrative mythological scenes with rich textile-like patterning
+- Always illustrate the verse/mythological scene, NOT any modern story analogy`,
+  },
+};
 
 /**
  * Minimal YAML parser — handles only the simple key: value and block-scalar
@@ -88,9 +201,9 @@ function parseVerseYaml(raw) {
   return result;
 }
 
-function readVerseData(verseNum) {
+function readVerseData(verseNum, versesDir) {
   const paddedNum = String(verseNum).padStart(3, '0');
-  const yamlPath = join(VERSES_DIR, `${paddedNum}.yaml`);
+  const yamlPath = join(versesDir, `${paddedNum}.yaml`);
   if (!existsSync(yamlPath)) {
     throw new Error(`Verse YAML not found: ${yamlPath}`);
   }
@@ -154,43 +267,38 @@ function getRelevantCharacters(verseData) {
 // Prompt construction
 // ---------------------------------------------------------------------------
 
-function buildSceneDescription(verseData) {
+function buildSceneDescription(verseData, chapterMeta) {
   const { verse_number, speaker, meaning, story_title } = verseData;
+  const chapterNum = chapterMeta.number || '?';
+  const chapterName = chapterMeta.name || '';
   const speakerName = speaker
     ? speaker.charAt(0).toUpperCase() + speaker.slice(1)
     : 'Unknown';
 
-  return `Chapter 1, Verse ${verse_number} of the Bhagavad Gita.
+  return `Chapter ${chapterNum} (${chapterName}), Verse ${verse_number} of the Bhagavad Gita.
 Speaker: ${speakerName}.
 Scene: ${meaning}
 Story theme: "${story_title || 'N/A'}"
 
-Illustrate the MYTHOLOGICAL scene on the Kurukshetra battlefield — chariots, warriors, bows, battle formations, divine figures. Do NOT illustrate any modern analogy or contemporary scene.`;
+Illustrate the MYTHOLOGICAL scene — divine figures, ancient India settings, sacred landscapes. Do NOT illustrate any modern analogy or contemporary scene.`;
 }
 
-function buildPrompt(verseData) {
+function buildPrompt(verseData, chapterMeta) {
   const characters = getRelevantCharacters(verseData);
-  const scene = buildSceneDescription(verseData);
+  const scene = buildSceneDescription(verseData, chapterMeta);
+  const artStyle = chapterMeta.folk_art_style || 'madhubani';
+  const styleConfig = STYLE_PROMPTS[artStyle] || STYLE_PROMPTS.madhubani;
 
   const characterBlock = characters.length > 0
     ? `\nCHARACTERS (use these exact visual attributes):\n${characters.map(c => `- ${c}`).join('\n')}\n`
     : '';
 
-  return `Create a Madhubani (Mithila) folk art style illustration for a children's book about the Bhagavad Gita.
+  return `Create a ${styleConfig.name} folk art style illustration for a children's book about the Bhagavad Gita.
 
 SCENE:
 ${scene}
 ${characterBlock}
-STYLE REQUIREMENTS (CRITICAL — follow every rule exactly):
-- Madhubani (Mithila) folk art style
-- Flat perspective — NO shading, NO atmospheric depth, NO 3D rendering, NO gradients
-- Double-line outlines on all figures and objects
-- Horror vacui — fill ALL blank spaces with traditional patterns: crosshatching, concentric circles, dots, fish motifs, lotus motifs, geometric fills
-- Figures in strict profile OR frontal view, NEVER three-quarter view
-- Dense floral and geometric border on all four sides
-- No naturalistic sky, ground, or landscape — use patterned flat color fields
-- Bharni (filled) style of Madhubani painting
-- Always illustrate the verse/mythological scene, NOT any modern story analogy
+${styleConfig.prompt}
 
 COLOR PALETTE (use ONLY these six colors):
 - Saffron/orange: #C75B12
@@ -202,8 +310,8 @@ COLOR PALETTE (use ONLY these six colors):
 - NO bright green grass, NO blue sky, NO purple, NO neon colors, NO black backgrounds
 
 SERIES COHESION:
-- Use the style of classic Mithila paintings as your reference — flat, bold, densely patterned
-- Border must be dense with lotus and floral motifs matching the series style
+- Use the style of classic ${styleConfig.name} paintings as your reference
+- Border must be dense with traditional motifs matching the series style
 
 FORMAT: Landscape orientation 16:9 aspect ratio (1408×768 px), suitable for full-width web display in a children's book.`.trim();
 }
@@ -298,16 +406,17 @@ function saveImage(base64Data, outputPath) {
 // Core: generate one verse illustration
 // ---------------------------------------------------------------------------
 
-async function generateIllustration(verseNum, options = {}) {
+async function generateIllustration(verseNum, chapter, options = {}) {
   const { regenerate = false, dryRun = false } = options;
 
-  console.log(`\n=== Verse ${verseNum} ===`);
+  console.log(`\n=== Chapter ${chapter.meta.number}, Verse ${verseNum} ===`);
 
-  const verseData = readVerseData(verseNum);
+  const verseData = readVerseData(verseNum, chapter.versesDir);
   console.log(`  Speaker: ${verseData.speaker}`);
   console.log(`  Story: "${verseData.story_title}"`);
+  console.log(`  Art style: ${chapter.meta.folk_art_style}`);
 
-  const outputPath = join(OUTPUT_DIR, `${verseData.padded_number}.png`);
+  const outputPath = join(chapter.outputDir, `${verseData.padded_number}.png`);
 
   // Check if already exists (skip unless --regenerate)
   if (existsSync(outputPath) && !regenerate) {
@@ -315,7 +424,7 @@ async function generateIllustration(verseNum, options = {}) {
     return { skipped: true, path: outputPath };
   }
 
-  const prompt = buildPrompt(verseData);
+  const prompt = buildPrompt(verseData, chapter.meta);
 
   console.log('\n--- PROMPT ---');
   console.log(prompt);
@@ -344,7 +453,7 @@ async function generateIllustration(verseNum, options = {}) {
 // Batch mode
 // ---------------------------------------------------------------------------
 
-async function generateBatch(rangeStr, options = {}) {
+async function generateBatch(rangeStr, chapter, options = {}) {
   const match = rangeStr.match(/^(\d+)-(\d+)$/);
   if (!match) {
     throw new Error(`Invalid batch range: "${rangeStr}". Use format like "11-20".`);
@@ -354,12 +463,12 @@ async function generateBatch(rangeStr, options = {}) {
 
   if (from > to) throw new Error('Batch range start must be <= end.');
 
-  console.log(`\nBatch mode: verses ${from} to ${to}`);
+  console.log(`\nBatch mode: Chapter ${chapter.meta.number}, verses ${from} to ${to} (${chapter.meta.folk_art_style} style)`);
   const results = [];
 
   for (let v = from; v <= to; v++) {
     try {
-      const result = await generateIllustration(v, options);
+      const result = await generateIllustration(v, chapter, options);
       results.push({ verse: v, ...result });
     } catch (err) {
       console.error(`  ERROR for verse ${v}: ${err.message}`);
@@ -396,6 +505,7 @@ async function generateBatch(rangeStr, options = {}) {
 function parseArgs(argv) {
   const args = argv.slice(2);
   const opts = {
+    chapter: null,
     verse: null,
     batch: null,
     regenerate: false,
@@ -404,6 +514,9 @@ function parseArgs(argv) {
 
   for (let i = 0; i < args.length; i++) {
     switch (args[i]) {
+      case '--chapter':
+        opts.chapter = args[++i];
+        break;
       case '--verse':
         opts.verse = parseInt(args[++i], 10);
         break;
@@ -427,13 +540,15 @@ function parseArgs(argv) {
 function printUsage() {
   console.log(`
 Usage:
-  node scripts/generate-illustration.mjs --verse <N>
+  node scripts/generate-illustration.mjs --chapter <N|slug> --verse <N>
+  node scripts/generate-illustration.mjs --chapter <N|slug> --batch <from>-<to>
+  node scripts/generate-illustration.mjs --verse <N>                (defaults to chapter 1)
   node scripts/generate-illustration.mjs --verse <N> --regenerate
-  node scripts/generate-illustration.mjs --verse <N> --dry-run
-  node scripts/generate-illustration.mjs --batch <from>-<to>
-  node scripts/generate-illustration.mjs --batch <from>-<to> --regenerate
+  node scripts/generate-illustration.mjs --batch <from>-<to> --dry-run
 
 Examples:
+  node scripts/generate-illustration.mjs --chapter 12 --verse 1
+  node scripts/generate-illustration.mjs --chapter 12 --batch 1-20
   node scripts/generate-illustration.mjs --verse 11
   node scripts/generate-illustration.mjs --verse 4 --regenerate
   node scripts/generate-illustration.mjs --batch 11-20
@@ -452,14 +567,20 @@ async function main() {
     process.exit(1);
   }
 
+  // Resolve chapter (default to 1 for backward compatibility)
+  const chapterArg = opts.chapter || '1';
+  const chapter = resolveChapterSync(chapterArg);
+  console.log(`Chapter: ${chapter.meta.number} — ${chapter.meta.name} (${chapter.slug})`);
+  console.log(`Art style: ${chapter.meta.folk_art_style}`);
+
   if (opts.verse) {
     if (isNaN(opts.verse) || opts.verse < 1) {
       console.error('Error: --verse must be a positive integer.');
       process.exit(1);
     }
-    await generateIllustration(opts.verse, { regenerate: opts.regenerate, dryRun: opts.dryRun });
+    await generateIllustration(opts.verse, chapter, { regenerate: opts.regenerate, dryRun: opts.dryRun });
   } else if (opts.batch) {
-    await generateBatch(opts.batch, { regenerate: opts.regenerate, dryRun: opts.dryRun });
+    await generateBatch(opts.batch, chapter, { regenerate: opts.regenerate, dryRun: opts.dryRun });
   }
 }
 

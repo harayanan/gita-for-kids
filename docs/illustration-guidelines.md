@@ -20,9 +20,11 @@ Use these fixed visual attributes in every illustration prompt that includes the
 
 ---
 
-## 2. Madhubani Style Constraints
+## 2. Folk Art Style Constraints
 
-Include ALL of the following phrases in every illustration prompt, verbatim:
+Each chapter has a `folk_art_style` in its `meta.yaml`. The illustration script (`scripts/generate-illustration.mjs`) auto-selects the correct style prompt. Below are the constraints for each style.
+
+### Madhubani (Chapters 1, 6, 11, 16)
 
 - "Madhubani (Mithila) folk art style"
 - "Flat perspective — NO shading, NO atmospheric depth, NO 3D rendering, NO gradients"
@@ -32,6 +34,41 @@ Include ALL of the following phrases in every illustration prompt, verbatim:
 - "Dense floral and geometric border on all four sides"
 - "No naturalistic sky, ground, or landscape — use patterned flat color fields"
 - "Bharni (filled) style of Madhubani painting"
+
+### Pichwai (Chapters 2, 7, 12, 17)
+
+- "Pichwai painting style from Nathdwara, Rajasthan"
+- "Rich, detailed, devotional composition centered on Krishna"
+- "Flat perspective — NO shading, NO atmospheric depth, NO 3D rendering"
+- "Intricate lotus pond motifs, cows, peacocks, flowering trees where relevant"
+- "Dense floral patterns filling all empty spaces (horror vacui)"
+- "Figures in strict profile OR frontal view, NEVER three-quarter view"
+- "Ornamental border with lotus, paisley, or floral chain on all four sides"
+- "Devotional, sacred atmosphere — temple painting aesthetic"
+
+### Pattachitra (Chapters 3, 8, 13, 18)
+
+- "Pattachitra folk art style from Odisha"
+- "Bold black outlines on all figures with intricate internal detailing"
+- "Horror vacui — fill ALL spaces with fine cross-hatching, floral scrolls, geometric patterns"
+- "Multi-layered ornamental border (typically 3-4 nested frames)"
+- "Narrative panel composition showing a single key scene"
+
+### Warli (Chapters 4, 9, 14)
+
+- "Warli tribal folk art style from Maharashtra"
+- "Simple white stick figures and geometric shapes on terracotta/earth-tone background"
+- "Figures made from basic geometric shapes (triangles for bodies, circles for heads)"
+- "Scenes composed in circular or processional arrangements"
+- "Minimalist aesthetic — beauty in simplicity and rhythm"
+
+### Kalamkari (Chapters 5, 10, 15)
+
+- "Kalamkari painting style from Andhra Pradesh"
+- "Fine pen-drawn outlines with natural dye color fills"
+- "Elaborate scrolling vine and floral borders on all four sides"
+- "Tree of Life motif where compositionally appropriate"
+- "Narrative mythological scenes with rich textile-like patterning"
 
 ---
 
