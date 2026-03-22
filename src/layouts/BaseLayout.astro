@@ -36,6 +36,7 @@ const {
     <ClientRouter />
   </head>
   <body class="min-h-screen flex flex-col bg-cream">
+    <div id="reading-progress" class="fixed top-0 left-0 h-[3px] bg-saffron z-[100] transition-[width] duration-100 ease-out" style="width: 0%"></div>
     <!-- Navigation -->
     <nav class="border-b border-gold/30 bg-cream/95 backdrop-blur-sm sticky top-0 z-50">
       <div class="max-w-reading mx-auto px-6 py-4 flex items-center justify-between">
@@ -63,5 +64,40 @@ const {
         <p>Gita for Kids &mdash; Ancient wisdom, young hearts</p>
       </div>
     </footer>
+    <script>
+      function initScrollReveal() {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+        );
+        document.querySelectorAll('.scroll-reveal').forEach((el) => observer.observe(el));
+      }
+
+      function initProgress() {
+        const bar = document.getElementById('reading-progress');
+        if (!bar) return;
+        function update() {
+          const scrollTop = window.scrollY;
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          bar.style.width = docHeight > 0 ? `${(scrollTop / docHeight) * 100}%` : '0%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      }
+
+      initScrollReveal();
+      initProgress();
+      document.addEventListener('astro:after-swap', () => {
+        initScrollReveal();
+        initProgress();
+      });
+    </script>
   </body>
 </html>

@@ -49,7 +49,7 @@ const {
 } = Astro.props;
 ---
 
-<article class="max-w-reading mx-auto px-4 py-12">
+<article class="max-w-reading mx-auto px-4 py-12" data-speaker={speaker}>
   <!-- 1. Chapter & Verse Number -->
   <div class="text-center mb-8">
     <span class="font-ui text-xs font-semibold uppercase tracking-widest text-gold" transition:name={`verse-${chapter}-${verse}`}>
@@ -81,17 +81,19 @@ const {
   </div>
 
   <!-- 5. Dhatu Breakdown -->
-  <DhatuBreakdown breakdown={dhatu_breakdown} />
+  <div class="scroll-reveal" style="transition-delay: 0.2s">
+    <DhatuBreakdown breakdown={dhatu_breakdown} />
+  </div>
 
   <!-- Divider -->
-  <div class="flex items-center gap-4 my-8">
+  <div class="flex items-center gap-4 my-8 scroll-reveal" style="transition-delay: 0.25s">
     <div class="flex-1 h-px bg-gold/20"></div>
     <span class="font-devanagari text-gold/40 text-lg">॥</span>
     <div class="flex-1 h-px bg-gold/20"></div>
   </div>
 
   <!-- 6. Simple Meaning -->
-  <div class="py-4">
+  <div class="py-4 scroll-reveal" style="transition-delay: 0.3s">
     <h3 class="font-ui text-xs font-semibold uppercase tracking-widest text-gold mb-3">What it means</h3>
     <p class="font-body text-lg leading-relaxed text-gray-800">
       <Tooltip client:load glossary={glossary} text={meaning} />
@@ -99,15 +101,17 @@ const {
   </div>
 
   <!-- 7. The Story -->
-  <StoryBlock
-    title={story.title}
-    source={story.source}
-    body={story.body}
-    glossary={glossary}
-  />
+  <div class="scroll-reveal" style="transition-delay: 0.4s">
+    <StoryBlock
+      title={story.title}
+      source={story.source}
+      body={story.body}
+      glossary={glossary}
+    />
+  </div>
 
   <!-- 8. Reflection -->
-  <div class="bg-forest/8 rounded-xl px-6 py-6 my-6 border border-forest/15">
+  <div class="bg-forest/8 rounded-xl px-6 py-6 my-6 border border-forest/15 scroll-reveal" style="transition-delay: 0.5s">
     <h3 class="font-ui text-xs font-semibold uppercase tracking-widest text-forest mb-3">Think about it</h3>
     <p class="font-body text-base italic text-gray-700 leading-relaxed">{reflection}</p>
   </div>
