@@ -1,22 +1,42 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import FolkArtBorder from '../components/FolkArtBorder.astro';
 import { getAllChapters } from '../lib/content';
 
 const chapters = getAllChapters();
+
+// Color accents based on folk_art_style
+const styleColors: Record<string, string> = {
+  madhubani:   '#C75B12',
+  pichwai:     '#2D3A87',
+  pattachitra: '#B85C3A',
+  warli:       '#B85C3A',
+  kalamkari:   '#1A6847',
+};
 ---
 
 <BaseLayout>
-  <!-- Hero Section -->
-  <section class="py-20 px-4">
-    <div class="max-w-reading mx-auto text-center">
-      <p class="font-devanagari text-4xl md:text-5xl text-saffron mb-4">
+  <!-- Hero Section with illustration background -->
+  <section class="relative overflow-hidden">
+    <!-- Background illustration -->
+    <div class="absolute inset-0">
+      <img
+        src="/illustrations/01-arjuna-vishada-yoga/001.png"
+        alt=""
+        class="w-full h-full object-cover object-top"
+        aria-hidden="true"
+      />
+      <!-- Cream gradient overlay -->
+      <div class="absolute inset-0 bg-gradient-to-b from-cream/80 via-cream/70 to-cream"></div>
+    </div>
+
+    <div class="relative max-w-reading mx-auto text-center px-4 pt-24 pb-20">
+      <p class="font-devanagari text-5xl md:text-6xl text-saffron mb-5 drop-shadow-sm">
         श्रीमद्भगवद्गीता
       </p>
-      <h1 class="font-body text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+      <h1 class="font-body text-2xl md:text-3xl font-bold text-gray-900 mb-3">
         The Bhagavad Gita
       </h1>
-      <p class="font-body text-xl text-gray-600 mb-2">
+      <p class="font-body text-lg text-gray-600 mb-2">
         For Young Explorers
       </p>
       <p class="font-body text-base text-gray-500 max-w-md mx-auto mt-6 leading-relaxed">
@@ -24,10 +44,32 @@ const chapters = getAllChapters();
         Word by word, story by story — for curious minds aged 8 to 12.
       </p>
 
-      <!-- Decorative divider -->
+      <!-- Animated Om SVG divider -->
       <div class="flex items-center justify-center gap-4 mt-10">
         <div class="w-16 h-px bg-gold/40"></div>
-        <span class="font-devanagari text-gold/60 text-2xl">ॐ</span>
+        <svg
+          class="om-symbol"
+          width="48"
+          height="48"
+          viewBox="0 0 100 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-label="Om"
+        >
+          <path
+            class="om-path"
+            d="M30,72 C18,72 10,64 10,54 C10,44 18,36 28,36 C34,36 38,38 42,42
+               M42,42 C46,38 52,36 58,36 C72,36 82,46 82,58 C82,68 76,74 68,74 C62,74 58,70 58,64
+               M58,64 C58,56 64,50 72,50
+               M42,42 L42,28 C42,20 48,14 54,14 C60,14 64,18 64,24
+               M64,24 C64,18 68,14 72,14
+               M50,8 C50,6 52,4 54,4 C56,4 58,6 56,8 C54,10 50,10 50,8"
+            stroke="#C4A24E"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
         <div class="w-16 h-px bg-gold/40"></div>
       </div>
     </div>
@@ -41,17 +83,21 @@ const chapters = getAllChapters();
       </h2>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {chapters.map((chapter) => {
+        {chapters.map((chapter, index) => {
           const isActive = chapter.status === 'active';
+          const isFirst = index === 0;
+          const borderColor = styleColors[chapter.folk_art_style] || '#C4A24E';
           return (
             <a
               href={isActive ? `/chapters/${chapter.slug}` : undefined}
               class:list={[
-                'block rounded-xl border p-6 transition-all',
+                'chapter-card block rounded-xl border p-6 transition-all scroll-reveal',
                 isActive
                   ? 'border-gold/30 hover:border-saffron hover:shadow-lg cursor-pointer bg-white/50'
-                  : 'border-gray-200 opacity-50 cursor-default bg-gray-50/50',
+                  : 'border-gray-200 cursor-default bg-gray-50/50 grayscale opacity-40',
+                isFirst && 'sm:col-span-2 lg:col-span-1 ring-1 ring-saffron/20 shadow-md',
               ]}
+              style={`border-left: 4px solid ${isActive ? borderColor : '#d1d5db'}; transition-delay: ${index * 0.06}s`}
             >
               <div class="flex items-start justify-between mb-3">
                 <span class="font-ui text-xs font-bold text-gold">
@@ -60,6 +106,11 @@ const chapters = getAllChapters();
                 {!isActive && (
                   <span class="font-ui text-[10px] uppercase tracking-widest text-gray-400">
                     Coming soon
+                  </span>
+                )}
+                {isFirst && isActive && (
+                  <span class="font-ui text-[10px] uppercase tracking-widest text-saffron bg-saffron/10 px-2 py-0.5 rounded-full">
+                    Start here
                   </span>
                 )}
               </div>
@@ -82,24 +133,53 @@ const chapters = getAllChapters();
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- What is the Gita? -->
   <section class="py-16 px-4">
     <div class="max-w-reading mx-auto">
-      <FolkArtBorder style="madhubani" class="text-center">
-        <h2 class="font-body text-2xl font-bold text-gray-900 mb-4">What is the Gita?</h2>
-        <p class="font-body text-base text-gray-600 leading-relaxed mb-4">
+      <!-- Sanskrit-style divider top -->
+      <div class="flex items-center gap-3 mb-8">
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent"></div>
+        <span class="font-devanagari text-gold/50 text-sm">परिचय</span>
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent"></div>
+      </div>
+
+      <div class="text-center scroll-reveal">
+        <h2 class="font-body text-2xl md:text-3xl font-bold text-gray-900 mb-6">What is the Gita?</h2>
+        <p class="font-body text-lg text-gray-700 leading-relaxed mb-5">
           Over 5,000 years ago, on a battlefield called Kurukshetra, a warrior named
           Arjuna faced the hardest moment of his life. His charioteer, Krishna — who
           was actually God in human form — spoke 700 verses of wisdom that changed
           everything.
         </p>
-        <p class="font-body text-base text-gray-600 leading-relaxed">
+        <p class="font-body text-lg text-gray-700 leading-relaxed">
           Those verses became the Bhagavad Gita — "The Song of God." It teaches us
           about courage, duty, love, and finding out who we really are. This site
           brings those teachings to life, one verse at a time, with stories you'll
           remember and words you'll understand.
         </p>
-      </FolkArtBorder>
+      </div>
+
+      <!-- Sanskrit-style divider bottom -->
+      <div class="flex items-center gap-3 mt-8">
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent"></div>
+        <span class="font-devanagari text-gold/50 text-sm">॥</span>
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent"></div>
+      </div>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  /* Om drawing animation */
+  .om-path {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: draw-om 2s ease-out 0.5s forwards;
+  }
+
+  @keyframes draw-om {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+</style>
