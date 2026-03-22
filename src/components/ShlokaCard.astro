@@ -64,22 +64,21 @@ const {
 
   <!-- 2. Illustration -->
   {illustration && (
-    <div class="mb-8">
-      <FolkArtBorder style={folkArtStyle}>
-        <img
-          src={illustration}
-          alt={`Illustration for Chapter ${chapter}, Verse ${verse}`}
-          class="w-full rounded-sm"
-          loading="lazy"
-        />
-      </FolkArtBorder>
+    <div class="-mx-4 sm:-mx-8 md:-mx-16 mb-10 scroll-reveal">
+      <img
+        src={illustration}
+        alt={`Illustration for Chapter ${chapter}, Verse ${verse}`}
+        class="w-full"
+        loading="lazy"
+        transition:name={`illustration-${chapter}-${verse}`}
+      />
     </div>
   )}
 
   <!-- 3 & 4. Sanskrit + Transliteration -->
-  <FolkArtBorder style={folkArtStyle} class="mb-8">
+  <div class="mb-8 scroll-reveal" style="transition-delay: 0.1s">
     <SanskritText sanskrit={sanskrit} transliteration={transliteration} />
-  </FolkArtBorder>
+  </div>
 
   <!-- 5. Dhatu Breakdown -->
   <DhatuBreakdown breakdown={dhatu_breakdown} />
