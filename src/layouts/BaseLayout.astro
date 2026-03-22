@@ -38,19 +38,25 @@ const {
   <body class="min-h-screen flex flex-col bg-cream">
     <div id="reading-progress" class="fixed top-0 left-0 h-[3px] bg-saffron z-[100] transition-[width] duration-100 ease-out" style="width: 0%"></div>
     <!-- Navigation -->
-    <nav class="border-b border-gold/30 bg-cream/95 backdrop-blur-sm sticky top-0 z-50">
-      <div class="max-w-reading mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/" class="flex items-center gap-3 group">
-          <span class="font-devanagari text-2xl text-saffron group-hover:text-saffron/80 transition-colors">गीता</span>
+    <nav id="site-nav" class="bg-cream sticky top-0 z-50 transition-all duration-300" style="padding-top: 1.25rem; padding-bottom: 1.25rem;">
+      <div class="max-w-reading mx-auto px-6 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-devanagari text-[1.7rem] text-saffron group-hover:text-saffron/80 transition-colors leading-none">गीता</span>
+          <span class="font-devanagari text-gold/40 text-lg leading-none">&#x2022;</span>
           <span class="font-ui text-sm font-semibold text-gray-600 tracking-wide uppercase">for Kids</span>
         </a>
         <div class="flex items-center gap-6 font-ui text-sm">
           <a href="/chapters/01-arjuna-vishada-yoga" class="text-gray-600 hover:text-saffron transition-colors">Chapters</a>
           <a href="/glossary" class="text-gray-600 hover:text-saffron transition-colors">Glossary</a>
-          <a href="/about" class="text-gray-600 hover:text-saffron transition-colors">About</a>
+          <a href="/about" class="text-gray-600 hover:text-saffron transition-colors hidden sm:inline">About</a>
         </div>
       </div>
+      <!-- Gold gradient bottom border -->
+      <div class="h-[2px] bg-gradient-to-r from-gold/10 via-gold/40 to-gold/10 mt-auto"></div>
     </nav>
+
+    <!-- Breadcrumb slot area -->
+    <slot name="breadcrumb" />
 
     <!-- Main Content -->
     <main class="flex-1">
@@ -92,11 +98,38 @@ const {
         update();
       }
 
+      function initNavScroll() {
+        const nav = document.getElementById('site-nav');
+        if (!nav) return;
+        let ticking = false;
+        function update() {
+          if (window.scrollY > 50) {
+            nav.style.paddingTop = '0.75rem';
+            nav.style.paddingBottom = '0.75rem';
+            nav.style.boxShadow = '0 1px 8px rgba(0,0,0,0.06)';
+          } else {
+            nav.style.paddingTop = '1.25rem';
+            nav.style.paddingBottom = '1.25rem';
+            nav.style.boxShadow = 'none';
+          }
+          ticking = false;
+        }
+        window.addEventListener('scroll', () => {
+          if (!ticking) {
+            requestAnimationFrame(update);
+            ticking = true;
+          }
+        }, { passive: true });
+        update();
+      }
+
       initScrollReveal();
       initProgress();
+      initNavScroll();
       document.addEventListener('astro:after-swap', () => {
         initScrollReveal();
         initProgress();
+        initNavScroll();
       });
     </script>
   </body>
