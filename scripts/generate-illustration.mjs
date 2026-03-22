@@ -309,6 +309,11 @@ COLOR PALETTE (use ONLY these six colors):
 - Cream background: #FDF6E3
 - NO bright green grass, NO blue sky, NO purple, NO neon colors, NO black backgrounds
 
+CRITICAL — NO TEXT IN THE IMAGE:
+- Do NOT include any words, letters, labels, captions, titles, chapter numbers, or color swatches
+- Do NOT render any text overlays, legends, or annotations
+- The image must contain ONLY the illustration — pure artwork with no text whatsoever
+
 SERIES COHESION:
 - Use the style of classic ${styleConfig.name} paintings as your reference
 - Border must be dense with traditional motifs matching the series style
