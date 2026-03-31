@@ -1,0 +1,114 @@
+- id: madhubani
+  name: Madhubani
+  region: Bihar
+  also_known_as: Mithila painting
+  description: >
+    Madhubani painting comes from the Mithila region of Bihar, where women
+    have decorated their homes with these designs for thousands of years.
+    The art uses bold outlines filled with vivid colors, and every empty
+    space is filled with flowers, animals, birds, and geometric patterns.
+    Traditionally painted on freshly plastered mud walls during festivals
+    and weddings, Madhubani tells stories from mythology with a flat,
+    two-dimensional style that feels both ancient and alive.
+  signature_elements:
+    - Double-line borders with cross-hatched fills
+    - Fish, peacock, and lotus motifs
+    - Symmetrical compositions
+    - Dense pattern-filling (horror vacui)
+  fun_fact: >
+    Madhubani art was almost lost to the world until the 1934 Bihar earthquake
+    damaged many homes. When relief workers arrived, they discovered the
+    stunning paintings on the crumbling walls and helped bring the art form
+    to international attention.
+
+- id: pichwai
+  name: Pichwai
+  region: Rajasthan
+  also_known_as: Temple cloth painting
+  description: >
+    Pichwai paintings are large cloth artworks that hang behind the idol of
+    Shrinathji (a form of Krishna as a child) in temples of Nathdwara,
+    Rajasthan. Each painting shows Krishna in different moods and seasons —
+    playing in the rain, celebrating Holi, or dancing under the full moon.
+    The style uses rich, deep colors on dark backgrounds, with incredibly
+    detailed lotus flowers, cows, and gopis (milkmaids) arranged in
+    symmetrical patterns around the central figure.
+  signature_elements:
+    - Dark, jewel-toned backgrounds
+    - Central figure of Krishna surrounded by devotees
+    - Elaborate lotus ponds and flowering trees
+    - Cows as recurring sacred motifs
+  fun_fact: >
+    A single Pichwai painting can take months to complete because every tiny
+    detail — each petal on a lotus, each bead on a necklace — is painted by
+    hand with brushes made from squirrel hair!
+
+- id: pattachitra
+  name: Pattachitra
+  region: Odisha
+  also_known_as: Cloth painting
+  description: >
+    Pattachitra means "cloth painting" in Odia, and this art has been
+    practised in Odisha for over a thousand years. Artists called chitrakars
+    prepare their own canvases by layering cloth with a paste of chalk and
+    tamarind seed gum, creating a smooth surface. Then they paint mythological
+    stories using bold black outlines and vibrant natural colors. The most
+    striking feature is the intricate border — three or four nested frames of
+    flowers and geometric patterns surround every scene, like looking through
+    decorated windows into the world of the gods.
+  signature_elements:
+    - Bold black outlines with fine internal detailing
+    - Multi-layered ornamental borders (3-4 nested frames)
+    - Horror vacui — every space filled with patterns
+    - Narrative panel compositions
+  fun_fact: >
+    Pattachitra artists traditionally make their own colors from natural
+    materials — white from conch shells, red from a local stone called
+    hingula, yellow from the urine of cows that eat mango leaves, and
+    black from burnt coconut shells!
+
+- id: kalamkari
+  name: Kalamkari
+  region: Andhra Pradesh
+  also_known_as: Pen-work painting
+  description: >
+    Kalamkari literally means "pen-work" — kalam (pen) and kari (work).
+    This ancient art from Andhra Pradesh uses a bamboo or date palm stick
+    sharpened into a pen, dipped in natural dyes made from plants and
+    minerals. Artists draw intricate outlines of gods, flowers, and the
+    famous Tree of Life motif, then fill them with earthy colors. The
+    Srikalahasti school focuses on freehand temple hangings, while the
+    Machilipatnam school uses hand-carved blocks for printing on fabric.
+    The result looks like a beautiful, detailed textile come to life.
+  signature_elements:
+    - Fine pen-drawn outlines with natural dye fills
+    - Elaborate scrolling vine and floral borders
+    - Tree of Life motif
+    - Textile-like patterning throughout
+  fun_fact: >
+    Making Kalamkari fabric involves 23 steps — including soaking the cloth
+    in buffalo milk and myrobalan solution! The entire process can take
+    weeks, and the natural dyes mean no two pieces ever look exactly the same.
+
+- id: warli
+  name: Warli
+  region: Maharashtra
+  also_known_as: Tribal wall painting
+  description: >
+    Warli is one of the oldest art forms in India, practised by the Warli
+    tribe of Maharashtra for over 2,500 years. Using just white rice paste
+    on a red or brown mud wall, Warli artists create an entire world from
+    simple shapes — circles, triangles, and lines. A circle becomes the sun
+    or the moon, triangles become mountains or dancing people, and lines
+    connect everything into scenes of daily life, harvests, festivals, and
+    stories from nature.
+  signature_elements:
+    - White figures on dark earth-toned backgrounds
+    - Simple geometric shapes (circles, triangles, lines)
+    - Stick-figure humans in dynamic poses
+    - Scenes of daily life and nature
+  fun_fact: >
+    In Warli tradition, paintings are always done by women. They paint the
+    walls of their homes before weddings and harvest festivals, and the
+    central figure is always Palaghata — the mother goddess of fertility —
+    drawn as a large triangle.

@@ -4,6 +4,7 @@ import yaml from 'js-yaml';
 
 const CONTENT_DIR = path.resolve('content/chapters');
 const GLOSSARY_PATH = path.resolve('src/data/glossary.yaml');
+const ART_STYLES_PATH = path.resolve('src/data/art-styles.yaml');
 
 export interface ChapterMeta {
   number: number;
@@ -44,6 +45,16 @@ export interface Verse {
 export interface GlossaryEntry {
   term: string;
   definition: string;
+}
+
+export interface ArtStyle {
+  id: string;
+  name: string;
+  region: string;
+  also_known_as: string;
+  description: string;
+  signature_elements: string[];
+  fun_fact: string;
 }
 
 export function getAllChapters(): ChapterMeta[] {
@@ -94,4 +105,10 @@ export function getGlossary(): GlossaryEntry[] {
   return (yaml.load(content) as GlossaryEntry[]).sort((a, b) =>
     a.term.localeCompare(b.term)
   );
+}
+
+export function getArtStyle(styleId: string): ArtStyle | undefined {
+  const content = fs.readFileSync(ART_STYLES_PATH, 'utf-8');
+  const styles = yaml.load(content) as ArtStyle[];
+  return styles.find((s) => s.id === styleId);
 }

@@ -1,7 +1,7 @@
 ---
 import ChapterLayout from '../../../layouts/ChapterLayout.astro';
 import ChapterNav from '../../../components/ChapterNav.astro';
-import { getAllChapters, getChapter, getChapterVerses } from '../../../lib/content';
+import { getAllChapters, getChapter, getChapterVerses, getArtStyle } from '../../../lib/content';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -36,6 +36,8 @@ const styleColors: Record<string, string> = {
 
 const accentColor = styleColors[chapter.folk_art_style] || '#C4A24E';
 
+const artStyle = getArtStyle(chapter.folk_art_style);
+
 // Speaker label formatting
 function formatSpeaker(speaker: string): string {
   return speaker.charAt(0).toUpperCase() + speaker.slice(1);
@@ -49,6 +51,38 @@ function formatSpeaker(speaker: string): string {
   summary={chapter.summary}
   illustration={firstIllustration}
 >
+  <!-- Art style callout -->
+  {artStyle && (
+    <details class="mb-10 rounded-xl border border-gold/20 bg-cream/60 scroll-reveal group" style={`border-left: 4px solid ${accentColor}`}>
+      <summary class="cursor-pointer px-6 py-4 flex items-center gap-3 select-none">
+        <span class="font-devanagari text-lg" style={`color: ${accentColor}`}>&#x2736;</span>
+        <span class="font-body text-sm font-semibold text-gray-700">
+          Art Style: {artStyle.name} from {artStyle.region}
+        </span>
+        <span class="ml-auto font-ui text-xs text-gray-400 group-open:hidden">Learn more</span>
+        <span class="ml-auto font-ui text-xs text-gray-400 hidden group-open:inline">Close</span>
+      </summary>
+      <div class="px-6 pb-5 pt-1 space-y-3">
+        <p class="font-body text-sm text-gray-600 leading-relaxed">{artStyle.description}</p>
+        <div>
+          <p class="font-ui text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1.5">Signature Elements</p>
+          <ul class="space-y-1">
+            {artStyle.signature_elements.map((el: string) => (
+              <li class="font-body text-sm text-gray-600 flex items-start gap-2">
+                <span class="text-gold mt-0.5 shrink-0">&#x2022;</span>
+                <span>{el}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="rounded-lg bg-saffron/5 border border-saffron/10 px-4 py-3">
+          <p class="font-ui text-xs font-semibold text-saffron mb-1">Did you know?</p>
+          <p class="font-body text-sm text-gray-600 leading-relaxed">{artStyle.fun_fact}</p>
+        </div>
+      </div>
+    </details>
+  )}
+
   <!-- Verse list -->
   {verses.length > 0 ? (
     <div class="space-y-3">
