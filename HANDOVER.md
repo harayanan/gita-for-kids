@@ -1,15 +1,34 @@
 # Gita for Kids — Handover
 
-## Current Status: Chapters 1, 12 & 15 Complete
+## Current Status: Chapters 1, 3, 12 & 15 Active
 
-The site is deployed at https://gita-for-kids.vercel.app. Three chapters are active:
+The site is deployed at https://gita-for-kids.vercel.app. Four chapters are active:
 - **Chapter 1** (Arjuna Vishada Yoga): 47/47 verses, 47 illustrations (Madhubani), complete
+- **Chapter 3** (Karma Yoga): 43/43 verses, 40/43 illustrations (Pattachitra), launched — 3 pending (v8, v16, v39)
 - **Chapter 12** (Bhakti Yoga): 20/20 verses, 20/20 illustrations (Pichwai), complete
 - **Chapter 15** (Purushottama Yoga): 20/20 verses, 20/20 illustrations (Kalamkari), complete
 
-## What Was Done This Session (2026-03-29)
+## What Was Done This Session (2026-03-31)
 
-### Chapter 15 — Purushottama Yoga (NEW)
+### Chapter 3 — Karma Yoga (NEW)
+
+Launched Chapter 3 with all 43 verses and 40/43 Pattachitra illustrations. Also added art style callout accordion to all chapter index pages.
+
+**Content:** All 43 Krishna-Arjuna dialogue verses on selfless action, duty, and yajna. Pattachitra art from Odisha — bold black outlines, multi-layered ornamental borders, narrative panel compositions.
+
+**Missing illustrations:** v8, v16, v39 — can be generated in a follow-up session.
+
+**New feature — Art Style Callout:** Every chapter index page now shows a collapsible `<details>` accordion with the folk art style's name, region, description, signature elements, and a fun fact. Data lives in `src/data/art-styles.yaml` (5 styles: Madhubani, Pichwai, Pattachitra, Kalamkari, Warli).
+
+**Files created:**
+- `content/chapters/03-karma-yoga/verses/001.yaml` through `043.yaml`
+- `public/illustrations/03-karma-yoga/001-043.png` (40 of 43)
+- `src/data/art-styles.yaml`
+- `docs/chapter-03-outline.md`
+
+---
+
+### Chapter 15 — Purushottama Yoga (2026-03-29)
 
 Wrote all 20 verse YAML files and generated all 20 Kalamkari-style illustrations:
 
@@ -41,18 +60,19 @@ Wrote all 20 verse YAML files and generated all 20 Kalamkari-style illustrations
 - `docs/chapter-15-outline.md` — verse-by-verse plan with story concepts
 
 ## Blockers
+- 3 missing Ch3 illustrations (v8, v16, v39) — not blocking, site live without them
 - Pichwai vs Madhubani visual distinction still needs work (noted in earlier session)
 
 ## Next Steps (in priority order)
 
 ### Immediate
-1. **Add Chapter 15 glossary terms** — new terms from this chapter (Ashvattha, Purushottama, Kshara/Akshara, Vaishvanara, etc.)
-2. **Add Gitamahatmyam page** — glory of the Gita (Varaha/Padma Purana) as closing/back matter
-3. **Revisit Pichwai style** — darker backgrounds, stronger negative constraints
+1. **Generate 3 missing Ch3 illustrations** — v8, v16, v39 (`--regenerate` flag)
+2. **Add Chapter 3 glossary terms** — Karma, Yajna, Dharma, Akarma, Vikarma, Nishkama, Prakriti, Guna, etc.
+3. **Add Chapter 15 glossary terms** — Ashvattha, Purushottama, Kshara/Akshara, Vaishvanara, etc.
+4. **Add Gitamahatmyam page** — glory of the Gita (Varaha/Padma Purana) as closing/back matter
 
 ### Chapter Order
-1. **Chapter 3 — Karma Yoga** (Pattachitra art style)
-2. **Chapter 2 — Sankhya Yoga** (Pichwai art style; 5 verses already drafted)
+1. **Chapter 2 — Sankhya Yoga** (Pichwai art style; 5 verses already drafted)
 
 ### Front & Back Matter
 1. **Gitamahatmyam** — glory of the Gita (from Varaha/Padma Purana) at the end
@@ -68,4 +88,4 @@ Wrote all 20 verse YAML files and generated all 20 Kalamkari-style illustrations
 - Chapter 15 outline: `docs/chapter-15-outline.md`
 - Chapter 12 outline: `docs/chapter-12-outline.md`
 
-Last reviewed: 2026-03-29
+Last reviewed: 2026-03-31
