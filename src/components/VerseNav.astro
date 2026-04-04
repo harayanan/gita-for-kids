@@ -34,7 +34,7 @@ function padVerse(n: number): string {
 
   <a
     href={`/chapters/${chapterSlug}`}
-    class="text-gray-500 hover:text-saffron transition-colors"
+    class="text-gray-600 hover:text-saffron transition-colors"
   >
     All Verses
   </a>
@@ -52,7 +52,7 @@ function padVerse(n: number): string {
       href={`/chapters/${nextChapter.slug}`}
       class="flex flex-col items-end text-saffron hover:text-saffron/80 transition-colors"
     >
-      <span class="text-xs text-gray-400">Next chapter &rarr;</span>
+      <span class="text-xs text-gray-500">Next chapter &rarr;</span>
       <span class="font-medium">Ch {nextChapter.number}: {nextChapter.name}</span>
     </a>
   ) : (

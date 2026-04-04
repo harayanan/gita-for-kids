@@ -60,13 +60,13 @@ function formatSpeaker(speaker: string): string {
         <span class="font-body text-sm font-semibold text-gray-700">
           Art Style: {artStyle.name} from {artStyle.region}
         </span>
-        <span class="ml-auto font-ui text-xs text-gray-400 group-open:hidden">Learn more</span>
-        <span class="ml-auto font-ui text-xs text-gray-400 hidden group-open:inline">Close</span>
+        <span class="ml-auto font-ui text-xs text-gray-500 group-open:hidden">Learn more</span>
+        <span class="ml-auto font-ui text-xs text-gray-500 hidden group-open:inline">Close</span>
       </summary>
       <div class="px-6 pb-5 pt-1 space-y-3">
         <p class="font-body text-sm text-gray-600 leading-relaxed">{artStyle.description}</p>
         <div>
-          <p class="font-ui text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1.5">Signature Elements</p>
+          <p class="font-ui text-xs font-semibold uppercase tracking-wider text-gray-600 mb-1.5">Signature Elements</p>
           <ul class="space-y-1">
             {artStyle.signature_elements.map((el: string) => (
               <li class="font-body text-sm text-gray-600 flex items-start gap-2">
@@ -100,11 +100,11 @@ function formatSpeaker(speaker: string): string {
             <div class="flex-1 min-w-0">
               <div class="flex items-center gap-2 mb-1">
                 <p lang="sa" class="font-devanagari text-base text-gray-800 truncate">{v.sanskrit}</p>
-                <span class="font-ui text-[10px] uppercase tracking-wider text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded shrink-0">
+                <span class="font-ui text-[10px] uppercase tracking-wider text-gray-500 bg-gray-100 px-1.5 py-0.5 rounded shrink-0">
                   {formatSpeaker(v.speaker)}
                 </span>
               </div>
-              <p class="font-body text-sm text-gray-500 mt-1 truncate">{v.meaning}</p>
+              <p class="font-body text-sm text-gray-600 mt-1 truncate">{v.meaning}</p>
             </div>
           </div>
         </a>
@@ -113,8 +113,8 @@ function formatSpeaker(speaker: string): string {
   ) : (
     <div class="text-center py-16">
       <p lang="sa" class="font-devanagari text-2xl text-saffron/40 mb-4" aria-hidden="true">॥</p>
-      <p class="font-body text-gray-500">Content for this chapter is being written.</p>
-      <p class="font-ui text-sm text-gray-400 mt-2">Check back soon!</p>
+      <p class="font-body text-gray-600">Content for this chapter is being written.</p>
+      <p class="font-ui text-sm text-gray-500 mt-2">Check back soon!</p>
     </div>
   )}
 

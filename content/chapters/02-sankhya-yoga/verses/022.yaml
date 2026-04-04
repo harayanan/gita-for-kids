@@ -13,15 +13,33 @@ dhatu_breakdown:
   - word: "जीर्णानि"
     parts: ["jṝ (to grow old, to wear out)"]
     meaning: "worn-out, old"
+  - word: "यथा"
+    parts: ["yathā (correlative particle)"]
+    meaning: "just as, in the same way as"
   - word: "विहाय"
     parts: ["vi (apart)", "hā (to leave, to abandon)"]
     meaning: "having cast off, having discarded"
+  - word: "नवानि"
+    parts: ["nava (new, fresh)"]
+    meaning: "new ones"
   - word: "गृह्णाति"
     parts: ["grah (to take, to seize)"]
     meaning: "takes, puts on"
+  - word: "नरः"
+    parts: ["nṛ (man, person)"]
+    meaning: "a person, a man"
+  - word: "अपराणि"
+    parts: ["apara (other, different)"]
+    meaning: "other, different ones"
+  - word: "तथा"
+    parts: ["tathā (correlative particle)"]
+    meaning: "so, in the same way"
   - word: "शरीराणि"
     parts: ["śarīra (body)"]
     meaning: "bodies"
+  - word: "अन्यानि"
+    parts: ["anya (other, another)"]
+    meaning: "other, different ones"
   - word: "संयाति"
     parts: ["sam (together, fully)", "yā (to go)"]
     meaning: "goes to, enters into"
