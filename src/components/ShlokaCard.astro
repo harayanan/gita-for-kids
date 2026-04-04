@@ -29,6 +29,7 @@ interface Props {
   story: Story;
   reflection: string;
   illustration?: string;
+  illustrationAlt?: string;
   glossary: { term: string; definition: string }[];
   folkArtStyle?: 'madhubani' | 'pichwai' | 'pattachitra' | 'warli' | 'kalamkari' | 'gond';
 }
@@ -44,6 +45,7 @@ const {
   story,
   reflection,
   illustration,
+  illustrationAlt,
   glossary,
   folkArtStyle = 'madhubani',
 } = Astro.props;
@@ -67,7 +69,7 @@ const {
     <div class="-mx-4 sm:-mx-8 md:-mx-16 mb-10 scroll-reveal">
       <img
         src={illustration}
-        alt={`Illustration for Chapter ${chapter}, Verse ${verse}`}
+        alt={illustrationAlt || `Illustration for Chapter ${chapter}, Verse ${verse}`}
         class="w-full"
         loading="lazy"
         transition:name={`illustration-${chapter}-${verse}`}

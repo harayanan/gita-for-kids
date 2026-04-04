@@ -5,6 +5,7 @@ import yaml from 'js-yaml';
 const CONTENT_DIR = path.resolve('content/chapters');
 const GLOSSARY_PATH = path.resolve('src/data/glossary.yaml');
 const ART_STYLES_PATH = path.resolve('src/data/art-styles.yaml');
+const ALT_TEXT_PATH = path.resolve('src/data/illustration-alt-text.yaml');
 
 export interface ChapterMeta {
   number: number;
@@ -112,4 +113,10 @@ export function getArtStyle(styleId: string): ArtStyle | undefined {
   const content = fs.readFileSync(ART_STYLES_PATH, 'utf-8');
   const styles = yaml.load(content) as ArtStyle[];
   return styles.find((s) => s.id === styleId);
+}
+
+export function getIllustrationAltText(chapterSlug: string, verseNum: string): string | undefined {
+  const content = fs.readFileSync(ALT_TEXT_PATH, 'utf-8');
+  const data = yaml.load(content) as Record<string, string>;
+  return data[`${chapterSlug}/${verseNum}`];
 }

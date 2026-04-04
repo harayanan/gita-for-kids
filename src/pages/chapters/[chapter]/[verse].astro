@@ -2,7 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import ShlokaCard from '../../../components/ShlokaCard.astro';
 import VerseNav from '../../../components/VerseNav.astro';
-import { getAllChapters, getChapter, getChapterVerses, getVerse, getGlossary } from '../../../lib/content';
+import { getAllChapters, getChapter, getChapterVerses, getVerse, getGlossary, getIllustrationAltText } from '../../../lib/content';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -35,6 +35,7 @@ const glossary = getGlossary();
 // Check if illustration exists in public/
 const illustrationFile = path.resolve(`public/illustrations/${slug}/${verseNum}.png`);
 const illustrationPath = fs.existsSync(illustrationFile) ? `/illustrations/${slug}/${verseNum}.png` : undefined;
+const illustrationAlt = illustrationPath ? getIllustrationAltText(slug!, verseNum!) : undefined;
 
 // Compute next active chapter for end-of-chapter CTA
 const allChapters = getAllChapters();
@@ -79,6 +80,7 @@ const nextChapter = currentIdx >= 0 && currentIdx < activeChapters.length - 1
     glossary={glossary}
     folkArtStyle={chapter.folk_art_style}
     illustration={illustrationPath}
+    illustrationAlt={illustrationAlt}
   />
 
   <VerseNav
