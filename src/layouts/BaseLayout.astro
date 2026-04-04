@@ -36,21 +36,46 @@ const {
     <ClientRouter />
   </head>
   <body class="min-h-screen flex flex-col bg-cream">
+    <!-- Skip to content (accessibility) -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[200] focus:bg-saffron focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-ui focus:text-sm">
+      Skip to content
+    </a>
     <div id="reading-progress" class="fixed top-0 left-0 h-[3px] bg-saffron z-[100] transition-[width] duration-100 ease-out" style="width: 0%"></div>
     <!-- Navigation -->
     <nav id="site-nav" class="bg-cream sticky top-0 z-50 transition-all duration-300" style="padding-top: 1.25rem; padding-bottom: 1.25rem;">
       <div class="max-w-reading mx-auto px-6 flex items-center justify-between">
         <a href="/" class="flex items-center gap-2 group">
-          <span class="font-devanagari text-[1.7rem] text-saffron group-hover:text-saffron/80 transition-colors leading-none">गीता</span>
+          <span lang="sa" class="font-devanagari text-[1.7rem] text-saffron group-hover:text-saffron/80 transition-colors leading-none">गीता</span>
           <span class="font-devanagari text-gold/40 text-lg leading-none">&#x2022;</span>
           <span class="font-ui text-sm font-semibold text-gray-600 tracking-wide uppercase">for Kids</span>
         </a>
         <div class="flex items-center gap-6 font-ui text-sm">
           <a href="/dhyanashloka" class="text-gray-600 hover:text-saffron transition-colors hidden sm:inline">Dhyanashloka</a>
-          <a href="/chapters/01-arjuna-vishada-yoga" class="text-gray-600 hover:text-saffron transition-colors">Chapters</a>
-          <a href="/glossary" class="text-gray-600 hover:text-saffron transition-colors">Glossary</a>
+          <a href="/" class="text-gray-600 hover:text-saffron transition-colors hidden sm:inline">Chapters</a>
+          <a href="/glossary" class="text-gray-600 hover:text-saffron transition-colors hidden sm:inline">Glossary</a>
           <a href="/gitamahatmyam" class="text-gray-600 hover:text-saffron transition-colors hidden sm:inline">Gitamahatmyam</a>
           <a href="/about" class="text-gray-600 hover:text-saffron transition-colors hidden sm:inline">About</a>
+          <!-- Mobile menu button -->
+          <button
+            id="mobile-menu-btn"
+            class="sm:hidden p-2 -mr-2 text-gray-600 hover:text-saffron transition-colors"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile dropdown menu -->
+      <div id="mobile-menu" class="hidden sm:hidden border-t border-gold/20 bg-cream">
+        <div class="max-w-reading mx-auto px-6 py-3 flex flex-col gap-3 font-ui text-sm">
+          <a href="/" class="text-gray-600 hover:text-saffron transition-colors py-1">Chapters</a>
+          <a href="/glossary" class="text-gray-600 hover:text-saffron transition-colors py-1">Glossary</a>
+          <a href="/dhyanashloka" class="text-gray-600 hover:text-saffron transition-colors py-1">Dhyanashloka</a>
+          <a href="/gitamahatmyam" class="text-gray-600 hover:text-saffron transition-colors py-1">Gitamahatmyam</a>
+          <a href="/about" class="text-gray-600 hover:text-saffron transition-colors py-1">About</a>
         </div>
       </div>
       <!-- Gold gradient bottom border -->
@@ -61,14 +86,14 @@ const {
     <slot name="breadcrumb" />
 
     <!-- Main Content -->
-    <main class="flex-1">
+    <main id="main-content" class="flex-1">
       <slot />
     </main>
 
     <!-- Footer -->
     <footer class="border-t border-gold/20 py-8 mt-16">
       <div class="max-w-reading mx-auto px-6 text-center font-ui text-sm text-gray-500">
-        <p class="font-devanagari text-lg text-saffron/60 mb-2">श्रीमद्भगवद्गीता</p>
+        <p lang="sa" class="font-devanagari text-lg text-saffron/60 mb-2">श्रीमद्भगवद्गीता</p>
         <p>Gita for Kids &mdash; Ancient wisdom, young hearts</p>
       </div>
     </footer>
@@ -125,13 +150,26 @@ const {
         update();
       }
 
+      function initMobileMenu() {
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        if (!btn || !menu) return;
+        btn.addEventListener('click', () => {
+          const expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!expanded));
+          menu.classList.toggle('hidden');
+        });
+      }
+
       initScrollReveal();
       initProgress();
       initNavScroll();
+      initMobileMenu();
       document.addEventListener('astro:after-swap', () => {
         initScrollReveal();
         initProgress();
         initNavScroll();
+        initMobileMenu();
       });
     </script>
   </body>

@@ -3,19 +3,22 @@ interface Props {
   chapterSlug: string;
   currentVerse: number;
   totalVerses: number;
+  position?: 'top' | 'bottom';
+  nextChapter?: { slug: string; number: number; name: string } | null;
 }
 
-const { chapterSlug, currentVerse, totalVerses } = Astro.props;
+const { chapterSlug, currentVerse, totalVerses, position = 'bottom', nextChapter = null } = Astro.props;
 
 const prevVerse = currentVerse > 1 ? currentVerse - 1 : null;
 const nextVerse = currentVerse < totalVerses ? currentVerse + 1 : null;
+const isLastVerse = !nextVerse;
 
 function padVerse(n: number): string {
   return String(n).padStart(3, '0');
 }
 ---
 
-<!-- Desktop inline nav (hidden on mobile) -->
+<!-- Desktop inline nav -->
 <nav class="hidden md:flex max-w-reading mx-auto px-4 py-8 items-center justify-between font-ui text-sm">
   {prevVerse ? (
     <a
@@ -44,57 +47,94 @@ function padVerse(n: number): string {
       <span>Verse {nextVerse}</span>
       <span>&rarr;</span>
     </a>
+  ) : nextChapter ? (
+    <a
+      href={`/chapters/${nextChapter.slug}`}
+      class="flex flex-col items-end text-saffron hover:text-saffron/80 transition-colors"
+    >
+      <span class="text-xs text-gray-400">Next chapter &rarr;</span>
+      <span class="font-medium">Ch {nextChapter.number}: {nextChapter.name}</span>
+    </a>
   ) : (
     <span class="text-gray-300">End &rarr;</span>
   )}
 </nav>
 
-<!-- Mobile fixed bottom nav (hidden on desktop) -->
-<div class="h-16 md:hidden" aria-hidden="true"></div>
-<nav class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-cream border-t-2 border-gold/30 font-ui text-sm">
-  <div class="flex items-stretch h-14">
-    <!-- Prev -->
-    {prevVerse ? (
+{/* End-of-chapter celebration banner (bottom only, last verse only) */}
+{position === 'bottom' && isLastVerse && nextChapter && (
+  <div class="max-w-reading mx-auto px-4 mb-4">
+    <div class="rounded-xl border border-gold/30 bg-saffron/5 p-6 text-center">
+      <p lang="sa" class="font-devanagari text-2xl text-saffron/60 mb-2">॥ इति ॥</p>
+      <p class="font-body text-lg text-gray-700 mb-4">You finished this chapter!</p>
       <a
-        href={`/chapters/${chapterSlug}/${padVerse(prevVerse)}`}
-        class="flex-1 flex items-center justify-center gap-1.5 text-saffron active:bg-saffron/10 transition-colors min-h-[44px]"
+        href={`/chapters/${nextChapter.slug}`}
+        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-saffron text-white font-ui text-sm font-medium hover:bg-saffron/90 transition-colors"
       >
-        <span>&larr;</span>
-        <span>Prev</span>
-      </a>
-    ) : (
-      <span class="flex-1 flex items-center justify-center text-gray-300 min-h-[44px]">
-        <span>&larr;</span>
-      </span>
-    )}
-
-    <!-- Divider -->
-    <div class="w-px bg-gold/20 my-2"></div>
-
-    <!-- All Verses -->
-    <a
-      href={`/chapters/${chapterSlug}`}
-      class="flex-1 flex items-center justify-center text-gray-600 active:bg-saffron/10 transition-colors min-h-[44px] font-medium"
-    >
-      All Verses
-    </a>
-
-    <!-- Divider -->
-    <div class="w-px bg-gold/20 my-2"></div>
-
-    <!-- Next -->
-    {nextVerse ? (
-      <a
-        href={`/chapters/${chapterSlug}/${padVerse(nextVerse)}`}
-        class="flex-1 flex items-center justify-center gap-1.5 text-saffron active:bg-saffron/10 transition-colors min-h-[44px]"
-      >
-        <span>Next</span>
+        Continue to Chapter {nextChapter.number}: {nextChapter.name}
         <span>&rarr;</span>
       </a>
-    ) : (
-      <span class="flex-1 flex items-center justify-center text-gray-300 min-h-[44px]">
-        <span>&rarr;</span>
-      </span>
-    )}
+    </div>
   </div>
-</nav>
+)}
+
+{/* Mobile fixed bottom nav (bottom position only) */}
+{position === 'bottom' && (
+  <>
+    <div class="h-16 md:hidden" aria-hidden="true"></div>
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-cream border-t-2 border-gold/30 font-ui text-sm">
+      <div class="flex items-stretch h-14">
+        {/* Prev */}
+        {prevVerse ? (
+          <a
+            href={`/chapters/${chapterSlug}/${padVerse(prevVerse)}`}
+            class="flex-1 flex items-center justify-center gap-1.5 text-saffron active:bg-saffron/10 transition-colors min-h-[44px]"
+          >
+            <span>&larr;</span>
+            <span>Prev</span>
+          </a>
+        ) : (
+          <span class="flex-1 flex items-center justify-center text-gray-300 min-h-[44px]">
+            <span>&larr;</span>
+          </span>
+        )}
+
+        {/* Divider */}
+        <div class="w-px bg-gold/20 my-2"></div>
+
+        {/* All Verses */}
+        <a
+          href={`/chapters/${chapterSlug}`}
+          class="flex-1 flex items-center justify-center text-gray-600 active:bg-saffron/10 transition-colors min-h-[44px] font-medium"
+        >
+          All Verses
+        </a>
+
+        {/* Divider */}
+        <div class="w-px bg-gold/20 my-2"></div>
+
+        {/* Next */}
+        {nextVerse ? (
+          <a
+            href={`/chapters/${chapterSlug}/${padVerse(nextVerse)}`}
+            class="flex-1 flex items-center justify-center gap-1.5 text-saffron active:bg-saffron/10 transition-colors min-h-[44px]"
+          >
+            <span>Next</span>
+            <span>&rarr;</span>
+          </a>
+        ) : nextChapter ? (
+          <a
+            href={`/chapters/${nextChapter.slug}`}
+            class="flex-1 flex items-center justify-center gap-1.5 text-saffron active:bg-saffron/10 transition-colors min-h-[44px]"
+          >
+            <span>Ch {nextChapter.number}</span>
+            <span>&rarr;</span>
+          </a>
+        ) : (
+          <span class="flex-1 flex items-center justify-center text-gray-300 min-h-[44px]">
+            <span>&rarr;</span>
+          </span>
+        )}
+      </div>
+    </nav>
+  </>
+)}

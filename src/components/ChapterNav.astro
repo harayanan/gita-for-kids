@@ -4,6 +4,7 @@ interface ChapterMeta {
   name: string;
   sanskrit_name: string;
   number: number;
+  status?: string;
 }
 
 interface Props {
@@ -13,8 +14,12 @@ interface Props {
 
 const { chapters, currentChapter } = Astro.props;
 
-const prev = chapters.find((c) => c.number === currentChapter - 1);
-const next = chapters.find((c) => c.number === currentChapter + 1);
+// Only link to active chapters to avoid 404s
+const activeChapters = chapters.filter((c) => !c.status || c.status === 'active');
+const sortedActive = activeChapters.sort((a, b) => a.number - b.number);
+const currentIndex = sortedActive.findIndex((c) => c.number === currentChapter);
+const prev = currentIndex > 0 ? sortedActive[currentIndex - 1] : undefined;
+const next = currentIndex < sortedActive.length - 1 ? sortedActive[currentIndex + 1] : undefined;
 ---
 
 <nav class="max-w-reading mx-auto px-4 py-8 flex items-center justify-between font-ui text-sm border-t border-gold/20 mt-12">

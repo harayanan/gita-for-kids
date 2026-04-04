@@ -9,12 +9,13 @@ const { sanskrit, transliteration } = Astro.props;
 
 <div class="text-center space-y-4 py-8">
   <p
+    lang="sa"
     class="font-devanagari text-3xl md:text-4xl lg:text-5xl leading-relaxed text-gray-900 tracking-wider"
     style="text-shadow: 0 1px 2px rgba(196, 162, 78, 0.15);"
   >
     {sanskrit}
   </p>
-  <p class="font-body text-base md:text-lg italic text-gray-500 tracking-wide">
+  <p lang="sa" class="font-body text-base md:text-lg italic text-gray-500 tracking-wide">
     {transliteration}
   </p>
 </div>

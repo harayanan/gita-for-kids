@@ -44,6 +44,7 @@ export interface Verse {
 
 export interface GlossaryEntry {
   term: string;
+  sanskrit?: string;
   definition: string;
 }
 

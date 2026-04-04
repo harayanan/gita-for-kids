@@ -413,12 +413,19 @@ async function generateImageWithRetry(prompt, apiKey, maxRetries = 3) {
 // Save image
 // ---------------------------------------------------------------------------
 
-function saveImage(base64Data, outputPath) {
+function saveImage(base64Data, outputPath, mimeType = 'image/png') {
   mkdirSync(dirname(outputPath), { recursive: true });
   const buffer = Buffer.from(base64Data, 'base64');
+
+  // If API returns JPEG but we want PNG, convert via sharp or warn
+  const isJpeg = mimeType === 'image/jpeg' || buffer[0] === 0xFF && buffer[1] === 0xD8;
+  if (isJpeg && outputPath.endsWith('.png')) {
+    console.warn(`  ⚠ API returned JPEG data — saving as .png (browser-compatible, not true PNG)`);
+  }
+
   writeFileSync(outputPath, buffer);
   const kb = (buffer.length / 1024).toFixed(1);
-  console.log(`  Saved: ${outputPath} (${kb} KB)`);
+  console.log(`  Saved: ${outputPath} (${kb} KB, ${isJpeg ? 'JPEG' : 'PNG'} data)`);
 }
 
 // ---------------------------------------------------------------------------
@@ -464,7 +471,7 @@ async function generateIllustration(verseNum, chapter, options = {}) {
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
   console.log(`  Success via ${model} in ${elapsed}s (mimeType: ${mimeType})`);
 
-  saveImage(base64, outputPath);
+  saveImage(base64, outputPath, mimeType);
   return { success: true, path: outputPath, model, elapsed };
 }
 

@@ -22,6 +22,28 @@ function TooltipWord({ term, definition }: { term: string; definition: string })
     }
   }, [show]);
 
+  const handleClick = (e: React.MouseEvent) => {
+    // Tap-to-toggle for touch devices
+    e.preventDefault();
+    setShow((prev) => !prev);
+  };
+
+  // Close on outside tap
+  useEffect(() => {
+    if (!show) return;
+    const handleOutside = (e: Event) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setShow(false);
+      }
+    };
+    document.addEventListener('touchstart', handleOutside);
+    document.addEventListener('mousedown', handleOutside);
+    return () => {
+      document.removeEventListener('touchstart', handleOutside);
+      document.removeEventListener('mousedown', handleOutside);
+    };
+  }, [show]);
+
   return (
     <span
       ref={ref}
@@ -30,20 +52,26 @@ function TooltipWord({ term, definition }: { term: string; definition: string })
       onMouseLeave={() => setShow(false)}
       onFocus={() => setShow(true)}
       onBlur={() => setShow(false)}
+      onClick={handleClick}
       tabIndex={0}
+      role="button"
+      aria-expanded={show}
+      aria-label={`${term}: ${definition}`}
     >
-      <span className="border-b border-dashed border-gold/60 text-saffron font-medium">
+      <span className="border-b border-dashed border-gold/60 text-saffron font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-saffron/50 focus-visible:rounded-sm">
         {term}
       </span>
       {show && (
         <span
-          className={`absolute z-50 left-1/2 -translate-x-1/2 w-56 px-3 py-2 rounded-lg shadow-lg bg-gray-900 text-white text-sm font-sans leading-snug pointer-events-none ${
+          className={`absolute z-50 left-1/2 -translate-x-1/2 w-56 max-w-[calc(100vw-2rem)] px-3 py-2 rounded-lg shadow-lg bg-gray-900 text-white text-sm font-sans leading-snug pointer-events-none ${
             position === 'above' ? 'bottom-full mb-2' : 'top-full mt-2'
           }`}
+          role="tooltip"
         >
           <span className="block font-semibold text-gold mb-0.5">{term}</span>
           <span className="block text-gray-200">{definition}</span>
           <span
+            aria-hidden="true"
             className={`absolute left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45 ${
               position === 'above' ? '-bottom-1' : '-top-1'
             }`}

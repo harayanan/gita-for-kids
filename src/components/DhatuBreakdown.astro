@@ -12,10 +12,10 @@ interface Props {
 const { breakdown } = Astro.props;
 ---
 
-<details class="py-6 group">
+<details class="py-6 group" aria-label="Word by word Sanskrit breakdown">
   <summary class="cursor-pointer list-none flex items-center gap-2 select-none [&::-webkit-details-marker]:hidden">
     <span class="font-ui text-xs font-semibold uppercase tracking-widest text-gold">Word by Word</span>
-    <svg class="w-4 h-4 text-gold/60 transition-transform duration-200 group-open:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <svg class="w-4 h-4 text-gold/60 transition-transform duration-200 group-open:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
       <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
     </svg>
     <span class="font-ui text-[10px] text-gray-400 ml-1">({breakdown.length} words)</span>
@@ -23,7 +23,7 @@ const { breakdown } = Astro.props;
   <div class="mt-4 space-y-3">
     {breakdown.map((entry) => (
       <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 py-2 border-b border-gold/10 last:border-0">
-        <span class="font-devanagari text-lg text-gray-900 sm:w-48 shrink-0">{entry.word}</span>
+        <span lang="sa" class="font-devanagari text-lg text-gray-900 sm:w-48 shrink-0">{entry.word}</span>
         <div class="flex-1">
           <span class="font-ui text-sm text-gray-500">
             {entry.parts.join(' + ')}

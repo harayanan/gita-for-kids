@@ -35,6 +35,16 @@ const glossary = getGlossary();
 // Check if illustration exists in public/
 const illustrationFile = path.resolve(`public/illustrations/${slug}/${verseNum}.png`);
 const illustrationPath = fs.existsSync(illustrationFile) ? `/illustrations/${slug}/${verseNum}.png` : undefined;
+
+// Compute next active chapter for end-of-chapter CTA
+const allChapters = getAllChapters();
+const activeChapters = allChapters
+  .filter((c) => c.status === 'active')
+  .sort((a, b) => a.number - b.number);
+const currentIdx = activeChapters.findIndex((c) => c.number === chapter.number);
+const nextChapter = currentIdx >= 0 && currentIdx < activeChapters.length - 1
+  ? { slug: activeChapters[currentIdx + 1].slug, number: activeChapters[currentIdx + 1].number, name: activeChapters[currentIdx + 1].name }
+  : null;
 ---
 
 <BaseLayout title={`${chapter.name} ${chapter.number}.${verse.verse} — Gita for Kids`}>
@@ -47,6 +57,14 @@ const illustrationPath = fs.existsSync(illustrationFile) ? `/illustrations/${slu
       <li class="text-gray-600">Verse {verse.verse}</li>
     </ol>
   </nav>
+
+  <VerseNav
+    chapterSlug={slug!}
+    currentVerse={verse.verse}
+    totalVerses={chapter.verse_count}
+    position="top"
+    nextChapter={nextChapter}
+  />
 
   <ShlokaCard
     chapter={verse.chapter}
@@ -67,5 +85,7 @@ const illustrationPath = fs.existsSync(illustrationFile) ? `/illustrations/${slu
     chapterSlug={slug!}
     currentVerse={verse.verse}
     totalVerses={chapter.verse_count}
+    position="bottom"
+    nextChapter={nextChapter}
   />
 </BaseLayout>

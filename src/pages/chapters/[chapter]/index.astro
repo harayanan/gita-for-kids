@@ -91,7 +91,7 @@ function formatSpeaker(speaker: string): string {
         <a
           href={`/chapters/${slug}/${String(v.verse).padStart(3, '0')}`}
           class="block rounded-lg border border-gold/15 hover:border-saffron/40 p-5 transition-all hover:shadow-sm bg-white/40 scroll-reveal"
-          style={`border-left: 3px solid ${accentColor}; transition-delay: ${index * 0.05}s`}
+          style={`border-left: 3px solid ${accentColor}; transition-delay: ${Math.min(index * 0.05, 1)}s`}
         >
           <div class="flex items-start gap-4">
             <span class="font-ui text-xs font-bold text-gold shrink-0 mt-1">
@@ -99,7 +99,7 @@ function formatSpeaker(speaker: string): string {
             </span>
             <div class="flex-1 min-w-0">
               <div class="flex items-center gap-2 mb-1">
-                <p class="font-devanagari text-base text-gray-800 truncate">{v.sanskrit}</p>
+                <p lang="sa" class="font-devanagari text-base text-gray-800 truncate">{v.sanskrit}</p>
                 <span class="font-ui text-[10px] uppercase tracking-wider text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded shrink-0">
                   {formatSpeaker(v.speaker)}
                 </span>
@@ -112,7 +112,7 @@ function formatSpeaker(speaker: string): string {
     </div>
   ) : (
     <div class="text-center py-16">
-      <p class="font-devanagari text-2xl text-saffron/40 mb-4">॥</p>
+      <p lang="sa" class="font-devanagari text-2xl text-saffron/40 mb-4" aria-hidden="true">॥</p>
       <p class="font-body text-gray-500">Content for this chapter is being written.</p>
       <p class="font-ui text-sm text-gray-400 mt-2">Check back soon!</p>
     </div>

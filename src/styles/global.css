@@ -83,3 +83,18 @@ article[data-speaker="krishna"] { --speaker-accent: #1A6847; --speaker-bg: rgba(
 article[data-speaker] {
   background-color: var(--speaker-bg);
 }
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  #reading-progress {
+    transition: none;
+  }
+  #site-nav {
+    transition: none;
+  }
+}

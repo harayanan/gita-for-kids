@@ -49,6 +49,9 @@ const letters = Object.keys(grouped).sort();
               <div class="py-2">
                 <dt class="font-body text-lg font-semibold text-gray-900 capitalize">
                   {entry.term}
+                  {entry.sanskrit && (
+                    <span lang="sa" class="font-devanagari text-base font-normal text-saffron/70 ml-2">{entry.sanskrit}</span>
+                  )}
                 </dt>
                 <dd class="font-body text-base text-gray-600 leading-relaxed mt-1">
                   {entry.definition}
