@@ -73,8 +73,8 @@ All content follows **Advaita Vedanta** (Shankaracharya's non-dualism). Atman is
 1. **Chapter 4 — Jnana Karma Sannyasa Yoga** (Warli art style)
 
 ### Front & Back Matter
-1. Create front matter pages (title page, characters, pronunciation guide)
-2. Build print layout (CSS @page rules)
+1. ~~Characters page + Pronunciation guide~~ — done ✓
+2. Print layout CSS (`@page` rules) — basic rules added, needs testing with actual print
 
 ## Key Files
 - CLAUDE.md: project architecture and dev commands
