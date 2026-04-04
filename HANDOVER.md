@@ -56,17 +56,16 @@ Ran 5 parallel quality audit agents, then systematically addressed all 38 findin
 ### Philosophical Orientation
 All content follows **Advaita Vedanta** (Shankaracharya's non-dualism). Atman is Brahman; liberation through jnana; maya as the power of appearance; Krishna speaks as Brahman itself.
 
-## Remaining Items (Print Pipeline Only)
+## Remaining Items
 
-All code and content fixes from the QA audit are complete. The only remaining items require **image regeneration**:
+### Resolved This Session
+- ~~4 Ch1 illustrations not Madhubani~~ → Regenerated v1, v2, v8, v9 ✓
+- ~~Pichwai too similar to Madhubani~~ → All 20 Ch12 images regenerated with dark backgrounds ✓
+- ~~Front matter pages~~ → Characters + Pronunciation guide created ✓
 
-1. **203 images are JPEG data saved as .png** — browsers handle it, print pipelines will not
-2. **Images web-resolution only** (1376×768) — print requires 2816×1536 minimum
-3. **4 Ch1 illustrations** (v1, v2, v8, v9) still not in Madhubani style
-4. **Pichwai (Ch12) too similar to Madhubani** — needs darker backgrounds
-5. **6 images** at 1408×768 vs 197 at 1376×768 (dimension inconsistency)
-
-These can all be addressed in a single regeneration pass with updated prompts.
+### Still Pending (for print publication)
+1. **203 images are JPEG data saved as .png** — browsers handle it, print pipelines will not. Need format conversion or true PNG regeneration.
+2. **Images web-resolution only** (1376×768) — print requires 2816×1536 minimum. Requires higher-res regeneration (Gemini API may not support this natively).
 
 ## Next Steps
 
