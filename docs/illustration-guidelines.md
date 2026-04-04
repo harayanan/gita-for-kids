@@ -48,14 +48,17 @@ Each chapter has a `folk_art_style` in its `meta.yaml`. The illustration script 
 
 ### Pichwai (Chapters 7, 12, 17)
 
-- "Pichwai painting style from Nathdwara, Rajasthan"
-- "Rich, detailed, devotional composition centered on Krishna"
+- "Traditional Nathdwara Pichwai temple painting style from Rajasthan"
+- "DARK background — deep blue (#0A1A3A), black (#1A1A2E), or deep green (#0A2A1A). NEVER cream, NEVER white, NEVER light-toned backgrounds"
+- "Rich, detailed, devotional composition centered on Krishna (often as Shrinathji)"
 - "Flat perspective — NO shading, NO atmospheric depth, NO 3D rendering"
-- "Intricate lotus pond motifs, cows, peacocks, flowering trees where relevant"
+- "Signature Pichwai elements: lotus ponds, cows, peacocks, gopis, flowering trees"
+- "Rich jewel-tone palette: emerald, sapphire, ruby, gold on dark ground — NOT the warm saffron/terracotta palette"
 - "Dense floral patterns filling all empty spaces (horror vacui)"
 - "Figures in strict profile OR frontal view, NEVER three-quarter view"
-- "Ornamental border with lotus, paisley, or floral chain on all four sides"
+- "Ornate textile-like border with lotus, paisley, or floral chain on all four sides — gold on dark ground"
 - "Devotional, sacred atmosphere — temple painting aesthetic"
+- "NOT Madhubani — no cream backgrounds, no red/saffron dominant palette, no geometric folk patterns, no double-line outlines"
 
 ### Pattachitra (Chapters 3, 8, 13, 18)
 
@@ -100,6 +103,8 @@ Also include this negative constraint in every prompt:
 
 > "NO bright green grass, NO blue sky, NO purple, NO neon colors, NO black backgrounds"
 
+**Exception — Pichwai style:** Pichwai paintings use dark backgrounds (deep blue, black, deep green) with jewel-tone colors. For Pichwai chapters, replace the cream background and "NO black backgrounds" constraint with dark background colors and a jewel-tone palette (see Pichwai section above).
+
 ---
 
 ## 4. Art Direction Rule
@@ -114,18 +119,28 @@ The modern analogies (cricket, sports, school) exist only in the narrative text.
 
 **Completed:** `004.png` and `007.png` were regenerated on 2026-03-22 (modern scenes → mythological Madhubani).
 
-Remaining (optional quality polish for verses 1-10):
+### Ch1 Madhubani style polish
 
 | Priority | Image | Current Issue | Replacement Scene |
 |----------|-------|---------------|-------------------|
-| MEDIUM | `001.png` | Rajput miniature style, lacks Madhubani | Dhritarashtra on throne, Sanjaya kneeling, battlefield visible through arch — in flat Madhubani style |
-| MEDIUM | `002.png` | Naturalistic tree/landscape | Duryodhana approaching Drona under Madhubani Tree of Life with patterned leaves |
-| MEDIUM | `008.png` | Naturalistic sunset | Bhishma towering figure with bow, Madhubani patterned background, smaller Devavrata vow scene inset |
-| MEDIUM | `009.png` | Naturalistic cliff landscape | Servant carrying king up stylized patterned cliff, Madhubani flat rendering |
+| HIGH | `001.png` | Rajput miniature style, lacks Madhubani | Dhritarashtra on throne, Sanjaya kneeling, battlefield visible through arch — in flat Madhubani style |
+| HIGH | `002.png` | Naturalistic tree/landscape | Duryodhana approaching Drona under Madhubani Tree of Life with patterned leaves |
+| HIGH | `008.png` | Naturalistic sunset | Bhishma towering figure with bow, Madhubani patterned background, smaller Devavrata vow scene inset |
+| HIGH | `009.png` | Naturalistic cliff landscape | Servant carrying king up stylized patterned cliff, Madhubani flat rendering |
 | LOW | `003.png` | Already good — minor refinements | Add more Madhubani fill patterns to warriors' clothing |
 | LOW | `006.png` | Already good — minor refinements | Ensure Abhimanyu's design connects to Arjuna's |
 | LOW | `005.png` | Good — minor refinements | Strengthen warrior connection in medallions |
 | LOW | `010.png` | Good — minor refinements | Push soldiers further into flat Madhubani profile |
+
+### Ch12 Pichwai style refresh
+
+All 20 Ch12 illustrations need regeneration — current images look too similar to Madhubani (cream backgrounds, warm saffron palette, geometric patterns). Must be regenerated with proper Pichwai characteristics: dark backgrounds, jewel tones, temple painting aesthetic.
+
+| Priority | Images | Current Issue | Target |
+|----------|--------|---------------|--------|
+| MEDIUM | `001.png` – `020.png` (all 20) | Cream backgrounds, warm palette, looks like Madhubani | Dark backgrounds (deep blue/black/green), jewel-tone palette, Nathdwara temple painting style, lotus ponds, cows, peacocks |
+
+Regenerate with: `node scripts/generate-illustration.mjs --chapter 12 --batch 1-20 --regenerate`
 
 ---
 

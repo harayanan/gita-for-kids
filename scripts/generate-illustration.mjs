@@ -116,15 +116,17 @@ const STYLE_PROMPTS = {
   pichwai: {
     name: 'Pichwai (Nathdwara)',
     prompt: `STYLE REQUIREMENTS (CRITICAL — follow every rule exactly):
-- Pichwai painting style from Nathdwara, Rajasthan
-- Rich, detailed, devotional composition centered on Krishna
+- In the style of traditional Nathdwara Pichwai temple paintings from Rajasthan
+- DARK BACKGROUND (MANDATORY): deep blue (#0A1A3A), black (#1A1A2E), or deep green (#0A2A1A) — NEVER cream, NEVER white, NEVER light backgrounds
+- Rich, detailed, devotional composition centered on Krishna (as Shrinathji where appropriate)
 - Flat perspective — NO shading, NO atmospheric depth, NO 3D rendering
-- Intricate lotus pond motifs, cows, peacocks, flowering trees where relevant
+- Signature Pichwai motifs: lotus ponds, cows, peacocks, gopis, flowering trees
+- Rich jewel-tone palette: emerald, sapphire, ruby, gold on dark ground — NOT warm saffron/terracotta
 - Dense floral patterns filling all empty spaces (horror vacui)
 - Figures in strict profile OR frontal view, NEVER three-quarter view
-- Ornamental border with lotus, paisley, or floral chain on all four sides
-- Rich jewel-tone palette with gold accents
+- Ornate textile-like border with lotus, paisley, or floral chain — gold on dark ground
 - Devotional, sacred atmosphere — temple painting aesthetic
+- NOT Madhubani — avoid cream backgrounds, geometric folk patterns, double-line outlines, and red/saffron dominant palette
 - Always illustrate the verse/mythological scene, NOT any modern story analogy`,
   },
   pattachitra: {
@@ -307,6 +309,26 @@ function buildPrompt(verseData, chapterMeta) {
     ? `\nCHARACTERS (use these exact visual attributes):\n${characters.map(c => `- ${c}`).join('\n')}\n`
     : '';
 
+  // Pichwai uses a dark background with jewel tones instead of the standard cream palette
+  const isPichwai = artStyle === 'pichwai';
+  const colorPalette = isPichwai
+    ? `COLOR PALETTE (Pichwai jewel tones on dark ground):
+- Dark background: deep blue #0A1A3A, black #1A1A2E, or deep green #0A2A1A
+- Emerald green: #0D6B3F
+- Sapphire blue: #1A3A8A
+- Ruby red: #8B1A1A
+- Gold/amber: #C4A24E
+- Warm white for highlights: #F5E6D3
+- NO cream backgrounds, NO bright saffron, NO neon colors, NO light-toned backgrounds`
+    : `COLOR PALETTE (use ONLY these six colors):
+- Saffron/orange: #C75B12
+- Deep indigo/blue: #2D3A87
+- Terracotta/brown: #B85C3A
+- Forest green: #1A6847
+- Gold/amber: #C4A24E
+- Cream background: #FDF6E3
+- NO bright green grass, NO blue sky, NO purple, NO neon colors, NO black backgrounds`;
+
   return `Create a ${styleConfig.name} folk art style illustration for a children's book about the Bhagavad Gita.
 
 SCENE:
@@ -314,14 +336,7 @@ ${scene}
 ${characterBlock}
 ${styleConfig.prompt}
 
-COLOR PALETTE (use ONLY these six colors):
-- Saffron/orange: #C75B12
-- Deep indigo/blue: #2D3A87
-- Terracotta/brown: #B85C3A
-- Forest green: #1A6847
-- Gold/amber: #C4A24E
-- Cream background: #FDF6E3
-- NO bright green grass, NO blue sky, NO purple, NO neon colors, NO black backgrounds
+${colorPalette}
 
 CRITICAL — NO TEXT IN THE IMAGE:
 - Do NOT include any words, letters, labels, captions, titles, chapter numbers, or color swatches

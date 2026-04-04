@@ -23,6 +23,48 @@
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
+
+    body::before, body::after {
+      display: none;
+    }
+
+    #site-nav, #reading-progress, #mobile-menu-btn,
+    .md\\:hidden, [class*="fixed bottom"] {
+      display: none !important;
+    }
+
+    main { padding-top: 0; }
+
+    .scroll-reveal {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    article {
+      page-break-inside: avoid;
+    }
+
+    .max-w-reading {
+      max-width: 100%;
+    }
+
+    img {
+      max-width: 100%;
+      page-break-inside: avoid;
+    }
+
+    @page {
+      size: A4;
+      margin: 2cm 2.5cm;
+    }
+
+    @page :first {
+      margin-top: 4cm;
+    }
+
+    a[href]::after {
+      content: none;
+    }
   }
 }
 

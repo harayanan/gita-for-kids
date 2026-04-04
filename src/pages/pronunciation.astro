@@ -1,0 +1,339 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FolkArtBorder from '../components/FolkArtBorder.astro';
+---
+
+<BaseLayout title="Pronunciation Guide — Gita for Kids" description="A simple guide to reading Sanskrit words aloud. Learn the vowels, consonants, and common words you'll find in the Bhagavad Gita.">
+  <div class="max-w-reading mx-auto px-4 py-12">
+    <!-- Header -->
+    <header class="text-center mb-12">
+      <span class="font-ui text-xs font-semibold uppercase tracking-widest text-gold">Reference</span>
+      <h1 class="font-body text-3xl font-bold text-gray-900 mt-3">How to Say Sanskrit Words</h1>
+      <p class="font-body text-base text-gray-600 mt-3 max-w-md mx-auto leading-relaxed">
+        Sanskrit is one of the oldest languages in the world. Here's a simple guide
+        to reading the Sanskrit words you'll find in this book.
+      </p>
+    </header>
+
+    <!-- Intro -->
+    <FolkArtBorder style="madhubani" class="mb-14">
+      <div class="font-body text-gray-700 leading-relaxed space-y-4 p-2">
+        <p>
+          Don't worry about getting every sound perfect! Sanskrit is a beautiful
+          language, and the more you read, the more natural it will feel. This guide
+          covers the special letters you'll see in the transliterations throughout the book.
+        </p>
+        <p>
+          The transliteration system we use is called <strong class="text-saffron">IAST</strong>
+          (International Alphabet of Sanskrit Transliteration). It uses dots and lines
+          over letters to show you exactly how to pronounce each sound.
+        </p>
+      </div>
+    </FolkArtBorder>
+
+    <!-- Vowels Section -->
+    <section class="mb-14 scroll-reveal">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-saffron/10 font-ui text-sm font-bold text-saffron">1</span>
+        <h2 class="font-body text-xl font-bold text-gray-900">Vowels</h2>
+        <div class="flex-1 h-px bg-gradient-to-r from-gold/30 to-transparent"></div>
+      </div>
+
+      <p class="font-body text-gray-600 mb-6 leading-relaxed">
+        Sanskrit vowels come in pairs — short and long. A long vowel is held for
+        twice as long as a short one. You'll see a line over the letter (like <span lang="sa" class="font-body text-saffron font-semibold">ā</span>)
+        to show it's long.
+      </p>
+
+      <!-- Short vowels -->
+      <h3 class="font-ui text-xs font-semibold uppercase tracking-widest text-gold mb-4">Short Vowels</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+        <div class="bg-white/60 rounded-lg border border-gold/15 px-5 py-4 text-center">
+          <span lang="sa" class="font-devanagari text-3xl text-saffron block mb-1">अ</span>
+          <span lang="sa" class="font-body text-lg font-semibold text-gray-900">a</span>
+          <p class="font-body text-sm text-gray-600 mt-1">like <strong>u</strong> in "b<strong>u</strong>t"</p>
+        </div>
+        <div class="bg-white/60 rounded-lg border border-gold/15 px-5 py-4 text-center">
+          <span lang="sa" class="font-devanagari text-3xl text-saffron block mb-1">इ</span>
+          <span lang="sa" class="font-body text-lg font-semibold text-gray-900">i</span>
+          <p class="font-body text-sm text-gray-600 mt-1">like <strong>i</strong> in "s<strong>i</strong>t"</p>
+        </div>
+        <div class="bg-white/60 rounded-lg border border-gold/15 px-5 py-4 text-center">
+          <span lang="sa" class="font-devanagari text-3xl text-saffron block mb-1">उ</span>
+          <span lang="sa" class="font-body text-lg font-semibold text-gray-900">u</span>
+          <p class="font-body text-sm text-gray-600 mt-1">like <strong>u</strong> in "p<strong>u</strong>t"</p>
+        </div>
+      </div>
+
+      <!-- Long vowels -->
+      <h3 class="font-ui text-xs font-semibold uppercase tracking-widest text-gold mb-4">Long Vowels</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+        <div class="bg-white/60 rounded-lg border border-gold/15 px-5 py-4 text-center">
+          <span lang="sa" class="font-devanagari text-3xl text-saffron block mb-1">आ</span>
+          <span lang="sa" class="font-body text-lg font-semibold text-gray-900">ā</span>
+          <p class="font-body text-sm text-gray-600 mt-1">like <strong>a</strong> in "f<strong>a</strong>ther"</p>
+        </div>
+        <div class="bg-white/60 rounded-lg border border-gold/15 px-5 py-4 text-center">
+          <span lang="sa" class="font-devanagari text-3xl text-saffron block mb-1">ई</span>
+          <span lang="sa" class="font-body text-lg font-semibold text-gray-900">ī</span>
+          <p class="font-body text-sm text-gray-600 mt-1">like <strong>ee</strong> in "f<strong>ee</strong>t"</p>
+        </div>
+        <div class="bg-white/60 rounded-lg border border-gold/15 px-5 py-4 text-center">
+          <span lang="sa" class="font-devanagari text-3xl text-saffron block mb-1">ऊ</span>
+          <span lang="sa" class="font-body text-lg font-semibold text-gray-900">ū</span>
+          <p class="font-body text-sm text-gray-600 mt-1">like <strong>oo</strong> in "m<strong>oo</strong>n"</p>
+        </div>
+      </div>
+
+      <!-- Special vowels -->
+      <h3 class="font-ui text-xs font-semibold uppercase tracking-widest text-gold mb-4">Special Vowels</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="bg-white/60 rounded-lg border border-gold/15 px-5 py-4 text-center">
+          <span lang="sa" class="font-devanagari text-3xl text-saffron block mb-1">ऋ</span>
+          <span lang="sa" class="font-body text-lg font-semibold text-gray-900">ṛ</span>
+          <p class="font-body text-sm text-gray-600 mt-1">like <strong>ri</strong> in "t<strong>ri</strong>p"</p>
+        </div>
+        <div class="bg-white/60 rounded-lg border border-gold/15 px-5 py-4 text-center">
+          <span lang="sa" class="font-devanagari text-3xl text-saffron block mb-1">ए</span>
+          <span lang="sa" class="font-body text-lg font-semibold text-gray-900">e</span>
+          <p class="font-body text-sm text-gray-600 mt-1">like <strong>ay</strong> in "s<strong>ay</strong>"</p>
+        </div>
+        <div class="bg-white/60 rounded-lg border border-gold/15 px-5 py-4 text-center">
+          <span lang="sa" class="font-devanagari text-3xl text-saffron block mb-1">ओ</span>
+          <span lang="sa" class="font-body text-lg font-semibold text-gray-900">o</span>
+          <p class="font-body text-sm text-gray-600 mt-1">like <strong>o</strong> in "g<strong>o</strong>"</p>
+        </div>
+        <div class="bg-white/60 rounded-lg border border-gold/15 px-5 py-4 text-center">
+          <span lang="sa" class="font-devanagari text-3xl text-saffron block mb-1">ऐ / औ</span>
+          <span lang="sa" class="font-body text-lg font-semibold text-gray-900">ai / au</span>
+          <p class="font-body text-sm text-gray-600 mt-1"><strong>ai</strong> as in "aisle" &middot; <strong>au</strong> as in "how"</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consonants Section -->
+    <section class="mb-14 scroll-reveal" style="transition-delay: 0.1s">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-saffron/10 font-ui text-sm font-bold text-saffron">2</span>
+        <h2 class="font-body text-xl font-bold text-gray-900">Consonants — The Tricky Ones</h2>
+        <div class="flex-1 h-px bg-gradient-to-r from-gold/30 to-transparent"></div>
+      </div>
+
+      <p class="font-body text-gray-600 mb-6 leading-relaxed">
+        Most Sanskrit consonants sound like their English cousins. Here are the ones
+        that might be new to you.
+      </p>
+
+      <!-- Retroflex consonants -->
+      <h3 class="font-ui text-xs font-semibold uppercase tracking-widest text-gold mb-4">Retroflex Sounds</h3>
+      <div class="bg-white/60 rounded-lg border border-gold/15 px-6 py-5 mb-8">
+        <p class="font-body text-sm text-gray-600 mb-4 leading-relaxed">
+          These have a dot under the letter. To make them, curl your tongue back so
+          the tip touches the roof of your mouth, then say the sound. It makes it
+          sound "harder" or "heavier."
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div class="text-center">
+            <span lang="sa" class="font-devanagari text-2xl text-saffron block">ट</span>
+            <span lang="sa" class="font-body text-lg font-semibold text-gray-900">ṭ</span>
+            <p class="font-body text-xs text-gray-500 mt-1">hard "t"</p>
+          </div>
+          <div class="text-center">
+            <span lang="sa" class="font-devanagari text-2xl text-saffron block">ड</span>
+            <span lang="sa" class="font-body text-lg font-semibold text-gray-900">ḍ</span>
+            <p class="font-body text-xs text-gray-500 mt-1">hard "d"</p>
+          </div>
+          <div class="text-center">
+            <span lang="sa" class="font-devanagari text-2xl text-saffron block">ण</span>
+            <span lang="sa" class="font-body text-lg font-semibold text-gray-900">ṇ</span>
+            <p class="font-body text-xs text-gray-500 mt-1">hard "n"</p>
+          </div>
+          <div class="text-center">
+            <span lang="sa" class="font-devanagari text-2xl text-saffron block">ष</span>
+            <span lang="sa" class="font-body text-lg font-semibold text-gray-900">ṣ</span>
+            <p class="font-body text-xs text-gray-500 mt-1">hard "sh"</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aspirated consonants -->
+      <h3 class="font-ui text-xs font-semibold uppercase tracking-widest text-gold mb-4">Aspirated Sounds</h3>
+      <div class="bg-white/60 rounded-lg border border-gold/15 px-6 py-5 mb-8">
+        <p class="font-body text-sm text-gray-600 mb-4 leading-relaxed">
+          When you see an <strong>h</strong> after a consonant, add a puff of air.
+          Hold your hand in front of your mouth — you should feel the breath!
+        </p>
+        <div class="flex flex-wrap justify-center gap-x-5 gap-y-3">
+          {[
+            { iast: 'kh', hint: '"k" + breath' },
+            { iast: 'gh', hint: '"g" + breath' },
+            { iast: 'ch', hint: '"ch" + breath' },
+            { iast: 'jh', hint: '"j" + breath' },
+            { iast: 'th', hint: '"t" + breath' },
+            { iast: 'dh', hint: '"d" + breath' },
+            { iast: 'ph', hint: '"p" + breath' },
+            { iast: 'bh', hint: '"b" + breath' },
+          ].map((item) => (
+            <div class="text-center px-3 py-2">
+              <span lang="sa" class="font-body text-lg font-semibold text-gray-900 block">{item.iast}</span>
+              <p class="font-body text-xs text-gray-500 mt-1">{item.hint}</p>
+            </div>
+          ))}
+        </div>
+        <p class="font-body text-sm text-gray-500 mt-4 italic text-center">
+          Tip: "ph" is <em>not</em> like the "f" in "phone" — it's a "p" with a puff of air, like "up-hill" said fast.
+        </p>
+      </div>
+
+      <!-- Sibilants (sh sounds) -->
+      <h3 class="font-ui text-xs font-semibold uppercase tracking-widest text-gold mb-4">Three Kinds of "Sh"</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+        <div class="bg-white/60 rounded-lg border border-gold/15 px-5 py-4 text-center">
+          <span lang="sa" class="font-devanagari text-2xl text-saffron block mb-1">श</span>
+          <span lang="sa" class="font-body text-lg font-semibold text-gray-900">ś</span>
+          <p class="font-body text-sm text-gray-600 mt-1">like <strong>sh</strong> in "ship"</p>
+          <p class="font-body text-xs text-gray-400 mt-1">(tongue at the palate)</p>
+        </div>
+        <div class="bg-white/60 rounded-lg border border-gold/15 px-5 py-4 text-center">
+          <span lang="sa" class="font-devanagari text-2xl text-saffron block mb-1">ष</span>
+          <span lang="sa" class="font-body text-lg font-semibold text-gray-900">ṣ</span>
+          <p class="font-body text-sm text-gray-600 mt-1">similar, but tongue curled back</p>
+          <p class="font-body text-xs text-gray-400 mt-1">(retroflex "sh")</p>
+        </div>
+        <div class="bg-white/60 rounded-lg border border-gold/15 px-5 py-4 text-center">
+          <span lang="sa" class="font-devanagari text-2xl text-saffron block mb-1">स</span>
+          <span lang="sa" class="font-body text-lg font-semibold text-gray-900">s</span>
+          <p class="font-body text-sm text-gray-600 mt-1">like <strong>s</strong> in "sun"</p>
+          <p class="font-body text-xs text-gray-400 mt-1">(teeth together)</p>
+        </div>
+      </div>
+
+      <!-- Nasal sounds -->
+      <h3 class="font-ui text-xs font-semibold uppercase tracking-widest text-gold mb-4">Nasal Sounds</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+        <div class="bg-white/60 rounded-lg border border-gold/15 px-5 py-4 text-center">
+          <span lang="sa" class="font-devanagari text-2xl text-saffron block mb-1">ञ</span>
+          <span lang="sa" class="font-body text-lg font-semibold text-gray-900">ñ</span>
+          <p class="font-body text-sm text-gray-600 mt-1">like <strong>ny</strong> in "ca<strong>ny</strong>on"</p>
+        </div>
+        <div class="bg-white/60 rounded-lg border border-gold/15 px-5 py-4 text-center">
+          <span lang="sa" class="font-devanagari text-2xl text-saffron block mb-1">ङ</span>
+          <span lang="sa" class="font-body text-lg font-semibold text-gray-900">ṅ</span>
+          <p class="font-body text-sm text-gray-600 mt-1">like <strong>ng</strong> in "si<strong>ng</strong>"</p>
+        </div>
+      </div>
+
+      <!-- Visarga and Anusvara -->
+      <h3 class="font-ui text-xs font-semibold uppercase tracking-widest text-gold mb-4">Special Marks</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="bg-white/60 rounded-lg border border-gold/15 px-5 py-4 text-center">
+          <span lang="sa" class="font-devanagari text-2xl text-saffron block mb-1">ः</span>
+          <span lang="sa" class="font-body text-lg font-semibold text-gray-900">ḥ</span>
+          <span class="font-ui text-xs text-gold block mb-1">visarga</span>
+          <p class="font-body text-sm text-gray-600 mt-1">a soft breath after a vowel, like a gentle "ha"</p>
+        </div>
+        <div class="bg-white/60 rounded-lg border border-gold/15 px-5 py-4 text-center">
+          <span lang="sa" class="font-devanagari text-2xl text-saffron block mb-1">ं</span>
+          <span lang="sa" class="font-body text-lg font-semibold text-gray-900">ṁ</span>
+          <span class="font-ui text-xs text-gold block mb-1">anusvara</span>
+          <p class="font-body text-sm text-gray-600 mt-1">a nasal hum, like humming with your mouth closed</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Common Words Section -->
+    <section class="mb-14 scroll-reveal" style="transition-delay: 0.15s">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-saffron/10 font-ui text-sm font-bold text-saffron">3</span>
+        <h2 class="font-body text-xl font-bold text-gray-900">Words You'll See Often</h2>
+        <div class="flex-1 h-px bg-gradient-to-r from-gold/30 to-transparent"></div>
+      </div>
+
+      <p class="font-body text-gray-600 mb-6 leading-relaxed">
+        Here are some words that appear again and again in the Gita. Practice saying
+        them out loud a few times — they'll feel familiar before you know it.
+      </p>
+
+      <div class="space-y-3">
+        {[
+          { devanagari: 'धर्म', iast: 'dharma', phonetic: 'DHAR-mah', meaning: 'righteous duty, the moral law' },
+          { devanagari: 'कर्म', iast: 'karma', phonetic: 'KAR-mah', meaning: 'action, deed and its consequences' },
+          { devanagari: 'योग', iast: 'yoga', phonetic: 'YO-gah', meaning: 'union, discipline, a spiritual path' },
+          { devanagari: 'आत्मन्', iast: 'ātman', phonetic: 'AAT-man', meaning: 'the true self, the soul' },
+          { devanagari: 'अर्जुन', iast: 'arjuna', phonetic: 'AR-ju-nah', meaning: 'the hero of the Gita, a great archer' },
+          { devanagari: 'कृष्ण', iast: 'kṛṣṇa', phonetic: 'KRISH-nah', meaning: 'Arjuna\'s charioteer and divine teacher' },
+          { devanagari: 'भगवद्गीता', iast: 'bhagavad gītā', phonetic: 'BHA-ga-vad GEE-taa', meaning: 'the song of the Lord' },
+          { devanagari: 'श्लोक', iast: 'śloka', phonetic: 'SHLO-kah', meaning: 'a verse of scripture' },
+          { devanagari: 'भक्ति', iast: 'bhakti', phonetic: 'BHAK-ti', meaning: 'loving devotion' },
+          { devanagari: 'गुरु', iast: 'guru', phonetic: 'GU-ru', meaning: 'a teacher, one who dispels darkness' },
+        ].map((word) => (
+          <div class="bg-white/60 rounded-lg border border-gold/15 px-5 py-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-5">
+            <div class="flex items-center gap-3 sm:w-48 shrink-0">
+              <span lang="sa" class="font-devanagari text-xl text-saffron">{word.devanagari}</span>
+              <span lang="sa" class="font-body text-base font-semibold text-gray-900">{word.iast}</span>
+            </div>
+            <div class="flex items-center gap-3 sm:w-44 shrink-0">
+              <span class="font-ui text-sm font-mono bg-saffron/8 text-saffron px-2 py-0.5 rounded">{word.phonetic}</span>
+            </div>
+            <p class="font-body text-sm text-gray-600">{word.meaning}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Quick Tips Section -->
+    <FolkArtBorder style="pichwai" class="mb-14">
+      <div class="p-2">
+        <h2 class="font-body text-xl font-bold text-gray-900 mb-4">Quick Tips</h2>
+        <ul class="font-body text-gray-700 leading-relaxed space-y-3 text-base">
+          <li>
+            <strong class="text-saffron">A line over a vowel</strong> (ā, ī, ū) means
+            hold it longer. Think of "a" in "cup" vs. "aa" in "father."
+          </li>
+          <li>
+            <strong class="text-saffron">A dot under a letter</strong> (ṭ, ḍ, ṇ, ṣ)
+            means curl your tongue back. These are called "retroflex" sounds.
+          </li>
+          <li>
+            <strong class="text-saffron">An "h" after a consonant</strong> (kh, gh, bh, etc.)
+            means add a puff of air. It's not a separate sound — just one sound with extra breath.
+          </li>
+          <li>
+            <strong class="text-saffron">Every letter is pronounced.</strong> Sanskrit
+            doesn't have silent letters! If you see it written, you say it.
+          </li>
+          <li>
+            <strong class="text-saffron">Stress is gentle.</strong> Sanskrit doesn't
+            have strong stress like English. Keep a steady, even rhythm when you read aloud.
+          </li>
+        </ul>
+      </div>
+    </FolkArtBorder>
+
+    <!-- Closing -->
+    <div class="mt-16 text-center">
+      <div class="flex items-center gap-3 mb-8">
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent"></div>
+        <span lang="sa" class="font-devanagari text-gold/50 text-lg">॥ शुभम् ॥</span>
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent"></div>
+      </div>
+      <p class="font-body text-gray-600 mb-6">
+        Now you're ready to read the Sanskrit in each verse. Don't be afraid to say the words out loud!
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="/chapters/01-arjuna-vishada-yoga"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-saffron text-white font-ui text-sm font-semibold rounded-lg hover:bg-saffron/90 transition-colors"
+        >
+          Begin Chapter 1 &rarr;
+        </a>
+        <a
+          href="/glossary"
+          class="inline-flex items-center gap-2 px-6 py-3 border border-saffron/30 text-saffron font-ui text-sm font-semibold rounded-lg hover:bg-saffron/5 transition-colors"
+        >
+          View Glossary
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
