@@ -12,7 +12,7 @@
 
 - term: atman
   sanskrit: आत्मन्
-  definition: Your true self — the soul that lives inside every being, unchanging and eternal.
+  definition: The soul — the real you that lives inside every being. It cannot be cut, burned, or destroyed. Unchanging and eternal.
 
 - term: Brahman
   sanskrit: ब्रह्मन्
@@ -64,11 +64,11 @@
 
 - term: sankhya
   sanskrit: सांख्य
-  definition: A system of philosophy that teaches how to tell apart the real (the soul) from the unreal (the material world).
+  definition: A way of knowing through wisdom and reasoning — one of the two paths Krishna teaches. It tells apart the real (the soul) from the unreal (the material world).
 
 - term: buddhi
   sanskrit: बुद्धि
-  definition: Intelligence — the power of the mind to reason, judge, and understand clearly.
+  definition: The intellect — the part of your mind that decides, discerns right from wrong, and understands clearly.
 
 - term: manas
   sanskrit: मनस्
@@ -80,7 +80,7 @@
 
 - term: guna
   sanskrit: गुण
-  definition: A quality or strand of nature. There are three gunas — sattva, rajas, and tamas.
+  definition: One of three qualities of nature — sattva (goodness), rajas (passion), tamas (inertia) — that shape everything in the world.
 
 - term: sattva
   sanskrit: सत्त्व
@@ -156,7 +156,7 @@
 
 - term: samadhi
   sanskrit: समाधि
-  definition: A state of deep meditation where the mind becomes completely still and united with the divine.
+  definition: Deep absorption — the state where the mind is perfectly still and focused, like a lamp in a windless place, united with the divine.
 
 - term: varna
   sanskrit: वर्ण
@@ -294,21 +294,9 @@
   sanskrit: छन्दस्
   definition: Vedic hymns — the sacred verses and metres in which ancient wisdom is preserved and chanted.
 
-- term: atman
-  sanskrit: आत्मन्
-  definition: The individual soul — the real you that lives inside the body. It cannot be cut, burned, or destroyed.
-
 - term: deha
   sanskrit: देह
   definition: The physical body — the "clothing" the soul wears. Bodies change, but the soul inside them does not.
-
-- term: sankhya
-  sanskrit: सांख्य
-  definition: A way of knowing through wisdom and reasoning — one of the two paths Krishna teaches in Chapter 2.
-
-- term: buddhi
-  sanskrit: बुद्धि
-  definition: The intellect — the part of your mind that decides and discerns right from wrong.
 
 - term: sthitaprajna
   sanskrit: स्थितप्रज्ञ
@@ -318,10 +306,6 @@
   sanskrit: समत्व
   definition: Equanimity — being balanced in success and failure, pleasure and pain. Krishna says this IS yoga.
 
-- term: guna
-  sanskrit: गुण
-  definition: One of three qualities of nature — sattva (goodness), rajas (passion), tamas (inertia) — that shape everything in the world.
-
 - term: kshatriya
   sanskrit: क्षत्रिय
   definition: A warrior — one whose dharma is to protect people and fight for justice.
@@ -329,10 +313,6 @@
 - term: rasa
   sanskrit: रस
   definition: Taste or essence — the lingering pull of past pleasures that remains even when the object is gone.
-
-- term: samadhi
-  sanskrit: समाधि
-  definition: Deep absorption — the state where the mind is perfectly still and focused, like a lamp in a windless place.
 
 - term: nirvana
   sanskrit: निर्वाण
