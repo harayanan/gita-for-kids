@@ -1,0 +1,437 @@
+title: "Gitamahatmyam"
+sanskrit_title: "गीतामाहात्म्यम्"
+description: >
+  The Glory of the Gita — eighteen short tales from the Padma Purana and
+  Varaha Purana, one for each chapter, told by Lord Vishnu to Goddess Lakshmi.
+  Each story shows how the teaching of a single chapter can transform a life.
+
+introduction: |
+  Long ago, Goddess Lakshmi asked Lord Vishnu: "Of all the scriptures in the
+  universe, which one do you love the most?"
+
+  Vishnu smiled and said: "The Bhagavad Gita. It is my very breath. Every
+  chapter is a jewel, and whoever holds even one jewel close to their heart
+  is freed from all sorrow."
+
+  Then he told her eighteen stories — one for each chapter of the Gita —
+  to show how the light of a single teaching can change everything.
+
+  These stories come from the Padma Purana and Varaha Purana. They are
+  traditionally read at the end of the Gita, like a garland placed around
+  the book after the last verse is finished.
+
+chapters:
+  - number: 1
+    title: "The Brahmin and the Serpent"
+    sanskrit_chapter: "अर्जुनविषादयोग"
+    chapter_name: "Arjuna Vishada Yoga"
+    story: |
+      In a village near Kashi, a brahmin named Susharma had lived a
+      careless life. When he died, his bad karma caused him to be reborn
+      as a serpent — a great cobra trapped in a dark burrow beneath the
+      roots of a banyan tree.
+
+      For years the serpent lay coiled in the dark, unable to speak,
+      unable to pray. But one day, a wandering sage sat under that very
+      banyan and began to recite the first chapter of the Gita aloud —
+      the chapter where Arjuna's heart breaks with sorrow on the
+      battlefield.
+
+      As the words entered the serpent's ears, something loosened in his
+      heart. The weight of old selfishness cracked, the way dry earth
+      cracks when the first rain falls. The serpent shed his skin, and
+      from within emerged a being of light — Susharma, freed at last,
+      rising toward the heavens.
+
+      Even sorrow, when honestly felt, is the beginning of wisdom.
+
+  - number: 2
+    title: "The Farmer Who Could Not Die"
+    sanskrit_chapter: "सांख्ययोग"
+    chapter_name: "Sankhya Yoga"
+    story: |
+      Devadatta was a farmer who feared death more than anything. He
+      would not cross rivers, climb trees, or travel after dark. His
+      fear shrank his world until he lived in a single room, afraid
+      even of sleep.
+
+      A visiting monk gave him a simple task: memorize just one verse
+      from the second chapter of the Gita — the one that says the soul
+      can never be cut, burned, or destroyed.
+
+      Devadatta repeated the verse every morning. Slowly, the words
+      became real to him. If the soul cannot die, then what was he
+      afraid of? He began crossing rivers again. He climbed the mango
+      tree in his yard. He traveled to see the sea.
+
+      When he finally died — peacefully, in old age — his last words
+      were that verse. And death, it turned out, was only a door.
+
+  - number: 3
+    title: "The Miser's Open Hands"
+    sanskrit_chapter: "कर्मयोग"
+    chapter_name: "Karma Yoga"
+    story: |
+      Janakirama was the richest man in his town and the stingiest. He
+      hoarded gold coins the way a squirrel hoards nuts — not because
+      he needed them, but because he could not bear to let go.
+
+      One monsoon, the river flooded the town. People came to
+      Janakirama for help — he had grain, he had gold, he had a strong
+      house on high ground. But he shut his doors and sat on his chest
+      of coins, watching the water rise.
+
+      That night, a sadhu knocked. Janakirama almost did not open the
+      door, but something made him. The sadhu asked for nothing except
+      to read aloud from the third chapter of the Gita — the one about
+      the great wheel of giving and receiving that keeps the world
+      turning.
+
+      When the reading was over, Janakirama looked at his locked chest
+      and for the first time saw it for what it was: a prison. He flung
+      the doors open. He fed the town. He gave away blankets and grain.
+      And with each thing he gave, something tight in his chest
+      loosened, until he was breathing freely for the first time in years.
+
+  - number: 4
+    title: "The King Who Remembered"
+    sanskrit_chapter: "ज्ञानकर्मसंन्यासयोग"
+    chapter_name: "Jnana Karma Sannyasa Yoga"
+    story: |
+      King Bharata ruled a prosperous land but grew weary of the
+      endless cycles of court politics and war. He gave up his throne
+      to live in the forest, seeking peace. But in the forest he
+      became attached to a baby deer he had rescued, and when he died,
+      his mind was so full of the deer that he was reborn as one.
+
+      Even as a deer, a faint memory stirred — the memory of seeking
+      something higher. When he was reborn again as a human, he
+      remembered everything. This time, he found a teacher who read
+      him the fourth chapter of the Gita, where Krishna reveals that
+      divine knowledge has been passed down since the beginning of time.
+
+      "Every birth was a step," Bharata understood. "Even the wrong
+      turns brought me here." He never forgot again.
+
+  - number: 5
+    title: "The Washerman's River"
+    sanskrit_chapter: "कर्मसंन्यासयोग"
+    chapter_name: "Karma Sannyasa Yoga"
+    story: |
+      A washerman named Dharmabandhu spent his days at the river,
+      scrubbing other people's clothes clean while his own mind stayed
+      muddy with worry and envy. He envied the merchants their gold,
+      the priests their respect, the soldiers their strength.
+
+      One day he found a torn page from a manuscript caught in the
+      wet cloth he was washing. It was a verse from the fifth chapter
+      of the Gita: the one that says a person who works without
+      attachment is untouched by sin, like a lotus leaf untouched
+      by water.
+
+      Dharmabandhu laughed — he, who stood in water all day, had never
+      been like a lotus! But the verse stayed with him. He began to wash
+      each garment as an offering, not a burden. The envy drained away.
+      The river was the same, the work was the same, but the washerman
+      was new.
+
+  - number: 6
+    title: "The Restless Boy"
+    sanskrit_chapter: "आत्मसंयमयोग"
+    chapter_name: "Atma Samyama Yoga"
+    story: |
+      A boy named Keshava could not sit still. His mother tried
+      everything — stories, sweets, threats. In school he fidgeted until
+      the teacher gave up. Everyone said he would never learn.
+
+      His grandmother took a different approach. She sat him down and
+      said: "The sixth chapter of the Gita says that the mind is like
+      the wind — wild and hard to catch. But Krishna also says that
+      with practice and detachment, it can be steadied. Even the wind
+      can be caught."
+
+      She gave him one task: sit still and count ten breaths. Just ten.
+      The first day, he counted three before jumping up. The second day,
+      five. By the tenth day, ten. By the thirtieth day, he could sit
+      for an hour, watching his thoughts like clouds crossing a mountain.
+
+      The wind was the same. But Keshava had become the mountain.
+
+  - number: 7
+    title: "The Four Who Seek"
+    sanskrit_chapter: "ज्ञानविज्ञानयोग"
+    chapter_name: "Jnana Vijnana Yoga"
+    story: |
+      Four travelers met at a crossroads and discovered they were all
+      going to the same temple. The first was in trouble and wanted
+      God's help. The second was poor and wanted wealth. The third was
+      curious and wanted to understand how the universe worked. The
+      fourth wanted nothing at all — she simply loved God.
+
+      A sage at the temple told them: "The seventh chapter of the Gita
+      says all four of you are dear to Krishna. But the one who loves
+      without wanting anything — that one is dearest."
+
+      The four looked at each other. Over the years, they all arrived
+      at the same place: the first stopped being afraid, the second
+      stopped feeling poor, the third found answers beyond questions.
+      And the fourth? She had been there all along.
+
+  - number: 8
+    title: "The Last Thought"
+    sanskrit_chapter: "अक्षरब्रह्मयोग"
+    chapter_name: "Akshara Brahma Yoga"
+    story: |
+      An old woman named Savitri knew she did not have long to live.
+      She was not afraid of death, but she worried: what would her
+      last thought be? Would it be about her aching knees, or the
+      unpaid milk bill, or old grudges?
+
+      Her son read her the eighth chapter of the Gita, where Krishna
+      says: "Whatever a person thinks of at the moment of death, that
+      is what they become."
+
+      "Then I must practice," Savitri said. She began ending each day
+      by sitting quietly and thinking of the divine — the light in the
+      lamp, the warmth in her son's hands, the vast sky at dawn. She
+      practiced this for months.
+
+      When the end came, her face was calm. Her last word was a name
+      she had been practicing — not the name of fear, but the name of
+      love.
+
+  - number: 9
+    title: "The Leaf, the Flower, and the Water"
+    sanskrit_chapter: "राजविद्याराजगुह्ययोग"
+    chapter_name: "Raja Vidya Raja Guhya Yoga"
+    story: |
+      A poor tribal woman lived on the edge of a great forest. She had
+      no money for temple offerings — no gold, no silks, no elaborate
+      puja items. She felt unworthy.
+
+      One day she overheard a priest reading the ninth chapter of the
+      Gita: "Whoever offers me a leaf, a flower, a fruit, or even
+      water, with love — I accept it."
+
+      That evening, she picked a single leaf from the neem tree, filled
+      her clay cup with river water, and placed them before a stone
+      she had always felt was sacred. She offered them with her whole
+      heart.
+
+      That night, she dreamed of a blue-skinned boy smiling at her,
+      holding her clay cup as if it were the most precious thing in
+      the universe. She never felt unworthy again.
+
+  - number: 10
+    title: "The Boy Who Saw Krishna Everywhere"
+    sanskrit_chapter: "विभूतियोग"
+    chapter_name: "Vibhuti Yoga"
+    story: |
+      After hearing the tenth chapter of the Gita — where Krishna
+      reveals that he is the best of everything: the Himalayas among
+      mountains, the Ganges among rivers, the lion among animals, the
+      syllable Om among sounds — a young student named Madhav began
+      to see differently.
+
+      "If Krishna is in the best of everything," he thought, "then
+      every mountain has a little Himalaya in it. Every stream has a
+      little Ganga. Every sound has a little Om."
+
+      He began pointing things out to his bewildered friends: "Look —
+      Krishna in the sunrise. Krishna in that old banyan. Krishna in
+      the way your mother calls your name."
+
+      His friends thought he had gone a little mad. But his teacher
+      smiled and said: "No. His eyes have opened. That is what the
+      tenth chapter does."
+
+  - number: 11
+    title: "The Vision That Changed Everything"
+    sanskrit_chapter: "विश्वरूपदर्शनयोग"
+    chapter_name: "Vishvarupa Darshana Yoga"
+    story: |
+      A proud scholar named Vidyapati had memorized the entire Gita
+      but believed it was only poetry — beautiful words, not truth. He
+      could recite every verse but felt nothing.
+
+      One night during a thunderstorm, lightning split the sky and for
+      one blinding instant Vidyapati saw — not with his eyes but with
+      something deeper — the vision Arjuna saw in the eleventh chapter:
+      all of creation pouring into a single blazing form, all faces,
+      all times, all worlds, birth and death happening simultaneously.
+
+      It lasted less than a heartbeat. But when it passed, Vidyapati
+      was on his knees, trembling. The words he had memorized were no
+      longer just words. They were a map of something real.
+
+      He never recited the Gita the same way again. Every verse now
+      shook with thunder.
+
+  - number: 12
+    title: "The Gardener's Devotion"
+    sanskrit_chapter: "भक्तियोग"
+    chapter_name: "Bhakti Yoga"
+    story: |
+      A simple gardener named Tulasi could not read. She could not
+      chant mantras or sit in meditation for hours. She felt she was
+      not spiritual enough.
+
+      A kind teacher told her about the twelfth chapter of the Gita,
+      where Krishna lists the qualities dearest to him — and none of
+      them require scholarship. Compassion. Friendliness. Forgiveness.
+      Contentment. Steadiness.
+
+      "Do you feel compassion when you see a wilted plant?" the
+      teacher asked.
+
+      "Of course," Tulasi said.
+
+      "Do you feel joy when it blooms?"
+
+      "Always."
+
+      "Then you are already practicing the highest yoga. You simply
+      did not know its name."
+
+      Tulasi went back to her garden and tended her flowers, and this
+      time she knew what she was really tending.
+
+  - number: 13
+    title: "The Field and the Knower"
+    sanskrit_chapter: "क्षेत्रक्षेत्रज्ञविभागयोग"
+    chapter_name: "Kshetra Kshetrajna Vibhaga Yoga"
+    story: |
+      Two brothers farmed side by side. One complained endlessly about
+      the soil, the rain, the pests. The other worked quietly, whatever
+      came.
+
+      A traveler asked the quiet brother: "Your fields are the same
+      size, the same soil, the same rain. Why is your harvest always
+      better?"
+
+      The brother said: "My guru taught me the thirteenth chapter of
+      the Gita. It says this body is a field, and the soul is the
+      knower of the field. Once you stop confusing the field with the
+      knower, you stop blaming the soil for your suffering. You just
+      tend the field."
+
+      The traveler looked at the two farms. Same earth, same sky.
+      One man fought his field. The other knew he was not his field.
+
+  - number: 14
+    title: "Beyond the Three Strands"
+    sanskrit_chapter: "गुणत्रयविभागयोग"
+    chapter_name: "Gunatraya Vibhaga Yoga"
+    story: |
+      A weaver woman made three kinds of thread: white (pure and
+      fine), red (strong and restless), and black (heavy and dull).
+      Every cloth she wove had all three, in different proportions.
+
+      A traveling monk watched her work and said: "You are weaving
+      the fourteenth chapter of the Gita. White is sattva — goodness.
+      Red is rajas — restless energy. Black is tamas — heaviness.
+      Every person is woven from these three strands."
+
+      "Can anyone be made of only white thread?" the weaver asked.
+
+      "No," said the monk. "But Krishna says there is something beyond
+      all three. The one who watches the weaving — the soul — is not
+      any thread at all."
+
+      The weaver looked at her hands and for the first time noticed:
+      she was not the cloth. She was the one making it.
+
+  - number: 15
+    title: "The Tree That Grew Backwards"
+    sanskrit_chapter: "पुरुषोत्तमयोग"
+    chapter_name: "Purushottama Yoga"
+    story: |
+      A child once drew a tree upside down — roots reaching into the
+      sky, branches spreading down toward the ground. Her teacher
+      scolded her: "Trees don't grow like that!"
+
+      But her grandfather, who was reading the fifteenth chapter of
+      the Gita, looked at the drawing and smiled. "Actually," he said,
+      "Krishna describes exactly this. The cosmic ashvattha tree has
+      its roots in heaven and its branches spread down into the world.
+      Everything we see is just the branches. The real roots are above,
+      in the divine."
+
+      The child stared at her drawing. "So I was right?"
+
+      "More right than you know," said her grandfather. "The wisest
+      thing is to look at the world and remember: the roots are not
+      here. The roots are above."
+
+  - number: 16
+    title: "Two Gates, One City"
+    sanskrit_chapter: "दैवासुरसम्पद्विभागयोग"
+    chapter_name: "Daivasura Sampad Vibhaga Yoga"
+    story: |
+      A great city had two gates. The northern gate was carved with
+      images of generosity, fearlessness, and truth. People who entered
+      through it walked with their heads high and their hands open.
+
+      The southern gate was carved with images of pride, anger, and
+      greed. People who entered through it walked with clenched fists
+      and narrowed eyes.
+
+      The sixteenth chapter of the Gita says every person has both
+      gates inside them — the divine qualities and the demonic ones.
+      You choose which gate to walk through every single day, with
+      every single decision.
+
+      An old gatekeeper who had watched people come and go for fifty
+      years said: "The gate you use most often becomes the only gate
+      you can see."
+
+  - number: 17
+    title: "Three Kinds of Food"
+    sanskrit_chapter: "श्रद्धात्रयविभागयोग"
+    chapter_name: "Shraddhatraya Vibhaga Yoga"
+    story: |
+      A cook named Annapurna served three meals at a festival.
+
+      The first was fresh, light, and nourishing — ripe fruit, warm
+      rice, fragrant dal. People who ate it felt clear and content.
+
+      The second was spicy, sour, and rich — heavy with oil and chili.
+      People who ate it felt excited but restless.
+
+      The third was stale, cold, and leftover. People who ate it felt
+      sluggish and dull.
+
+      A wise woman watching said: "The seventeenth chapter of the Gita
+      describes exactly this. What you eat, how you worship, and what
+      you give — all of it comes in three kinds, matching the three
+      gunas. Choose the food that makes your mind as clear as still
+      water."
+
+      Annapurna smiled. She had always known this in her hands. Now
+      she knew it in her heart.
+
+  - number: 18
+    title: "The Final Word"
+    sanskrit_chapter: "मोक्षसंन्यासयोग"
+    chapter_name: "Moksha Sannyasa Yoga"
+    story: |
+      After all seventeen stories, Goddess Lakshmi said to Vishnu:
+      "And the eighteenth chapter? What is its glory?"
+
+      Vishnu was silent for a long time. Then he said:
+
+      "The eighteenth chapter contains everything. It is the chapter
+      where Krishna says: 'Give up all other paths and simply come
+      to me. I will free you from all fear.' It is the chapter where
+      Arjuna says: 'My confusion is gone. I will do as you say.'
+      And it is the chapter where Sanjaya says: 'Wherever Krishna
+      and Arjuna are, there is goodness, victory, and joy.'
+
+      "The glory of the last chapter is this: it is not an ending.
+      It is the moment when the student stands up, picks up the bow,
+      and walks into life — changed forever, afraid of nothing."
+
+      Lakshmi smiled. The universe hummed. And the book was complete.
+
+closing_sanskrit: "॥ इति श्रीवाराहपुराणे श्रीगीतामाहात्म्यम् सम्पूर्णम् ॥"
+closing_meaning: "Thus ends the Gitamahatmyam from the Varaha Purana."
