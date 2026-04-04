@@ -1,0 +1,91 @@
+chapter: 2
+verse: 6
+speaker: arjuna
+
+sanskrit: "न चैतद्विद्मः कतरन्नो गरीयो यद्वा जयेम यदि वा नो जयेयुः। यानेव हत्वा न जिजीविषामस्तेऽवस्थिताः प्रमुखे धार्तराष्ट्राः॥"
+
+transliteration: "na caitadvidmaḥ kataranno garīyo yadvā jayema yadi vā no jayeyuḥ | yāneva hatvā na jijīviṣāmaste'vasthitāḥ pramukhe dhārtarāṣṭrāḥ ||"
+
+dhatu_breakdown:
+  - word: "विद्मः"
+    parts: ["vid (to know)"]
+    meaning: "we know"
+  - word: "कतरत्"
+    parts: ["katara (which of two)"]
+    meaning: "which of the two"
+  - word: "गरीयः"
+    parts: ["guru (heavy, weighty, better)"]
+    meaning: "better, weightier, preferable"
+  - word: "जयेम"
+    parts: ["ji (to conquer)"]
+    meaning: "we should conquer"
+  - word: "जयेयुः"
+    parts: ["ji (to conquer)"]
+    meaning: "they should conquer us"
+  - word: "हत्वा"
+    parts: ["han (to kill, to strike)"]
+    meaning: "having killed"
+  - word: "जिजीविषामः"
+    parts: ["jīv (to live)", "san (desiderative — wish to)"]
+    meaning: "we would wish to live"
+  - word: "धार्तराष्ट्राः"
+    parts: ["dhṛtarāṣṭra (Dhritarashtra)", "aḥ (sons of)"]
+    meaning: "the sons of Dhritarashtra"
+
+meaning: >
+  We do not know which is better for us — to conquer them or be conquered
+  by them. The sons of Dhritarashtra, whom if we killed we would not wish
+  to live, stand arrayed before us.
+
+story:
+  title: "Two Doors, Both Locked"
+  source: "original"
+  body: |
+    From where Arjuna sat in the chariot, he could see everything.
+
+    To his left, the Pandava army stretched like a dark river — thousands
+    of soldiers who had left their families and farms to fight for him,
+    who believed in his cause, who were counting on his arrows to fly
+    true. Their banners snapped in the dry wind. Their horses pawed
+    the dust. They were ready.
+
+    To his right, the Kaurava army stood in perfect formation. And there,
+    at the front, gleaming in the morning light, was the silver armor of
+    Bhishma — grandfather Bhishma, who had held Arjuna on his knee as
+    a child and told him stories about the stars. Beside Bhishma stood
+    Drona, calm as a temple pond, the man who had placed the first bow
+    in Arjuna's small hands and said, "You are born for this." Drona,
+    who had made Arjuna practice until his fingers bled, then wrapped
+    those fingers himself with clean cloth and said, "Tomorrow, again."
+
+    Arjuna's mind spun like a wheel stuck between two ruts.
+
+    If we win, he thought, then Bhishma will fall. His silver armor will
+    be dented and still. Drona's calm eyes will close forever. And I will
+    stand on a field of victory that is also a graveyard of everyone who
+    ever loved me. What kingdom is worth that? What throne can I sit on
+    without seeing their faces?
+
+    But if we lose — then everything my brothers have suffered, every
+    year of exile in the forest, every humiliation Draupadi endured,
+    every promise broken by the Kauravas — all of it will have been
+    for nothing. Yudhishthira's patience, wasted. Bhima's rage, wasted.
+    My own vows, smoke in the wind.
+
+    Win, and the people I love are dead. Lose, and the people I love
+    have suffered for nothing.
+
+    Arjuna looked at Krishna, hoping his friend would offer some third
+    path, some clever escape from this impossible choice. But Krishna
+    only held the reins and waited. The white horses stood still. A
+    crow cried somewhere overhead, circling.
+
+    This is the paralysis that comes when every road leads to pain.
+    Not laziness. Not cowardice. The honest recognition that some
+    choices do not have a clean answer — that sometimes both doors are
+    locked, and the key to one is the cost of the other.
+
+    Arjuna was not a fool. He was a man staring at two futures, and in
+    neither one could he find a place to stand without his heart breaking.
+
+reflection: "Have you ever faced a choice where both options felt wrong? What did you do — and how did you decide?"

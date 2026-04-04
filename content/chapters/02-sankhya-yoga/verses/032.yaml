@@ -1,0 +1,85 @@
+chapter: 2
+verse: 32
+speaker: krishna
+
+sanskrit: "यदृच्छया चोपपन्नं स्वर्गद्वारमपावृतम्। सुखिनः क्षत्रियाः पार्थ लभन्ते युद्धमीदृशम्॥"
+
+transliteration: "yadṛcchayā copapannaṁ svargadvāramapāvṛtam | sukhinaḥ kṣatriyāḥ pārtha labhante yuddhamīdṛśam ||"
+
+dhatu_breakdown:
+  - word: "यदृच्छया"
+    parts: ["yad (which)", "ṛch (to go, to move towards)"]
+    meaning: "by chance, of its own accord, unsought"
+  - word: "उपपन्नम्"
+    parts: ["upa (near, towards)", "pad (to go, to fall)"]
+    meaning: "arrived, presented itself, come about"
+  - word: "स्वर्गद्वारम्"
+    parts: ["svarga (heaven)", "dvāra (door, gate)"]
+    meaning: "the gate of heaven"
+  - word: "अपावृतम्"
+    parts: ["apa (away)", "ā (towards)", "vṛ (to cover, to open)"]
+    meaning: "opened wide, thrown open"
+  - word: "सुखिनः"
+    parts: ["sukha (happiness, ease)"]
+    meaning: "happy, fortunate, blessed"
+  - word: "क्षत्रियाः"
+    parts: ["kṣatra (warrior power, rulership)"]
+    meaning: "warriors, Kshatriyas"
+  - word: "लभन्ते"
+    parts: ["labh (to obtain, to get)"]
+    meaning: "they obtain, they receive"
+
+meaning: >
+  Happy are the warriors, O Partha, who find such a battle coming
+  unsought — it opens the very gates of heaven.
+
+story:
+  title: "The Door That Came to Him"
+  source: "original"
+  body: |
+    Krishna leaned forward now, and something almost fierce entered
+    his voice — not anger, but urgency, the way a man speaks when he
+    sees his friend about to throw away the rarest thing in the world
+    without realizing what it is.
+
+    "Do you know," he said, "how many warriors live their entire lives
+    waiting for what stands in front of you right now?"
+
+    Arjuna did not answer. His jaw was clenched, his eyes fixed on
+    the ground between his feet.
+
+    "I will tell you," Krishna said. "Thousands. Tens of thousands.
+    Warriors who train from boyhood, who wake before dawn to practice
+    with the sword and the bow and the mace, who sharpen their
+    discipline year after year after year — and never once in their
+    lives does a truly righteous cause find them. They fight border
+    skirmishes. They defend trade routes. They grow old and die
+    having never stood at the center of something that mattered.
+    They would have given everything for a battle like this one."
+
+    He swept his hand toward the field.
+
+    "This war did not come because you went looking for it. You
+    did not choose this. Your family was cheated, your wife was
+    humiliated, your kingdom was stolen, every attempt at peace was
+    thrown back in your face. This battle arrived at your door the
+    way the monsoon arrives — not because you called it, but because
+    it was time. And for a Kshatriya, a righteous war that comes
+    unsought is the rarest gift the world can offer. It is an open
+    gate."
+
+    Krishna pointed skyward, and for a moment Arjuna imagined he
+    could see it — a gate in the bright haze above the field,
+    massive, carved with lotuses and lions, standing open and
+    waiting, light pouring through.
+
+    "Other men must search their whole lives for a chance to serve
+    dharma so completely. The chance came to you. It walked to your
+    chariot and stood here, asking to be met."
+
+    The wind picked up, snapping the Pandava banners eastward. The
+    white horses tossed their manes.
+
+    "Will you turn it away?"
+
+reflection: "Has something important ever happened to you that you did not plan or ask for — and looking back, do you think it was meant to find you?"

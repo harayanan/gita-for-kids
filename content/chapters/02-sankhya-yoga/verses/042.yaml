@@ -1,0 +1,80 @@
+chapter: 2
+verse: 42
+speaker: krishna
+
+sanskrit: "यामिमां पुष्पितां वाचं प्रवदन्त्यविपश्चितः। वेदवादरताः पार्थ नान्यदस्तीति वादिनः॥"
+
+transliteration: "yāmimāṁ puṣpitāṁ vācaṁ pravadantyavipaścitaḥ | vedavādaratāḥ pārtha nānyadastīti vādinaḥ ||"
+
+dhatu_breakdown:
+  - word: "पुष्पिताम्"
+    parts: ["puṣp (to flower, to bloom)"]
+    meaning: "flowery, ornate, blossoming with elaborate words"
+  - word: "वाचम्"
+    parts: ["vac (to speak)"]
+    meaning: "speech, words"
+  - word: "प्रवदन्ति"
+    parts: ["pra (forth)", "vad (to speak, to proclaim)"]
+    meaning: "they proclaim, they speak forth"
+  - word: "अविपश्चितः"
+    parts: ["a (not)", "vi (clearly)", "paś (to see)"]
+    meaning: "the undiscerning, those who cannot see clearly"
+  - word: "वेदवादरताः"
+    parts: ["veda (scripture)", "vāda (doctrine, argument)", "rata (devoted to)"]
+    meaning: "devoted to the letter of the Vedas, attached to scriptural argument"
+  - word: "वादिनः"
+    parts: ["vad (to speak, to argue)"]
+    meaning: "those who argue, those who proclaim"
+
+meaning: >
+  The undiscerning who delight in the flowery words of the Vedas
+  proclaim that there is nothing beyond ritual and reward.
+
+story:
+  title: "The Priest Who Sold the Sky"
+  source: "original"
+  body: |
+    In the age before Kurukshetra, there was a priest named Vishala
+    who traveled from kingdom to kingdom with a cart full of scrolls.
+
+    He was not a bad man. He knew the Vedas the way a mapmaker knows
+    coastlines — every contour memorized, every prayer catalogued,
+    every ritual filed in its proper place. When he opened his mouth,
+    scripture poured out in perfect meter, each syllable landing with
+    the precision of a coin dropped into a brass bowl. Kings invited
+    him to their courts. Crowds gathered when his cart rolled into
+    the market square.
+
+    But Vishala had learned a trick.
+
+    He had noticed that people did not come to hear wisdom. They came
+    to hear promises. So he wrapped the Vedas in ribbons of desire.
+    "Perform this fire ritual," he would say, "and your fields will
+    yield double grain." He would lean close, his voice rich and
+    warm as ghee poured into flame. "Chant this mantra a thousand
+    times, and your son will become a king. Offer this sacrifice,
+    and the gates of heaven will swing open like a merchant's doors
+    on market day."
+
+    His words were beautiful — truly beautiful. They bloomed like
+    flowers. Puṣpitāṁ vācam, Krishna would later call them. Flowery
+    speech. The kind that smells wonderful and weighs nothing.
+
+    People paid him in gold, in cattle, in land. They performed the
+    rituals exactly as he prescribed. Some received what they wanted
+    — a good harvest, a healthy child — and credited Vishala. Others
+    did not, and Vishala blamed their pronunciation, their timing,
+    their insufficient faith. He always had an answer. His cart of
+    scrolls never ran empty.
+
+    But here was the thing Vishala never taught, because it could not
+    be sold: the Vedas were a doorway, not a destination. The rituals
+    were meant to discipline the mind, not purchase results. The
+    prayers were meant to dissolve the ego, not inflate it. Vishala
+    had taken a map to the ocean and convinced people that the map
+    itself was water.
+
+    Krishna's warning to Arjuna was this: beware the man whose
+    scripture sounds like a shopping list. Wisdom is not a transaction.
+
+reflection: "Have you ever heard someone use big, impressive words but say nothing that actually helped? How can you tell the difference between real wisdom and just fancy talk?"

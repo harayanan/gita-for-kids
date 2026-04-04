@@ -21,6 +21,31 @@
     stunning paintings on the crumbling walls and helped bring the art form
     to international attention.
 
+- id: gond
+  name: Gond
+  region: Madhya Pradesh
+  also_known_as: Tribal dot painting
+  description: >
+    Gond art comes from the Gond people of Madhya Pradesh, one of India's
+    largest tribal communities. Using fine dots, dashes, and flowing lines,
+    Gond artists fill every shape — trees, birds, fish, tigers — with intricate
+    internal patterns that seem to reveal hidden structures within nature.
+    A tree is not just a tree but a universe of tiny dots pulsing with life.
+    The style connects all living things through organic, flowing forms,
+    reflecting the Gond belief that everything in nature has a spirit.
+    Traditionally painted on mud walls and floors, today Gond art is recognised
+    as one of India's most distinctive contemporary folk traditions.
+  signature_elements:
+    - Intricate dot-and-dash internal patterns
+    - Flowing organic shapes connecting all forms
+    - Bold black outlines with vibrant fills
+    - Nature-centric motifs (trees, birds, fish, animals)
+  fun_fact: >
+    Gond artists believe that viewing a good painting brings good luck! The
+    legendary Gond artist Jangarh Singh Shyam was discovered painting the
+    walls of his village and went on to exhibit his work in galleries across
+    the world, bringing this ancient tribal art to international fame.
+
 - id: pichwai
   name: Pichwai
   region: Rajasthan

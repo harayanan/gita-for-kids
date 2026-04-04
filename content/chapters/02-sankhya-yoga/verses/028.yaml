@@ -1,0 +1,83 @@
+chapter: 2
+verse: 28
+speaker: krishna
+
+sanskrit: "अव्यक्तादीनि भूतानि व्यक्तमध्यानि भारत। अव्यक्तनिधनान्येव तत्र का परिदेवना॥"
+
+transliteration: "avyaktādīni bhūtāni vyaktamadhyāni bhārata | avyaktanidhanānyeva tatra kā paridevanā ||"
+
+dhatu_breakdown:
+  - word: "अव्यक्तादीनि"
+    parts: ["a (not)", "vi (apart)", "añj (to manifest)", "ādi (beginning)"]
+    meaning: "having an unmanifest beginning, invisible at the start"
+  - word: "भूतानि"
+    parts: ["bhū (to be, to become)"]
+    meaning: "beings, creatures"
+  - word: "व्यक्तमध्यानि"
+    parts: ["vi (apart)", "añj (to manifest)", "madhya (middle)"]
+    meaning: "manifest in the middle, visible in their middle state"
+  - word: "अव्यक्तनिधनानि"
+    parts: ["a (not)", "vi (apart)", "añj (to manifest)", "nidhana (end, death)"]
+    meaning: "unmanifest at death, invisible at the end"
+  - word: "तत्र"
+    parts: ["tad (that, there)"]
+    meaning: "in that, therein"
+  - word: "का"
+    parts: ["ka (what, which)"]
+    meaning: "what? which?"
+  - word: "परिदेवना"
+    parts: ["pari (around, fully)", "div (to lament, to wail)"]
+    meaning: "lamentation, grieving"
+
+meaning: >
+  Beings are unmanifest before birth, manifest in the middle, and
+  unmanifest again after death. What is there to grieve about in this?
+
+story:
+  title: "The Brief Visibility"
+  source: "original"
+  body: |
+    Krishna swept his hand across the plain of Kurukshetra, palm open,
+    as though wiping condensation from a window.
+
+    "Where were they," he asked, "a hundred years ago?"
+
+    Arjuna followed the gesture. His eyes moved across the front ranks
+    of the Kaurava army — Duryodhana in his golden armor, Dushasana
+    with his whip coiled at his hip, row after row of soldiers with
+    their spears planted in the earth like a forest of iron saplings.
+
+    A hundred years ago. None of them had existed. Not one. The field
+    itself had been here — the same dry grass, the same flat horizon
+    shimmering in the heat — but it had been empty of these particular
+    lives. They had been nowhere. Unmanifest. Like colors inside a
+    seed that has not yet sprouted, like music inside a flute that no
+    one is playing.
+
+    "And a hundred years from now?" Krishna continued.
+
+    Arjuna's throat tightened. He knew the answer. A hundred years from
+    now, this field would be empty again. The grass would grow over
+    whatever scars the battle left. Farmers would plow the soil and
+    find rusted arrowheads and wonder briefly who had fought here.
+    Every man he was looking at — every face he loved, every face he
+    feared — would be gone.
+
+    "You see?" Krishna said softly. "The visible part is the middle.
+    It is the smallest part. Before birth, we are invisible. After
+    death, invisible again. This life — this brief flash of being
+    seen, of being here, of standing in the sun — it is a single
+    paragraph in a story that has no beginning and no end."
+
+    He paused and let the silence do its work. A hawk circled high
+    above the field, riding a thermal, patient as a thought.
+
+    "You are grieving for the paragraph, Arjuna. You are weeping
+    because the paragraph will end. But the story goes on. It was
+    going on before the paragraph started, and it will go on after.
+    What is there to mourn in that?"
+
+    The hawk tilted its wings and slid eastward, vanishing into the
+    white haze where sky met earth.
+
+reflection: "Think of a raindrop — it was water vapor before it fell, it becomes part of a river after. Is the raindrop the most important part of its journey, or just the most visible?"

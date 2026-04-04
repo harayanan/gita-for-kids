@@ -35,7 +35,18 @@ Each chapter has a `folk_art_style` in its `meta.yaml`. The illustration script 
 - "No naturalistic sky, ground, or landscape — use patterned flat color fields"
 - "Bharni (filled) style of Madhubani painting"
 
-### Pichwai (Chapters 2, 7, 12, 17)
+### Gond (Chapters 2)
+
+- "Gond folk art style from Madhya Pradesh, central India"
+- "Intricate dot-and-dash patterns filling all forms — every figure, tree, and animal composed of fine dots and flowing lines"
+- "Organic, flowing shapes — figures emerge from nature, interconnected with trees, birds, fish"
+- "Flat perspective — NO shading, NO atmospheric depth, NO 3D rendering"
+- "Bold black outlines with vibrant color fills using natural palette"
+- "Horror vacui — all empty space filled with dot clusters, concentric circles, wave patterns"
+- "Decorative border with repeating leaf, vine, or animal motifs"
+- "Nature-centric: trees, birds, fish, rivers as compositional anchors even in narrative scenes"
+
+### Pichwai (Chapters 7, 12, 17)
 
 - "Pichwai painting style from Nathdwara, Rajasthan"
 - "Rich, detailed, devotional composition centered on Krishna"

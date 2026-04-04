@@ -166,6 +166,20 @@ const STYLE_PROMPTS = {
 - Narrative mythological scenes with rich textile-like patterning
 - Always illustrate the verse/mythological scene, NOT any modern story analogy`,
   },
+  gond: {
+    name: 'Gond (Madhya Pradesh)',
+    prompt: `STYLE REQUIREMENTS (CRITICAL — follow every rule exactly):
+- Gond folk art style from Madhya Pradesh, central India
+- Flat perspective — NO shading, NO atmospheric depth, NO 3D rendering
+- Intricate dot-and-dash patterns filling ALL forms — every figure, tree, animal, and object composed of fine dots and flowing lines
+- Organic, flowing shapes — figures emerge from nature, interconnected with trees, birds, fish
+- Bold black outlines with vibrant color fills using the specified palette
+- Horror vacui — all empty space filled with dot clusters, concentric circles, wave patterns
+- Figures in strict profile OR frontal view, NEVER three-quarter view
+- Decorative border with repeating leaf, vine, or animal motifs
+- Nature-centric: trees, birds, fish, rivers as compositional anchors even in narrative scenes
+- Always illustrate the verse/mythological scene, NOT any modern story analogy`,
+  },
 };
 
 /**
