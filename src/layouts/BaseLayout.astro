@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import { ClientRouter } from 'astro:transitions';
 
 interface Props {
   title?: string;
@@ -45,7 +44,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
-    <ClientRouter />
 
     <!-- Native app shell: activates only inside the Capacitor app, never on the website -->
     <script is:inline>
@@ -228,12 +226,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
       initProgress();
       initNavScroll();
       initMobileMenu();
-      document.addEventListener('astro:after-swap', () => {
-        initScrollReveal();
-        initProgress();
-        initNavScroll();
-        initMobileMenu();
-      });
     </script>
   </body>
 </html>
