@@ -27,6 +27,18 @@ The complete Bhagavad Gita is live at https://gitakids.com — all 18 chapters, 
 
 Plus **Gitamahatmyam** (18 stories) and front/back matter. Build: 726 pages.
 
+## What Was Done This Session (2026-07-15, three owner fixes: iPad back button, person consistency, illustration rework)
+
+Three owner requests, all fixed + deployed:
+
+**1. iPad back button exited the browser instead of going back.** Root cause: Astro's `<ClientRouter />` (View Transitions) breaks iOS WebKit history — Safari's back gesture landed on an empty history entry and exited the site (known Astro issue, #11919/#7739/#13943). Removed `<ClientRouter />` and its `astro:after-swap` re-init block from `src/layouts/BaseLayout.astro`; the four init functions already run on normal page load, so nothing else changed. Back now returns to the previous page reliably (trades the cross-page fade for a normal load). Committed `573e24f`, deployed + verified (site serves no redirects; issue was client-side history, not server redirects).
+
+**2. Translations switched first↔third person mid-verse.** Cause: `meaning:` fields inconsistently rendered Krishna's speech — some as direct first person ("I am..."), some as reported third person ("Krishna says he is..."), sometimes within one verse. Scanned all 701 verses (62 candidates), fixed 27 by standardizing Krishna's reported speech to direct first-person quotes (`Krishna says, "...Me..."`); left the ~35 already-correct ones untouched. Only `meaning:` changed. Committed `ca9b0c3`, deployed.
+
+**3. Illustration rework, chapters 10–13.** Audited all illustrations in ch10–13 for shloka relevance and no-text compliance (most were already relevant, so this was targeted, not a blanket regen). Added an **`illustration_brief:`** field to 18 verses (art-director scene direction) and taught the pipeline (`scripts/generate-illustration.mjs` — `parseVerseYaml` + `buildSceneDescription`) to draw that brief literally instead of a generic teaching tableau. Regenerated all 18 and viewed each: shloka-specific, anatomy correct, text-free. Four also fixed a baked-in-text/fake-Devanagari violation (ch10 v35, ch13 v15/v19/v20). Verses: ch10 003/017/018/023/031/035, ch11 002/003/043, ch12 003/018, ch13 010/012/013/015/019/020/032. Committed `9a970f3` (18 PNGs + 18 briefs), deployed + verified live (www serves the new bytes).
+
+**Not committed (left as pre-existing WIP, by design):** `scripts/generate-illustration.mjs` (the brief-parsing pipeline change is intermingled with ~265 lines of earlier uncommitted WIP in that file; the deployed site does not need it — the script runs locally and the site ignores unknown YAML fields), `docs/illustration-guidelines.md`, and untracked `public/illustrations/_samples/` + `scripts/generate-samples.mjs`. If the owner wants the brief-driven pipeline reproducible from the repo, commit `generate-illustration.mjs` separately after reviewing its pre-existing hunks.
+
 ## What Was Done This Session (2026-06-29, UI refresh — research + live previews)
 
 **Deep visual research + two live design previews** for a presentation-only UI refresh (owner: get to a beautiful, distinctive, fast site "worthy of the content"; do NOT change text, images, or flow). Ran 4 parallel research/audit agents (best-in-class reading sites, cultural/kids design, fast-delight techniques, current-system audit). Full direction + prioritized backlog + references: **`docs/plans/2026-06-29-ui-refresh-direction.md`**.
@@ -329,4 +341,4 @@ Open next steps:
 - Android signing/version: `android/app/build.gradle` (debug `signingConfig`, version from `APP_BUILD_NUMBER`) + `android/app/signing-debug.keystore`
 - Native app shell (system bars, status bar, back button): `<script>`/`<style>` blocks in `src/layouts/BaseLayout.astro`
 
-Last reviewed: 2026-06-29
+Last reviewed: 2026-07-15
