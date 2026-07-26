@@ -215,6 +215,164 @@ export const STYLE_PROMPTS = {
 - Nature-centric: trees, birds, fish, rivers as compositional anchors even in narrative scenes
 - Always illustrate the verse/mythological scene, NOT any modern story analogy`,
   },
+
+  // ---- Diversification styles (added 2026-06-29) to break up repeated forms ----
+  'kerala-mural': {
+    name: 'Kerala Mural',
+    prompt: `STYLE REQUIREMENTS (CRITICAL — follow every rule exactly):
+- Kerala temple mural style (as in Guruvayur, Mattancherry, and Pundarikapuram murals)
+- Flat perspective — NO shading, NO atmospheric depth, NO 3D rendering
+- Figures with rounded faces, large lotus-petal eyes, tall elaborate crowns and heavy ornaments
+- Bold black outlines; rich panchavarna (five-colour) fills — ochre-yellow, red, green, white, black
+- Stylised curling foliage, lotus, and creeper motifs filling the background (horror vacui)
+- Figures in profile OR frontal view — ornate, stately, sacred
+- Foliate scrollwork border on all four sides
+- Always illustrate the verse/mythological scene, NOT any modern story analogy`,
+  },
+  tanjore: {
+    name: 'Tanjore (Thanjavur)',
+    prompt: `STYLE REQUIREMENTS (CRITICAL — follow every rule exactly):
+- Thanjavur (Tanjore) painting style from Tamil Nadu — regal, devotional, opulent
+- Central figures framed under an ornamental arch (prabhavali / pillared torana)
+- Abundant gold-leaf gilding on crowns, jewellery, arch and borders — raised gold-relief look
+- Vivid flat jewel colours: deep red, emerald green, royal blue; NO 3D modelling
+- Rounded faces, large eyes, heavy gold jewellery and pearl strings
+- Symmetrical, iconic, frontal devotional composition
+- TWO distinct frames: (1) an OUTER rectangular gilded border enclosing all four sides of the painting, including a full bottom band of equal weight to the top; (2) an INNER ornamental arch (prabhavali) arching over the figures
+- The COMPLETE outer rectangle must be visible inside the image with a small margin of background beyond it on every side — do NOT zoom in, do NOT crop or run any element off the top, bottom, left or right edge
+- Always illustrate the verse/mythological scene, NOT any modern story analogy`,
+  },
+  mysore: {
+    name: 'Mysore',
+    prompt: `STYLE REQUIREMENTS (CRITICAL — follow every rule exactly):
+- Mysore painting style from Karnataka — graceful, serene, refined
+- Slender, delicate figures with gentle serene expressions
+- Restrained gesso gold-leaf detailing on crowns, jewellery and thrones (subtler than Tanjore)
+- Soft muted palette — gentle greens, soft blues, warm ochres, cream
+- Fine intricate linework; flat colour with only the faintest tonal grading on faces
+- Ornate thrones, arches, and lotus pedestals
+- Delicate floral border on all four sides
+- Always illustrate the verse/mythological scene, NOT any modern story analogy`,
+  },
+  phad: {
+    name: 'Phad Scroll',
+    prompt: `STYLE REQUIREMENTS (CRITICAL — follow every rule exactly):
+- Phad scroll painting style from Shahpura, Rajasthan — narrative epic scroll
+- Processional composition — many figures packed across the panel in scene-blocks, NO single vanishing point, NO empty centre
+- Flat bright colour with predominant red and orange grounds, plus green, yellow, indigo
+- Figures in profile with large fish-shaped eyes, compact and repeated
+- Bold outlines; figures grouped by episode, facing one another
+- Festive, busy, decorative; simple running border
+- Flat perspective — NO shading, NO 3D rendering
+- Always illustrate the verse/mythological scene, NOT any modern story analogy`,
+  },
+  pahari: {
+    name: 'Pahari (Kangra)',
+    prompt: `STYLE REQUIREMENTS (CRITICAL — follow every rule exactly):
+- Pahari (Kangra) miniature painting style from the Himalayan foothills — lyrical, tender, refined
+- Slender graceful figures with delicate fine faces and gentle expressions
+- Soft naturalistic flowering landscape — delicate trees, blossoms, gentle hills and streams (flat decorative depth, not photographic)
+- Soft refined palette — tender greens, pale sky blue, rose pink, cream, soft gold accents
+- Fine delicate linework; only very subtle modelling
+- Narrow floral creeper border
+- Always illustrate the verse/mythological scene, NOT any modern story analogy`,
+  },
+  mewar: {
+    name: 'Mewar (Rajput)',
+    prompt: `STYLE REQUIREMENTS (CRITICAL — follow every rule exactly):
+- Mewar (Rajput) miniature painting style from Rajasthan — bold, courtly, vigorous
+- Bold flat planes of saturated colour, often a single dominant ground (hot red or ochre)
+- Scene divided into registers / colour bands; flat decorative architecture, pavilions, horses, chariots
+- Figures in profile with large eyes, lively and animated
+- Well suited to battlefield and court scenes — warriors, bows, chariots rendered flat and patterned
+- Bold outlines, minimal modelling; simple banded border
+- Always illustrate the verse/mythological scene, NOT any modern story analogy`,
+  },
+  cheriyal: {
+    name: 'Cheriyal Scroll',
+    prompt: `STYLE REQUIREMENTS (CRITICAL — follow every rule exactly):
+- Cheriyal scroll painting style from Telangana — lively folk narrative
+- Signature vivid red background; bold rounded folk figures with large eyes
+- Figures grouped in animated action, warm and lively
+- Flat vibrant primary colours — red, yellow, green, blue, white — with black outlines
+- Simple floral or dotted border bands
+- Flat perspective — NO shading, NO 3D rendering
+- Always illustrate the verse/mythological scene, NOT any modern story analogy`,
+  },
+  kalighat: {
+    name: 'Kalighat',
+    prompt: `STYLE REQUIREMENTS (CRITICAL — follow every rule exactly):
+- Kalighat painting style from 19th-century Bengal — bold, fluid, economical
+- One or a few large figures with confident sweeping brush outlines
+- Rounded, volumetric forms suggested by smooth graded watercolour wash (gentle shading allowed — this style is the exception to the flat rule)
+- Minimal, mostly plain or lightly-washed background — generous open space, NOT horror vacui
+- Limited earthy palette with bright accents — indian red, ochre, blue-grey — on a cream/plain ground
+- Expressive watercolour feel; little or no border, or a thin plain rule
+- Always illustrate the verse/mythological scene, NOT any modern story analogy`,
+  },
+  sanjhi: {
+    name: 'Sanjhi Paper-cut',
+    prompt: `STYLE REQUIREMENTS (CRITICAL — follow every rule exactly):
+- Sanjhi paper-cut (stencil) art from Mathura / Braj — delicate devotional filigree
+- The whole image reads as intricate symmetrical lace-like paper cutwork
+- Braj / Krishna devotional motifs — cows, peacocks, kadamba trees, lotus, the Yamuna river
+- Cutwork rendered as a single light colour (cream/white) silhouetted against a flat contrasting deep ground (indigo, deep blue, or black)
+- Highly symmetrical, filigree detailing, fine perforated patterns
+- Flat — NO shading, NO 3D rendering
+- Decorative cut-paper border on all four sides
+- Always illustrate the verse/mythological scene, NOT any modern story analogy`,
+  },
+  'tholu-bommalata': {
+    name: 'Tholu Bommalata (Shadow Puppet)',
+    prompt: `STYLE REQUIREMENTS (CRITICAL — follow every rule exactly):
+- Tholu Bommalata leather shadow-puppet style from Andhra Pradesh — theatrical and luminous
+- Figures rendered as ornate translucent leather puppets in strong profile, with jointed limbs and tall elaborate crowns
+- Intricate perforated / punched lace-like patterns within every figure and costume
+- Glowing, back-lit translucent jewel colours (red, orange, green, gold) against a DARK ground, as if lit from behind on a screen
+- Bold dark outlines; dramatic silhouettes
+- Decorative punched border
+- Flat — NO 3D modelling
+- Always illustrate the verse/mythological scene, NOT any modern story analogy`,
+  },
+  saura: {
+    name: 'Saura',
+    prompt: `STYLE REQUIREMENTS (CRITICAL — follow every rule exactly):
+- Saura (Soura) tribal painting style from Odisha — ritual, rhythmic, geometric
+- White / cream stick-and-geometric figures on a deep maroon / red-brown earth ground
+- Drawn border-inward in the signature fishnet manner; figures arranged in rows — dancers, horses, tree of life
+- Stylised figures built from simple triangles and lines, arms linked, processional rhythm
+- Flat perspective — NO shading, NO 3D rendering
+- Geometric icon-house (ikon) frame border
+- Fill space with small trees, birds, sun/moon and dot motifs
+- Always illustrate the verse/mythological scene, NOT any modern story analogy`,
+  },
+  basohli: {
+    name: 'Basohli',
+    prompt: `STYLE REQUIREMENTS (CRITICAL — follow every rule exactly):
+- Basohli miniature painting style (early Pahari school) — bold, intense, vivid
+- Hot saturated grounds, especially brilliant red and deep yellow
+- Figures with large lotus-petal eyes and strong profiles, vigorous and expressive
+- Beetle-wing iridescent emerald green for jewellery highlights; rich gold detailing
+- Flat geometric architecture and bold colour planes
+- Strong patterned border on all four sides
+- Flat perspective — NO shading, NO 3D rendering
+- Always illustrate the verse/mythological scene, NOT any modern story analogy`,
+  },
+
+  // Fine-art realism (NOT folk) — deliberately breaks the flat-folk constraints.
+  tomassetti: {
+    name: 'Giampaolo Tomassetti (classical realism)',
+    fineArt: true,
+    prompt: `STYLE REQUIREMENTS (CRITICAL — follow every rule exactly):
+- In the style of Italian painter Giampaolo Tomassetti's Mahabharata oil paintings — classical European realism applied to Vedic India
+- Naturalistic, anatomically accurate figures with realistic proportions and lifelike, expressive faces
+- Oil-painting finish — soft chiaroscuro modelling, three-dimensional form, real atmospheric depth and perspective
+- Warm cinematic lighting, glowing skin, luminous golden-hour or dramatic sky
+- Richly detailed costumes, jewellery, armour, chariots and landscape rendered realistically
+- Devotional grandeur and epic, theatrical composition — Renaissance-influenced but faithfully Indian
+- This is FINE-ART REALISM, NOT flat folk art: shading, depth, volume and naturalism are REQUIRED
+- Always illustrate the verse/mythological scene, NOT any modern story analogy`,
+  },
 };
 
 /**
@@ -238,6 +396,21 @@ function parseVerseYaml(raw) {
   const storyTitleMatch = raw.match(/^\s+title:\s*"(.+?)"/m);
   if (storyTitleMatch) {
     result.story_title = storyTitleMatch[1];
+  }
+
+  // Extract optional `illustration_brief` — an art-director's CONCRETE visual
+  // scene direction (what to literally depict). Supports a folded/literal block
+  // (`>`/`|`) or a quoted/plain scalar. When present it drives the image scene
+  // instead of the abstract `meaning`, so philosophical verses get a real scene.
+  const briefBlock = raw.match(/^illustration_brief:\s*[>|][-+]?\s*\n((?:[ \t]+.+\n?)+)/m);
+  if (briefBlock) {
+    result.illustration_brief = briefBlock[1]
+      .split('\n').map(l => l.trim()).filter(Boolean).join(' ');
+  } else {
+    const briefScalar = raw.match(/^illustration_brief:\s*(?:"([^"]*)"|'([^']*)'|(.+))\s*$/m);
+    if (briefScalar) {
+      result.illustration_brief = (briefScalar[1] || briefScalar[2] || briefScalar[3] || '').trim();
+    }
   }
 
   // Simple scalar fields
@@ -320,26 +493,134 @@ function getRelevantCharacters(verseData) {
 // ---------------------------------------------------------------------------
 
 function buildSceneDescription(verseData, chapterMeta) {
-  const { verse_number, speaker, meaning, story_title } = verseData;
+  const { verse_number, speaker, meaning, story_title, illustration_brief } = verseData;
   const chapterNum = chapterMeta.number || '?';
   const chapterName = chapterMeta.name || '';
   const speakerName = speaker
     ? speaker.charAt(0).toUpperCase() + speaker.slice(1)
     : 'Unknown';
 
+  // Prefer a concrete art-director brief (what to literally depict). Fall back to
+  // the abstract meaning only when no brief is authored.
+  const sceneLine = illustration_brief && illustration_brief.length
+    ? illustration_brief
+    : meaning;
+  const contextLine = illustration_brief && illustration_brief.length
+    ? `Teaching this illustrates: ${meaning}`
+    : '';
+
   return `Chapter ${chapterNum} (${chapterName}), Verse ${verse_number} of the Bhagavad Gita.
 Speaker: ${speakerName}.
-Scene: ${meaning}
+Scene to depict (draw this literally and specifically): ${sceneLine}
+${contextLine}
 Story theme: "${story_title || 'N/A'}"
 
-Illustrate the MYTHOLOGICAL scene — divine figures, ancient India settings, sacred landscapes. Do NOT illustrate any modern analogy or contemporary scene.`;
+Illustrate the MYTHOLOGICAL scene — divine figures, ancient India settings, sacred landscapes. Make the illustration SPECIFIC to this verse's scene above, not a generic teaching tableau. Do NOT illustrate any modern analogy or contemporary scene.`;
 }
 
 /**
+ * Per-style colour palettes for the diversification styles. Each has its own
+ * ground and palette logic — gold-dominant (Tanjore), dark-ground (Tholu
+ * Bommalata, Sanjhi), maroon-ground (Saura), etc. — so they do NOT use the
+ * default cream six-colour block.
+ */
+export const STYLE_PALETTES = {
+  'kerala-mural': `COLOR PALETTE (Kerala mural panchavarna — five colours):
+- Ochre-yellow: #C98A1B
+- Indian red: #9E2B25
+- Forest green: #1A6847
+- White: #F5E6D3
+- Black outlines
+- Gold accents: #C4A24E
+- Earthy mural tones — NO blue sky, NO neon colors`,
+  tanjore: `COLOR PALETTE (Tanjore — gold-rich jewel tones):
+- Gold leaf (dominant): #C4A24E
+- Deep red: #8B1A1A
+- Emerald green: #0D6B3F
+- Royal blue: #1A3A8A
+- White / pearl highlights: #F5E6D3
+- Abundant gold gilding; NO neon colors`,
+  mysore: `COLOR PALETTE (Mysore — soft muted with gold):
+- Soft gold: #C4A24E
+- Muted green: #4E7A5A
+- Soft blue: #5A7AA8
+- Warm ochre: #C98A4B
+- Cream: #FDF6E3
+- Gentle, restrained tones; NO neon colors`,
+  phad: `COLOR PALETTE (Phad — flat brights on red/orange):
+- Phad red (ground): #B83227
+- Orange: #C75B12
+- Yellow ochre: #D9A441
+- Green: #1A6847
+- Indigo: #2D3A87
+- White accents; NO neon colors`,
+  pahari: `COLOR PALETTE (Pahari — soft naturalistic):
+- Tender green: #6E9B5A
+- Pale sky blue: #A8C6DE
+- Rose pink: #D49AA0
+- Cream: #FDF6E3
+- Soft gold: #C4A24E
+- Gentle refined tones; NO neon colors`,
+  mewar: `COLOR PALETTE (Mewar — bold saturated Rajput):
+- Hot red (ground): #B0231F
+- Ochre: #C98A1B
+- Indigo: #2D3A87
+- Green: #1A6847
+- White: #F5E6D3
+- Gold: #C4A24E
+- Bold flat planes; NO neon colors`,
+  cheriyal: `COLOR PALETTE (Cheriyal — vivid folk on red):
+- Cheriyal red (ground): #C0392B
+- Yellow: #E0A93B
+- Green: #1A6847
+- Blue: #2D3A87
+- White and black outlines
+- Vibrant primaries; NO neon colors`,
+  kalighat: `COLOR PALETTE (Kalighat — earthy watercolour washes):
+- Indian red: #9E2B25
+- Ochre: #C98A1B
+- Blue-grey: #6E7E8A
+- Cream / plain ground: #FDF6E3
+- Soft graded washes; NO neon colors`,
+  sanjhi: `COLOR PALETTE (Sanjhi — light cutwork on deep ground):
+- Cutwork in cream / white: #F5E6D3
+- Deep flat ground: indigo #1A2A5A, deep blue #0A1A3A, or black #1A1A2E
+- Optional gold accents: #C4A24E
+- The GROUND is deep/dark and the cutwork is light — NO cream background fields`,
+  'tholu-bommalata': `COLOR PALETTE (Tholu Bommalata — back-lit translucent on dark):
+- Dark ground: black #1A1A2E or deep brown #2A1A10
+- Glowing translucent red: #C0392B
+- Glowing orange: #D9701F
+- Glowing green: #0D6B3F
+- Gold: #C4A24E
+- Luminous back-lit feel; NO light-toned backgrounds`,
+  saura: `COLOR PALETTE (Saura — white figures on maroon):
+- Maroon / red-brown ground: #6B1E1E
+- White / cream figures: #F5E6D3
+- Sparse accents of ochre #C98A1B and green #1A6847
+- The GROUND is deep maroon — NO cream background`,
+  basohli: `COLOR PALETTE (Basohli — hot saturated):
+- Brilliant red (ground): #C01818
+- Deep yellow: #E0A521
+- Beetle-wing emerald: #0D6B3F
+- Blue: #2D3A87
+- White and gold: #C4A24E
+- Intense saturated planes; NO neon colors`,
+  tomassetti: `COLOR PALETTE (Tomassetti — naturalistic oil painting):
+- Rich naturalistic colour with a full tonal range and soft gradients
+- Warm golds and saffrons, deep reds, royal blues, earthy greens
+- Realistic skin tones; Krishna's skin a soft luminous blue
+- Atmospheric sky and natural light are WELCOME (this fine-art style is EXEMPT from the flat-folk 'no sky' rule)
+- Cinematic chiaroscuro lighting; no neon colours`,
+};
+
+/**
  * Build the color-palette block for a given art style. Pichwai uses a dark
- * background with jewel tones; all other styles use the standard cream palette.
+ * background with jewel tones; the diversification styles use their own
+ * palettes; all other styles use the standard cream palette.
  */
 export function buildColorPalette(artStyle) {
+  if (STYLE_PALETTES[artStyle]) return STYLE_PALETTES[artStyle];
   const isPichwai = artStyle.startsWith('pichwai');
   return isPichwai
     ? `COLOR PALETTE (Pichwai jewel tones on dark ground):
@@ -384,8 +665,12 @@ function buildPrompt(verseData, chapterMeta) {
     : '';
 
   const colorPalette = buildColorPalette(artStyle);
+  const medium = styleConfig.fineArt ? 'classical oil-painting style' : 'folk art style';
+  const borderLine = styleConfig.fineArt
+    ? '- Composition is a borderless cinematic canvas — NO decorative frame or folk border'
+    : '- Border must be dense with traditional motifs matching the series style';
 
-  return `Create a ${styleConfig.name} folk art style illustration for a children's book about the Bhagavad Gita.
+  return `Create a ${styleConfig.name} ${medium} illustration for a children's book about the Bhagavad Gita.
 
 SCENE:
 ${scene}
@@ -401,7 +686,7 @@ CRITICAL — NO TEXT IN THE IMAGE:
 
 SERIES COHESION:
 - Use the style of classic ${styleConfig.name} paintings as your reference
-- Border must be dense with traditional motifs matching the series style
+${borderLine}
 
 FORMAT: Landscape orientation 16:9 aspect ratio (1408×768 px), suitable for full-width web display in a children's book.`.trim();
 }
@@ -444,8 +729,9 @@ function buildCoverPrompt(chapterMeta) {
     : '';
 
   const colorPalette = buildColorPalette(artStyle);
+  const medium = styleConfig.fineArt ? 'classical oil-painting style' : 'folk art style';
 
-  return `Create a ${styleConfig.name} folk art style CHAPTER-COVER illustration for the opening page of Chapter ${chapterNum} of a children's book about the Bhagavad Gita.
+  return `Create a ${styleConfig.name} ${medium} CHAPTER-COVER illustration for the opening page of Chapter ${chapterNum} of a children's book about the Bhagavad Gita.
 
 This is a TITLE-PAGE / FRONTISPIECE artwork — a single emblematic, symmetrical, devotional composition that captures the WHOLE chapter's theme. It is NOT a depiction of one specific verse; it is the iconic image that opens the chapter.
 
